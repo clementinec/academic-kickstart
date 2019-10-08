@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 
-title = "Reaching within and outside of thermal comfort zone"
+title = "Research"
 subtitle = ""
 
 [design]
@@ -21,8 +21,8 @@ subtitle = ""
   #   Choose a light or dark text color by setting `text_color_light`.
   #   Any HTML color name or Hex value is valid.
 
-  Background color.
-  color = "navy"
+  # Background color.
+  # color = "navy"
 
   # Background gradient.
   gradient_start = "DarkGreen"
