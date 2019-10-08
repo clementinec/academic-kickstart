@@ -28,14 +28,14 @@ interests:
 education:
   courses:
   - course: PhD in Architectural Technology and Computational Design
-	- institution: Princeton University
-	- year: 2012
+ institution: Princeton University
+ year: 2012
   - course: MEng in Artificial Intelligence
-	- institution: Massachusetts Institute of Technology
-	- year: 2009
+ institution: Massachusetts Institute of Technology
+ year: 2009
   - course: BSc in Artificial Intelligence
-	- institution: Massachusetts Institute of Technology
-	- year: 2008
+ institution: Massachusetts Institute of Technology
+ year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -62,15 +62,15 @@ social:
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: "hongshan@princeton.edu"
-  
+
 # Organizational groups that you belong to (for People widget)
 # Set this to `[]` or comment out if you are not using People widget.  
 user\_groups:
 - Researchers
 - Visitors
 ---
-<!-- 
+<!--
 Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.  -->
-Hongshan Guo is a Postdoctoral Research Associate at Princeton University, C.H.A.O.S. (Cooling, Heating and Architecturally Optimized Systems) Laboratory. She completed her PhD studies and graduated in June, 2019 on architectural technology and computational design in the School of Architecture at Princeton University, and is currently working at the Andlinger Center for Energy and the Environment. 
+Hongshan Guo is a Postdoctoral Research Associate at Princeton University, C.H.A.O.S. (Cooling, Heating and Architecturally Optimized Systems) Laboratory. She completed her PhD studies and graduated in June, 2019 on architectural technology and computational design in the School of Architecture at Princeton University, and is currently working at the Andlinger Center for Energy and the Environment.
