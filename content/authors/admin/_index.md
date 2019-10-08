@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Hongshan Guo
+name: Nelson Bighetti
 
 # Username (this should match the folder name)
 authors:
@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Postdoctoral Research Associate
+role: Professor of Artificial Intelligence
 
 # Organizations/Affiliations
 organizations:
-- name: Princeton University
+- name: Stanford University
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed energy system, building technology and IoT sensing within both the indoor and outdoor environment.
+bio: My research interests include distributed robotics, mobile computing and programmable matter.
 
 interests:
 - Artificial Intelligence
@@ -27,50 +27,49 @@ interests:
 
 education:
   courses:
-  - course: PhD in Architectural Technology and Computational Design
- institution: Princeton University
- year: 2012
+  - course: PhD in Artificial Intelligence
+    institution: Stanford University
+    year: 2012
   - course: MEng in Artificial Intelligence
- institution: Massachusetts Institute of Technology
- year: 2009
+    institution: Massachusetts Institute of Technology
+    year: 2009
   - course: BSc in Artificial Intelligence
- institution: Massachusetts Institute of Technology
- year: 2008
+    institution: Massachusetts Institute of Technology
+    year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
-# For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-# form "mailto:your-email@example.com" or "#contact" for contact widget.
+#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
+#   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
 - icon: envelope
-  icon\_pack: fas
+  icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
-  icon\_pack: fab
+  icon_pack: fab
   link: https://twitter.com/GeorgeCushen
 - icon: google-scholar
-  icon\_pack: ai
+  icon_pack: ai
   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
-  icon\_pack: fab
+  icon_pack: fab
   link: https://github.com/gcushen
 # Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
-# icon\_pack: ai
-# link: files/cv.pdf
+#   icon_pack: ai
+#   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "hongshan@princeton.edu"
+email: ""
 
 # Organizational groups that you belong to (for People widget)
-# Set this to `[]` or comment out if you are not using People widget.  
-user\_groups:
+#   Set this to `[]` or comment out if you are not using People widget.  
+user_groups:
 - Researchers
 - Visitors
 ---
-<!--
+
 Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.  -->
-Hongshan Guo is a Postdoctoral Research Associate at Princeton University, C.H.A.O.S. (Cooling, Heating and Architecturally Optimized Systems) Laboratory. She completed her PhD studies and graduated in June, 2019 on architectural technology and computational design in the School of Architecture at Princeton University, and is currently working at the Andlinger Center for Energy and the Environment.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
