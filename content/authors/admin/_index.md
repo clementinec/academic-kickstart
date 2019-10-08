@@ -70,4 +70,7 @@ user_groups:
 - Visitors
 ---
 
-Hongshan Guo is a Postdoctoral Research Associate at the Andlinger Center for Energy and the Environment. Having recently finished her PhD in Architectural Technology and Computational Design from the university's School of Architecture, she has been working on projects including geothermal TRT tests and outdoor infrared sensing through distributed sensors.
+You've reached the page for Hongshan Guo, who's currently a Postdoctoral Research Associate at the Andlinger Center for Energy and the Environment. Having recently finished my PhD in Architectural Technology and Computational Design from the university's School of Architecture, I have been working on projects including geothermal TRT(thermal response test) and outdoor infrared sensing through distributed sensors. 
+
+Aside from doing practical and applied research, time in Princeton has also led me into rabbit holes of doing fundamental research on both the analytical modeling of not only the borehole, but also the heat balance of the human body, and I primarily focused on the challenge of understanding the underlying physiological models and their roles in existing conditioning systems.
+
