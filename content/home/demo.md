@@ -12,7 +12,7 @@ title = "Reaching within and outside of thermal comfort zone"
 subtitle = ""
 
 [design]
-  # Choose how many columns the section has. Valid values: 1 or 2.
+  Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
 [design.background]
@@ -21,7 +21,7 @@ subtitle = ""
   #   Choose a light or dark text color by setting `text_color_light`.
   #   Any HTML color name or Hex value is valid.
 
-  # Background color.
+  Background color.
   color = "navy"
 
   # Background gradient.
