@@ -57,9 +57,9 @@ social:
   link: https://github.com/clementinec
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
+- icon: cv
+  icon_pack: ai
+  link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: "hongshan@princeton.edu"
@@ -71,7 +71,7 @@ user_groups:
 - Visitors
 ---
 
-You've reached the page for Hongshan Guo, who's currently a Postdoctoral Research Associate at the Andlinger Center for Energy and the Environment. Having recently finished my PhD in Architectural Technology and Computational Design from the university's School of Architecture, I have been working on projects including geothermal TRT (thermal response test) and outdoor infrared sensing through distributed sensors. 
+Welcome! You've reached the project and personal info page by Hongshan Guo. I'm currently a Postdoctoral Research Associate at the Andlinger Center for Energy and the Environment. Having recently finished my PhD in Architectural Technology and Computational Design from the university's School of Architecture, I have been working on projects including geothermal TRT (thermal response test) and outdoor infrared sensing through distributed sensors. 
 
 Aside from doing practical and applied research, time in Princeton has also led me into rabbit holes of doing fundamental research on both the analytical modeling of not only the borehole, but also the heat balance of the human body, and I primarily focused on the challenge of understanding the underlying physiological models and their roles in existing conditioning systems.
 
