@@ -1,7 +1,6 @@
 +++
 # A Recent Publications section created with the Pages widget.
 # This section displays recent blog posts from `content/publication/`.
-
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
@@ -64,9 +63,10 @@ subtitle = ""
  
  # CSS class.
  css_class = ""
-+++
 
++++
 {{% alert note %}}
 Quickly discover relevant content by [filtering publications]({{< ref "/publication/_index.md" >}}).
 {{% /alert %}}
+[content]
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
