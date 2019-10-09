@@ -69,3 +69,4 @@ subtitle = ""
 {{% alert note %}}
 Quickly discover relevant content by [filtering publications]({{< ref "/publication/_index.md" >}}).
 {{% /alert %}}
+Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
