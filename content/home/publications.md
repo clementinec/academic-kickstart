@@ -63,7 +63,7 @@ subtitle = ""
  
  # CSS class.
  css_class = ""
-[content]
+
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
 
 +++
