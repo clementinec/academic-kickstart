@@ -20,33 +20,23 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[item]]
-  organization = "Coursera"
-  organization_url = "https://www.coursera.org"
-  title = "Neural Networks and Deep Learning"
+  organization = "American Meterological Society"
+  organization_url = "https://www.ametsoc.org/index.cfm/ams/"
+  title = "William P. Lowry Methodology Prize"
   url = ""
-  certificate_url = "https://www.coursera.org"
-  date_start = "2018-10-01"
+  certificate_url = "http://www.urban-climate.org/newsletter/icuc-10-ams-student-award-winners/"
+  date_start = "2018-10-08"
   date_end = ""
   description = ""
 
 [[item]]
-  organization = "edX"
-  organization_url = "https://www.edx.org"
-  title = "Blockchain Fundamentals"
-  url = "https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals"
-  certificate_url = "https://www.edx.org"
-  date_start = "2018-03-01"
+  organization = "Princeton University"
+  organization_url = "https://acee.princeton.edu"
+  title = "BMaeder Graduate Fellowship in Energy and the Environment"
+  url = "https://acee.princeton.edu/education/student-funding-for-research/2019-maeder-graduate-fellowship-in-energy-and-the-environment-opportunities/"
+  certificate_url = ""
+  date_start = "2018-09-01"
   date_end = ""
-  description = "Formulated informed blockchain models, hypotheses, and use cases."
-  
-[[item]]
-  organization = "DataCamp"
-  organization_url = "https://www.datacamp.com"
-  title = "Object-Oriented Programming in R: S3 and R6 Course"
-  url = ""
-  certificate_url = "https://www.datacamp.com"
-  date_start = "2017-07-01"
-  date_end = "2017-12-21"
-  description = ""
+  description = "Awarded the fellowship on research regarding improving the comfort delivery efficiency of existing building and built environment conditioning systems."
 
 +++
