@@ -68,6 +68,9 @@ subtitle = ""
 {{% alert note %}}
 Or search by year or keyword here: [filtering publications]({{< ref "/publication/_index.md" >}}).
 {{% /alert %}}
+
+Hongshan Guo, Dorit Aviv, Mauricio Loyola, Eric Teitelbaum, Nicholas Houchois, Forrest Meggers, “On the understanding of the Mean Radiant Temperature within both the indoor and outdoor environment, a critical review.” Renewable and Sustainable Energy Reviews, Volume 108 (2019): 365-378.
+
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, _Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions_, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
 
 Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. _Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation._ Energy and Buildings 180 (2018): 83–94.
