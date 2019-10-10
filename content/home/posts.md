@@ -64,4 +64,7 @@ subtitle = ""
  
  # CSS class.
  css_class = ""
+[[item]]
+  title: "Energy delivery reconditioned for thermal comfort"
+  description: "Something that I've been working on "
 +++
