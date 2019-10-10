@@ -22,17 +22,16 @@ Increasing complaints or increasing challenges?
 
 Note to self: more on markdown cheat sheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-# 
+ 
 # ```
 # There are some *easy* examples for styling, though. I can't **emphasize** that enough.
 # Creating [links](https://google.com/) or `inline code` blocks are very straightforward.
 # ```
-# 
+
 # Front Matter for Fun
 # --------------------
-# 
 # This is the meta data for this post. It is located at the top of the `content/post/hello-hugo.md` markdown file.
-# 
+
 # ```
 # ---
 # title: "Hello Hugo!"
@@ -47,7 +46,7 @@ Note to self: more on markdown cheat sheet [here](https://github.com/adam-p/mark
 #   - "blog"
 # ---
 # ```
-# 
+
 # This section, called 'Front Matter', is what tells Hugo about the content in this file: the `title` of the item, the
 # `description`, and the `date` it was posted. In our example, we've added two custom bits of data too. The `categories` and
 # `tags` sections are used in this example for indexing/grouping content. You will learn more about what that means by
