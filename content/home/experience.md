@@ -40,5 +40,13 @@ date_format = "Jan 2006"
   date_start = "2014-09-01"
   date_end = "2019-05-31"
   description = """Obtained PhD in understanding the occupants' need and demands regarding their thermal comfort and its impact on redesigning energy delivery."""
-
+  
+[[experience]]
+  title = "Research Associate"
+  company = "Carnegie Mellon University"
+  company_url = ""
+  location = "Pittsburgh, PA"
+  date_start = "2013-09-01"
+  date_end = "2014-07-01"
+  description = """Researched on Post-Occupancy Evaluation for Building 101 Project funded by EEEHub (Energy Innovation Hub for Energy-Efficient Buildings) and the challenges posed by joining building energy/information modeling."""
 +++
