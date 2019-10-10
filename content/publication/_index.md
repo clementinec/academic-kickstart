@@ -6,14 +6,13 @@ title: Publications
 #   2 = Compact
 #   3 = Card
 #   4 = Citation
-view: 4
+view: 1
 
 # Optional header image (relative to `static/img/` folder).
 header:
   caption: ""
   image: ""
 ---
-[[item]]
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, _Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions_, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
 
 Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. “Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation.” Energy and Buildings 180 (2018): 83–94.
