@@ -12,3 +12,7 @@ header:
   caption: ""
   image: ""
 ---
+
+### Comfort delivery efficiency vs. energy delivery efficiency
+
+Existing understanding of the indoor environment usually states the thermal comfort of the occupants can be ensured by using consistent temperature set points within an indoor environment.
