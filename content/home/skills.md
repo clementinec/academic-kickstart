@@ -24,7 +24,7 @@ subtitle = ""
   icon_pack = "fab"
   name = "R"
   description = "70%"
-  
+
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
@@ -32,9 +32,12 @@ subtitle = ""
   description = "80%"  
 
 [[feature]]
-  icon = "camera-retro"
-  icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+
+# 
+# [[feature]]
+#   icon = "camera-retro"
+#   icon_pack = "fas"
+#   name = "Photography"
+#   description = "10%"
 
 +++

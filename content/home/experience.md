@@ -18,27 +18,27 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
+  title = "Postdoctoral Research Associate"
+  company = "Anglinger Center for Energy and the Environment"
   company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
+  location = "Princeton,NJ"
+  date_start = "2019-06-01"
   date_end = ""
   description = """
   Responsibilities include:
   
-  * Analysing
-  * Modelling
-  * Deploying
+  * Analysing 2nd law of thermodynamics' influence on comfort delivery efficiency
+  * Modelling geothermal borehole heat exchanger
+  * Deploying campus-wide distributed sensing network
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
+  title = "PhD Student/Candidate"
+  company = "Princeton University"
   company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  location = "Princeton,NJ"
+  date_start = "2014-09-01"
+  date_end = "2019-05-31"
+  description = """Obtained PhD in understanding the occupants' need and demands regarding their thermal comfort and its impact on redesigning energy delivery."""
 
 +++
