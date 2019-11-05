@@ -40,7 +40,7 @@ subtitle = ""
 
 [[feature]]
   icon = "ello"
-  icon_pack="fas"
+  icon_pack="fab"
   name = "Thermal Comfort"
   description = "95%"
 
