@@ -20,7 +20,7 @@
 
 [[main]]
   name = "Publications"
-  url = "/publication/_index.md"
+  url = "/content/publication/_index.md"
   weight = 40
 
 [[main]]
