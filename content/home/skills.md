@@ -33,14 +33,14 @@ subtitle = ""
 
 [[feature]]
   icon = "user-md"
-  icon_pack="fab"
+  icon_pack="fas"
   name = "Building Diagnostics"
   description = "70%"
   
 
 [[feature]]
   icon = "city"
-  icon_pack="fab"
+  icon_pack="fas"
   name = "Urban Climatology"
   description = "45%"
 
