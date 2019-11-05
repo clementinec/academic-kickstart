@@ -20,11 +20,11 @@ Hongshan Guo, Dorit Aviv, Mauricio Loyola, Eric Teitelbaum, Nicholas Houchois, F
 
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, _Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions_, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
 
-Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. “Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation.” Energy and Buildings 180 (2018): 83–94.
+Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. _Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation._ Energy and Buildings 180 (2018): 83–94.https://doi.org/10.1016/j.enbuild.2018.08.029
+
+Hongshan Guo and Forrest Meggers. _Impact of Control Availability on Perceived Comfort._ Energy Procedia 78 (2015): 1671–1677.
 
 Hongshan Guo, and Forrest Meggers. “Geothermal Distribution Network Modeled as Heat Exchanger Network to Be Optimized with Mixed Integer Nonlinear Programming.” Energy Procedia 122 (2017): 1105–1110. 
-
-Hongshan Guo and Forrest Meggers. “Impact of Control Availability on Perceived Comfort.” Energy Procedia 78 (2015): 1671–1677.
 
 Hongshana Guo, Forrest Meggers, and KIM Min-gunc. “Geothermal District Heating Investigation of Retired Oil/Gas Wells as Higher-Temperature Renewable Heat Sources,” SimAUD 2017, Lausanne, EPFL. 
 
