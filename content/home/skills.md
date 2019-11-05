@@ -36,6 +36,14 @@ subtitle = ""
   icon_pack="fab"
   name = "Building Diagnostics"
   description = "70%"
+  
+
+[[feature]]
+  icon = "city"
+  icon_pack="fab"
+  name = "Urban Climatology"
+  description = "45%"
+
 
 # 
 # [[feature]]
