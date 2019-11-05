@@ -2,6 +2,7 @@
 title: "Is it Time to Make People Instead of Rooms Comfortable?"
 description: "Snippet of _some_ of my PhD"
 date: "2019-05-07"
+event: "Princeton Research Day 2019"
 categories:
   - "sensor"
   - "research"
