@@ -39,6 +39,13 @@ subtitle = ""
   
 
 [[feature]]
+  icon = "ello"
+  icon_pack="fas"
+  name = "Thermal Comfort"
+  description = "95%"
+
+
+[[feature]]
   icon = "city"
   icon_pack="fas"
   name = "Urban Climatology"
