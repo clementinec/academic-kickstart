@@ -20,4 +20,4 @@ We are individual humans that are _different_.
 -------------------------
 Needless to say, the differences between the occupants are somewhat striking: between men and women, and between occupants of different build, age and weight, the heat-producing mechanism alone would result in a wide range of metabolic rates, let alone the differences caused by different muscle/fat ratios, etc. 
 
-This talk was selected[https://www.princeton.edu/news/2019/05/07/princeton-research-day-explores-research-process-across-disciplines] to be among the five Princeton Research Day (PRD) Talks on May 7th, 2019. 
+This talk was [selected ](https://www.princeton.edu/news/2019/05/07/princeton-research-day-explores-research-process-across-disciplines) to be among the five Princeton Research Day (PRD) Talks on May 7th, 2019. 
