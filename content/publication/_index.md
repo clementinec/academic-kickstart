@@ -34,7 +34,7 @@ Luo, Yongqaing, Hongshan Guo, Forrest Meggers, and Ling Zhang. “Deep Coaxial B
 
 Luo, Yongqiang, Ling Zhang, Michael Bozlar, Zhongbing Liu, Hongshan Guo, and Forrest Meggers. “Active Building Envelope Systems toward Renewable and Sustainable Energy.” Renewable and Sustainable Energy Reviews 104 (2019): 470–491.
 
-Forrest MEggers, Gideon Aschwanden, Eric Teitelbaum, Hongshan Guo, and Marcel Bruelisauer. “Urban Cooling Potential: System Losses from Microclimates.” Energy Procedia 78 (2015): 3072–3077.
+Forrest Meggers, Gideon Aschwanden, Eric Teitelbaum, Hongshan Guo, and Marcel Bruelisauer. “Urban Cooling Potential: System Losses from Microclimates.” Energy Procedia 78 (2015): 3072–3077.
 
 Emanuele Calabrò, Forrest Meggers, Eric Teitelbaum, Hongshan Guo, Claire Gmachl, and Germano Maioli Penello. “Thermoheliodome Testing: Evaluation Methods for Testing Directed Radiant Heat Reflection.” Energy Procedia 78 (2015): 1762–1768.
 

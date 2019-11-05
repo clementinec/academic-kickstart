@@ -69,17 +69,11 @@ subtitle = ""
 Or search by year or keyword here: [filtering publications]({{< ref "/publication/_index.md" >}}).
 {{% /alert %}}
 
-Hongshan Guo, Dorit Aviv, Mauricio Loyola, Eric Teitelbaum, Nicholas Houchois, Forrest Meggers, “On the understanding of the Mean Radiant Temperature within both the indoor and outdoor environment, a critical review.” Renewable and Sustainable Energy Reviews, Volume 108 (2019): 365-378.
+Hongshan Guo, Maria Ferrara, James Coleman, Mauricio Loyola, Forrest Meggers,
+_Simulation and measurement of air temperatures and mean radiant temperatures in a radiantly heated indoor space_, Energy, 2019, 116369, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.116369.
+
+Hongshan Guo, Dorit Aviv, Mauricio Loyola, Eric Teitelbaum, Nicholas Houchois, Forrest Meggers, _On the understanding of the mean radiant temperature within both the indoor and outdoor environment, a critical review_, Renewable and Sustainable Energy Reviews, 2019, 109207, ISSN 1364-0321, https://doi.org/10.1016/j.rser.2019.06.014.
 
 Hongshan Guo, Yongqiang Luo, Forrest Meggers, Marco Simonetti, _Human body exergy consumption models’ evaluation and their sensitivities towards different environmental conditions_, Energy, Volume 183, 2019, Pages 1075-1088, ISSN 0360-5442, https://doi.org/10.1016/j.energy.2019.05.045.
 
-Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. _Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation._ Energy and Buildings 180 (2018): 83–94.
-
-Hongshan Guo and Forrest Meggers. _Impact of Control Availability on Perceived Comfort._ Energy Procedia 78 (2015): 1671–1677.
-
-Hongshan Guo, and Forrest Meggers. _Geothermal Distribution Network Modeled as Heat Exchanger Network to Be Optimized with Mixed Integer Nonlinear Programming._ Energy Procedia 122 (2017): 1105–1110. 
-
-Hongshana Guo, Forrest Meggers, and Kim Min-gun. _Geothermal District Heating Investigation of Retired Oil/Gas Wells as Higher-Temperature Renewable Heat Sources_, SimAUD 2017, Lausanne, EPFL. 
-
-Forrest Meggers, Hongshan Guo, Eric Teitelbaum, Gideon Aschwanden, Jake Read, Nicholas Houchois, Jovan Pantelic, and Emanuele Calabrò. _The Thermoheliodome–‘Air Conditioning’ without Conditioning the Air, Using Radiant Cooling and Indirect Evaporation._ Energy and Buildings 157 (2017): 11–19.
-
+Hongshan Guo, Eric Teitelbaum, Nicholas Houchois, Michael Bozlar, and Forrest Meggers. _Revisiting the Use of Globe Thermometers to Estimate Radiant Temperature in Studies of Heating and Ventilation._ Energy and Buildings 180 (2018): 83–94.https://doi.org/10.1016/j.enbuild.2018.08.029
