@@ -32,6 +32,10 @@ subtitle = ""
   description = "80%"  
 
 [[feature]]
+  icon = "user-md"
+  icon_pack="fab"
+  name = "Building Diagnostics"
+  description = "70%"
 
 # 
 # [[feature]]
