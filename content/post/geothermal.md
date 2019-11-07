@@ -18,13 +18,13 @@ Method to estimate required length of borehole
 -------------------------
 The methods required to estimate the length required by borehole is outlined in ASHRAE Handbook - Applications (2015). Specifically, we'll be looking at the sizing of a vertical geothermal heat pump system. The given (known) values that we have are $q_c$ and $q_h$, the cooling and heating load of the new campus in tons, which needs to be plugged into the following Equation (1) for the required length of cooling:
 
-$$L_c = \frac{q_aR_{ga}+(q_{lc}-3.41W_c)(R_b+PLF_mR_{gm}+R_{gd}F_{sc})}{t_g-\frac{t_{wi}+t_{wo}}{2}-t_p}$$ (1)
+$$L_c = \frac{q_a R_{ga} + (q_{lc}-3.41 W_c) (R_b+PLF_m R_{gm}+R_{gd} F_{sc})}{t_g-\frac{t_{wi}+t_{wo}}{2}-t_p}$$ (1)
 
-The required length for heating could, similarly, be calculated from Equation (2). Since $$L_h$$ is commonly smaller than $$L_c$$, it is very common to use $L_c$ instead of $L_h$ when sizing geothermal systems. 
+The required length for heating could, similarly, be calculated from Equation (2). Since $L_h$ is commonly smaller than $L_c$, it is very common to use $L_c$ instead of $L_h$ when sizing geothermal systems. 
 
-$$L_h = \frac{q_aR_{ga}+(q_{lh}-3.41W_h)(R_b+PLF_mR_{gm}+R_{gd}F_{sc})}{t_g-\frac{t_{wi}+t_{wo}}{2}-t_p}$$ (2)
+$$L_h = \frac{q_aR_{ga} + (q_{lh}-3.41 W_h)(R_b+PLF_mR_{gm} + R_{gd} F_{sc})}{t_g- \frac{t_{wi} + t_{wo}}{2} - t_p}$$ (2)
 
-Regarding the respective variables in Equation (1), $R_b$ is obviously the thermal resistance of the bore, which can be estimated from the different diameters of boreholes. $t_g$ is the undisturbed ground temperature, $t_p$ the temperature penalty for interference of adjacent bores, and $t_{wi},t_{wo}$ the liquid temperature at heat pump inlet and outlet. The system power input as design cooling/heating load is expressed as $W_c$ or $W_h$. A few less common variables are the short-circuit heat loss factor $F_{sc}$, the part-load factor during design month, and the effective(equivalent) thermal resistance of the ground of an annual, daily, monthly basis as $R_{ga},R_{gd},R_{gm}$ as well as shorter terms $R_{gst}$. 
+Regarding the respective variables in Equation (1), $R_b$ is obviously the thermal resistance of the bore, which can be estimated from the different diameters of boreholes. $t_g$ is the undisturbed ground temperature, $t_p$ is the temperature penalty for interference of adjacent bores, and $t_{wi},t_{wo}$ the liquid temperature at heat pump inlet and outlet. The system power input as design cooling/heating load is expressed as $W_c$ or $W_h$. A few less common variables are the short-circuit heat loss factor $F_{sc}$, the part-load factor during design month, and the effective(equivalent) thermal resistance of the ground of an annual, daily, monthly basis as $R_{ga},R_{gd},R_{gm}$ as well as shorter terms $R_{gst}$. 
 
 To evaluate the equivalent thermal resistances of the ground, the solution from Carslaw and Jaeger (1947) requires the time of operation, borehole diameter and thermal diffusivity of the ground to be related in the dimensionless Fourier number (Fo):
 
