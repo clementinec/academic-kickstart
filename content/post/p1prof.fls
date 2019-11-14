@@ -1,0 +1,6 @@
+PWD /Users/hongshanguo/mygit/comf/content/post
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT p1prof.md
+OUTPUT p1prof.log
