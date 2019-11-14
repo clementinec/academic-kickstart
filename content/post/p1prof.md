@@ -1,5 +1,5 @@
 ---
-title: "Recent development in machine learning"
+title: "Recent development in machine learning - Technical"
 description: "Specialist-facing research development on Python deployment in machinelearning - specifically focusing on sckit-based appraoches!"
 date: "2019-11-14"
 categories:
