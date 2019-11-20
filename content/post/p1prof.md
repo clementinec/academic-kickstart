@@ -38,6 +38,9 @@ In addition, a recent publication on the Speech and Signal Processing conference
 
 This may not be of extreme interests if the NLP-based learning is limited only to written text. However, as the project premise incorporates cross-lingual speech-based TOBI label generation, shall the need arises to implement analysis on documented conference recordings and proceedings with a cross-cultural nature, this would be a very interesting case study to go back to, or keep track of since the researchers are likely to continue along this path of investigation per their previous research record<cite>[7]</cite>. 
 
+Figure![png](./break_gen.png)
+
+
 
 ##### Some technical challenges/drawbacks of the approach
 Japanese is a highly phonetic language, and has a hiragana system that adopts foreign language into its phonetic system. Since English is also a phonetic language, the results of this study may be skewed since both has limited fricative sounds. Application of the method reported in the study on a language that has less phonemic orthography - such as Chinese - may prove that the prosody-label-generation applies primarily to phonetic languages. 
