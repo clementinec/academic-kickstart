@@ -4,26 +4,26 @@ import { publicScholarship, service, supervision, teaching } from "../data/site"
 ---
 
 <BaseLayout
-  title="Teaching | Hongshan Guo"
-  description="Courses, pedagogy, mentorship, and public-facing work by Hongshan Guo."
+  title="Teaching | FORGE"
+  description="Courses, pedagogy, mentorship, and public-facing work associated with FORGE."
   activePath="/teaching"
 >
-  <section class="page-hero narrow">
+  <section class="page-intro narrow">
     <div>
       <p class="eyebrow">Teaching and mentorship</p>
       <h1>Evidence, uncertainty, and visual communication as design pedagogy.</h1>
-      <p class="hero-summary">
+      <p class="page-summary">
         Teaching blends low-code accessibility with technical depth in Python and Colab,
         emphasizing reproducibility, design argumentation, and public-facing outputs.
       </p>
     </div>
   </section>
 
-  <section class="surface section-block">
+  <section class="section-shell">
     <p class="eyebrow">Courses designed and taught at HKU</p>
-    <div class="card-grid">
+    <div class="feature-grid">
       {teaching.courses.map((course) => (
-        <article class="feature-card">
+        <article class="feature-panel">
           <p class="timeline-years">{course.years}</p>
           <h2>{course.code}: {course.title}</h2>
           <p>{course.description}</p>
@@ -34,18 +34,18 @@ import { publicScholarship, service, supervision, teaching } from "../data/site"
     </div>
   </section>
 
-  <section class="content-grid">
-    <div class="surface">
+  <section class="page-grid">
+    <div class="section-shell">
       <p class="eyebrow">Pedagogy</p>
-      <h2 class="section-title">How the courses are structured</h2>
+      <h2>How the courses are structured</h2>
       <p>{teaching.pedagogy}</p>
       <p class="note">{teaching.prior}</p>
       <p class="note">Prepared to teach: {teaching.prepared}</p>
     </div>
-    <div class="surface">
+    <div class="section-shell">
       <p class="eyebrow">Mentorship</p>
-      <h2 class="section-title">Doctoral and thesis supervision</h2>
-      <ul class="stack-list">
+      <h2>Doctoral and thesis supervision</h2>
+      <ul class="statement-list">
         {supervision.doctoral.map((item) => (
           <li>{item}</li>
         ))}
@@ -56,20 +56,20 @@ import { publicScholarship, service, supervision, teaching } from "../data/site"
     </div>
   </section>
 
-  <section class="content-grid">
-    <div class="surface">
+  <section class="page-grid">
+    <div class="section-shell">
       <p class="eyebrow">Professional service</p>
-      <h2 class="section-title">Standards, reviewing, and collaboration</h2>
-      <ul class="stack-list">
+      <h2>Standards, reviewing, and collaboration</h2>
+      <ul class="statement-list">
         {service.map((item) => (
           <li>{item}</li>
         ))}
       </ul>
     </div>
-    <div class="surface">
+    <div class="section-shell">
       <p class="eyebrow">Creative practice and public scholarship</p>
-      <h2 class="section-title">Beyond the classroom</h2>
-      <ul class="stack-list">
+      <h2>Beyond the classroom</h2>
+      <ul class="statement-list">
         {publicScholarship.map((item) => (
           <li>{item}</li>
         ))}

@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { lab, profile, team } from "../data/site";
+---
+
+<BaseLayout
+  title="Team | FORGE"
+  description="FORGE team, collaborators, and lab framing at The University of Hong Kong."
+  activePath="/team"
+>
+  <section class="home-hero">
+    <div class="hero-copy team-copy">
+      <p class="eyebrow">About us</p>
+      <h1>Why FORGE?</h1>
+      <p class="hero-lead">{lab.longName}</p>
+      <p class="hero-summary">
+        People often disappear inside building and energy models. FORGE puts occupants,
+        uncertainty, and climate futures back into the center of design decisions.
+      </p>
+    </div>
+
+    <aside class="hero-aside">
+      <div class="image-card square-panel">
+        <img
+          class="profile-image square-image"
+          src="/images/profile.png"
+          alt="Portrait of Hongshan Guo"
+          width="548"
+          height="516"
+        />
+      </div>
+      <a class="home-card mini-card home-card-person" href="/pi">
+        <div class="card-copy">
+          <p class="eyebrow">PI</p>
+          <h2>{team.principalInvestigator.name}</h2>
+          <p class="profile-role">{profile.role}</p>
+          <p>{team.principalInvestigator.detail}</p>
+        </div>
+      </a>
+    </aside>
+  </section>
+
+  <section class="home-band">
+    <div class="section-header">
+      <p class="eyebrow">Collaborators</p>
+      <h2>Current team</h2>
+    </div>
+    <div class="team-grid">
+      {team.collaborators.map((member) => (
+        <article class="team-card">
+          <div class="person-header">
+            <div class="person-meta">
+              <p class="person-role">{member.role}</p>
+              <h3>{member.name}</h3>
+            </div>
+            <img
+              class="person-avatar"
+              src={member.avatar}
+              alt={`Placeholder avatar for ${member.name}`}
+              width="80"
+              height="80"
+            />
+          </div>
+          <p class="note">{member.detail}</p>
+          <p>{member.bio}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

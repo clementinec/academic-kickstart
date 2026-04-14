@@ -13,8 +13,13 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },
   "dependencies": {
-    "@fontsource-variable/newsreader": "^5.1.0",
-    "@fontsource-variable/sora": "^5.1.0",
+    "@fontsource/antonio": "^5.2.8",
+    "@fontsource/dm-serif-text": "^5.2.8",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/manrope": "^5.2.8",
+    "@fontsource/outfit": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
+    "@fontsource/righteous": "^5.2.7",
     "astro": "^5.14.2"
   },
   "devDependencies": {

@@ -1,49 +1,49 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SignalField from "../components/SignalField.astro";
 import {
   contributions,
   expertise,
+  lab,
   honors,
-  profile,
   supervision
 } from "../data/site";
 ---
 
 <BaseLayout
-  title="Research | Hongshan Guo"
-  description="Research themes, expertise, and funding for Hongshan Guo."
+  title="Research | FORGE"
+  description="Research themes, expertise, and current directions for FORGE."
   activePath="/research"
 >
-  <section class="page-hero">
+  <section class="page-intro">
     <div>
-      <p class="eyebrow">Research</p>
+      <p class="eyebrow">{lab.name}</p>
       <h1>Building intelligence for climate-stressed environments.</h1>
-      <p class="hero-summary">
+      <p class="page-summary">
         Work spans digital twins, probabilistic design exploration, physics-informed
         learning, and scenario-conditioned climate analysis for buildings, cities, and
         public institutions.
       </p>
     </div>
-    <SignalField className="page-field" />
   </section>
 
-  <section class="surface section-block">
-    <div class="card-grid">
-      {contributions.map((item) => (
-        <article class="feature-card">
+  <section class="feature-grid">
+      {contributions.map((item, index) => (
+        <article class="feature-panel">
+          <p class="eyebrow">Contribution 0{index + 1}</p>
           <h2>{item.title}</h2>
           <p>{item.text}</p>
         </article>
       ))}
-    </div>
   </section>
 
-  <section class="content-grid">
+  <section class="page-grid">
     {expertise.map((group) => (
-      <div class="surface">
-        <p class="eyebrow">{group.area}</p>
-        <ul class="stack-list">
+      <div class="section-shell">
+        <div class="section-header">
+          <p class="eyebrow">Research area</p>
+          <h2>{group.area}</h2>
+        </div>
+        <ul class="statement-list">
           {group.items.map((item) => (
             <li>{item}</li>
           ))}
@@ -52,11 +52,13 @@ import {
     ))}
   </section>
 
-  <section class="content-grid">
-    <div class="surface">
-      <p class="eyebrow">Supervision</p>
-      <h2 class="section-title">Mentorship in progress</h2>
-      <ul class="stack-list">
+  <section class="page-grid">
+    <div class="section-shell">
+      <div class="section-header">
+        <p class="eyebrow">Supervision</p>
+        <h2>Mentorship in progress</h2>
+      </div>
+      <ul class="statement-list">
         {supervision.doctoral.map((item) => (
           <li>{item}</li>
         ))}
@@ -65,10 +67,12 @@ import {
         ))}
       </ul>
     </div>
-    <div class="surface">
-      <p class="eyebrow">Funding and honors</p>
-      <h2 class="section-title">Recent recognition</h2>
-      <ul class="stack-list">
+    <div class="section-shell">
+      <div class="section-header">
+        <p class="eyebrow">Funding and honors</p>
+        <h2>Recent recognition</h2>
+      </div>
+      <ul class="statement-list">
         {honors.map((item) => (
           <li>{item}</li>
         ))}
@@ -76,14 +80,16 @@ import {
     </div>
   </section>
 
-  <section class="surface section-block emphasis-panel">
-    <p class="eyebrow">Research position</p>
-    <h2 class="section-title">A design-science lab mindset</h2>
+  <section class="section-shell emphasis-shell">
+    <div class="section-header">
+      <p class="eyebrow">Research position</p>
+      <h2>A design-science lab mindset</h2>
+    </div>
     <p>
-      {profile.name}'s work does not sit neatly inside a conventional faculty-template
-      split of “research”, “teaching”, and “service”. The through-line is evidence:
-      methods rigorous enough for standards and policy, but legible enough for design
-      studios, public institutions, and cross-disciplinary collaborations.
+      FORGE does not sit neatly inside a conventional faculty-template split of
+      “research”, “teaching”, and “service”. The through-line is evidence: methods
+      rigorous enough for standards and policy, but legible enough for design studios,
+      public institutions, and cross-disciplinary collaborations.
     </p>
   </section>
 </BaseLayout>

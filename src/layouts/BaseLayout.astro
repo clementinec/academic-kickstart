@@ -1,12 +1,16 @@
 ---
-import { ClientRouter } from "astro:transitions";
-import "@fontsource-variable/newsreader";
-import "@fontsource-variable/sora";
+import "@fontsource/dm-serif-text/400.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/outfit/400.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/righteous/400.css";
 import "../styles/global.css";
 
 const {
-  title = "Hongshan Guo",
-  description = "Assistant Professor in the Department of Architecture at The University of Hong Kong.",
+  title = "FORGE",
+  description = "FORGE: Future, Occupant, Risk, and Generative Environments at The University of Hong Kong.",
   activePath = "/"
 } = Astro.props;
 
@@ -14,7 +18,8 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/research", label: "Research" },
   { href: "/publications", label: "Publications" },
-  { href: "/teaching", label: "Teaching" }
+  { href: "/team", label: "Team" },
+  { href: "/pi", label: "PI" }
 ];
 ---
 
@@ -25,15 +30,14 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#07131f" />
-    <ClientRouter fallback="animate" />
+    <meta name="theme-color" content="#ece6db" />
   </head>
   <body>
     <div class="site-shell">
       <header class="site-nav">
         <a class="brand" href="/">
-          <span class="brand-mark">HG</span>
-          <span class="brand-text">Hongshan Guo</span>
+          <span class="brand-text">FORGE</span>
+          <span class="brand-meta">Future, Occupant, Risk, and Generative Environments</span>
         </a>
         <nav aria-label="Primary">
           <ul class="nav-links">
@@ -57,14 +61,16 @@ const navItems = [
             ))}
           </ul>
         </nav>
-        <a class="button subtle nav-cta" href="/cv.pdf">CV</a>
+        <a class="nav-cta" href="/cv.pdf">CV</a>
       </header>
-      <main transition:animate="slide">
-        <slot />
+      <main>
+        <div class="page-shell">
+          <slot />
+        </div>
       </main>
       <footer class="site-footer">
+        <p>FORGE at HKU.</p>
         <p>Content refreshed from the CV dated February 27, 2026.</p>
-        <p>Built as a custom Astro rebuild to replace the legacy academic template.</p>
       </footer>
     </div>
   </body>
