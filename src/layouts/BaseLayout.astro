@@ -1,0 +1,71 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "@fontsource-variable/newsreader";
+import "@fontsource-variable/sora";
+import "../styles/global.css";
+
+const {
+  title = "Hongshan Guo",
+  description = "Assistant Professor in the Department of Architecture at The University of Hong Kong.",
+  activePath = "/"
+} = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/research", label: "Research" },
+  { href: "/publications", label: "Publications" },
+  { href: "/teaching", label: "Teaching" }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#07131f" />
+    <ClientRouter fallback="animate" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">HG</span>
+          <span class="brand-text">Hongshan Guo</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    "nav-link",
+                    {
+                      active:
+                        item.href === "/"
+                          ? activePath === "/"
+                          : activePath.startsWith(item.href)
+                    }
+                  ]}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <a class="button subtle nav-cta" href="/cv.pdf">CV</a>
+      </header>
+      <main transition:animate="slide">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p>Content refreshed from the CV dated February 27, 2026.</p>
+        <p>Built as a custom Astro rebuild to replace the legacy academic template.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { publications } from "../data/site";
+
+const groups = [
+  { title: "Journal articles", items: publications.journals },
+  { title: "Book chapters", items: publications.chapters },
+  { title: "Refereed conference and workshop papers", items: publications.proceedings },
+  { title: "Manuscripts under review", items: publications.underReview }
+];
+---
+
+<BaseLayout
+  title="Publications | Hongshan Guo"
+  description="Selected publications and manuscripts for Hongshan Guo."
+  activePath="/publications"
+>
+  <section class="page-hero narrow">
+    <div>
+      <p class="eyebrow">Publications</p>
+      <h1>Selected output across comfort, control, climate, and design intelligence.</h1>
+      <p class="hero-summary">
+        This page follows the current CV as the source of truth, including accepted
+        papers, book chapters, workshop papers, and active manuscripts under review.
+      </p>
+    </div>
+  </section>
+
+  <section class="metric-grid publication-metrics">
+    <article class="metric-card">
+      <p class="metric-value">{publications.journals.length}</p>
+      <h2>Journal articles listed</h2>
+      <p>Published and accepted papers spanning 2019 through 2026.</p>
+    </article>
+    <article class="metric-card">
+      <p class="metric-value">{publications.chapters.length}</p>
+      <h2>Book chapters</h2>
+      <p>Recent contributions to multiphysics and multiscale building physics volumes.</p>
+    </article>
+    <article class="metric-card">
+      <p class="metric-value">{publications.proceedings.length}</p>
+      <h2>Conference and workshop papers</h2>
+      <p>Including ICML CO-BUILD, IBPC, and competition-recognized work.</p>
+    </article>
+    <article class="metric-card">
+      <p class="metric-value">{publications.underReview.length}</p>
+      <h2>Manuscripts under review</h2>
+      <p>Climate futures, weather generation, and risk-aware thermal comfort control.</p>
+    </article>
+  </section>
+
+  <section class="publication-groups">
+    {groups.map((group) => (
+      <div class="surface section-block">
+        <p class="eyebrow">{group.title}</p>
+        <div class="publication-list">
+          {group.items.map((item) => (
+            <article class="publication-entry">
+              <div class="publication-topline">
+                <p class="publication-meta">{item.venue} · {item.year}</p>
+                <span class="status-pill">{item.status}</span>
+              </div>
+              <h2>{item.title}</h2>
+              <p>{item.authors}</p>
+              {item.note && <p class="note">{item.note}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

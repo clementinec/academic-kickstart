@@ -1,0 +1,170 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SignalField from "../components/SignalField.astro";
+import {
+  appointments,
+  contributions,
+  education,
+  links,
+  metrics,
+  profile,
+  publications,
+  publicScholarship,
+  service,
+  teaching
+} from "../data/site";
+
+const featuredPublications = publications.journals.slice(0, 4);
+---
+
+<BaseLayout
+  title="Hongshan Guo | Human-Building-Climate Design Science"
+  description={profile.summary}
+  activePath="/"
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Architecture · AI · climate futures · HKU</p>
+      <h1 transition:name="hero-name">{profile.name}</h1>
+      <p class="hero-kicker">{profile.hero}</p>
+      <p class="hero-summary">{profile.summary}</p>
+      <div class="hero-actions">
+        <a class="button" href="/publications">Selected Publications</a>
+        <a class="button subtle" href="/cv.pdf">Download CV</a>
+      </div>
+      <ul class="link-row" aria-label="Profile links">
+        {links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <aside class="hero-panel">
+      <div class="identity-card">
+        <div class="identity-copy">
+          <p class="identity-role">{profile.role}</p>
+          <p>{profile.department}</p>
+          <p>{profile.institution}</p>
+          <p>Hong Kong</p>
+        </div>
+        <img
+          class="profile-image"
+          src="/images/profile.png"
+          alt="Portrait of Hongshan Guo"
+          width="548"
+          height="516"
+        />
+      </div>
+      <SignalField />
+    </aside>
+  </section>
+
+  <section class="metric-grid" aria-label="Key impact metrics">
+    {metrics.map((item) => (
+      <article class="metric-card">
+        <p class="metric-value">{item.value}</p>
+        <h2>{item.label}</h2>
+        <p>{item.detail}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Current profile</p>
+      <h2 class="section-title">What the work is doing now</h2>
+      <ul class="stack-list">
+        {profile.profilePoints.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Appointments</p>
+      <h2 class="section-title">Trajectory</h2>
+      <div class="timeline-list">
+        {appointments.map((item) => (
+          <article>
+            <p class="timeline-years">{item.years}</p>
+            <h3>{item.title}</h3>
+            <p class="timeline-org">{item.org}</p>
+            <p>{item.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="surface section-block">
+    <p class="eyebrow">Selected design science contributions</p>
+    <div class="card-grid">
+      {contributions.map((item) => (
+        <article class="feature-card">
+          <h2>{item.title}</h2>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Selected publications</p>
+      <h2 class="section-title">Recent work</h2>
+      <div class="publication-list compact">
+        {featuredPublications.map((paper) => (
+          <article class="publication-entry">
+            <p class="publication-meta">{paper.venue} · {paper.year} · {paper.status}</p>
+            <h3>{paper.title}</h3>
+            <p>{paper.authors}</p>
+            {paper.note && <p class="note">{paper.note}</p>}
+          </article>
+        ))}
+      </div>
+      <a class="text-link" href="/publications">See all selected publications</a>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Teaching and public work</p>
+      <h2 class="section-title">Evidence-based pedagogy</h2>
+      <div class="stack-block">
+        {teaching.courses.slice(0, 2).map((course) => (
+          <article>
+            <p class="timeline-years">{course.years}</p>
+            <h3>{course.code}: {course.title}</h3>
+            <p>{course.description}</p>
+          </article>
+        ))}
+      </div>
+      <p class="note">{teaching.pedagogy}</p>
+      <a class="text-link" href="/teaching">Teaching, mentorship, and service</a>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Education</p>
+      <h2 class="section-title">Training</h2>
+      <div class="stack-block">
+        {education.map((item) => (
+          <article>
+            <p class="timeline-years">{item.year}</p>
+            <h3>{item.degree}</h3>
+            <p>{item.school}</p>
+            {item.detail && <p class="note">{item.detail}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Service and scholarship</p>
+      <h2 class="section-title">Institutional and public reach</h2>
+      <ul class="stack-list">
+        {service.slice(0, 2).map((item) => (
+          <li>{item}</li>
+        ))}
+        {publicScholarship.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

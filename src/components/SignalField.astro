@@ -1,0 +1,45 @@
+---
+const { className = "" } = Astro.props;
+---
+
+<svg
+  aria-hidden="true"
+  class={`signal-field ${className}`.trim()}
+  viewBox="0 0 640 420"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient id="field-stroke-a" x1="50" y1="32" x2="540" y2="340">
+      <stop offset="0%" stop-color="var(--accent-two)" stop-opacity="0.9"></stop>
+      <stop offset="100%" stop-color="var(--accent-one)" stop-opacity="0.85"></stop>
+    </linearGradient>
+    <linearGradient id="field-stroke-b" x1="120" y1="64" x2="520" y2="410">
+      <stop offset="0%" stop-color="white" stop-opacity="0.34"></stop>
+      <stop offset="100%" stop-color="white" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <path
+    d="M22 250C90 227 107 145 184 149C261 153 286 281 372 281C458 281 506 112 618 122"
+    stroke="url(#field-stroke-a)"
+    stroke-width="3"
+    stroke-linecap="round"
+  ></path>
+  <path
+    d="M32 309C110 300 166 215 246 222C326 229 366 348 446 342C526 336 552 260 616 262"
+    stroke="url(#field-stroke-b)"
+    stroke-width="2"
+    stroke-linecap="round"
+  ></path>
+  <path
+    d="M48 92C126 83 186 139 262 120C338 101 351 23 453 31C521 36 560 70 620 64"
+    stroke="url(#field-stroke-b)"
+    stroke-width="2"
+    stroke-linecap="round"
+  ></path>
+  <circle cx="182" cy="149" r="10" fill="var(--accent-two)" fill-opacity="0.95"></circle>
+  <circle cx="372" cy="281" r="14" fill="var(--accent-one)" fill-opacity="0.92"></circle>
+  <circle cx="453" cy="31" r="9" fill="white" fill-opacity="0.85"></circle>
+  <circle cx="246" cy="222" r="7" fill="white" fill-opacity="0.75"></circle>
+  <circle cx="525" cy="336" r="5" fill="var(--accent-two)" fill-opacity="0.82"></circle>
+</svg>

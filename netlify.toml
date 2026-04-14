@@ -1,19 +1,12 @@
 [build]
-  command = "hugo --gc --minify -b $URL"
-  publish = "public"
-
-[build.environment]
-  HUGO_VERSION = "0.58.3"
-  HUGO_ENABLEGITINFO = "true"
-
-[context.production.environment]
-  HUGO_ENV = "production"
+  command = "npm run build"
+  publish = "dist"
 
 [context.deploy-preview]
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "npm run build"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  command = "npm run build"
 
 [[headers]]
   for = "*.webmanifest"

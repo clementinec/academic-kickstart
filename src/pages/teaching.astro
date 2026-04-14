@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { publicScholarship, service, supervision, teaching } from "../data/site";
+---
+
+<BaseLayout
+  title="Teaching | Hongshan Guo"
+  description="Courses, pedagogy, mentorship, and public-facing work by Hongshan Guo."
+  activePath="/teaching"
+>
+  <section class="page-hero narrow">
+    <div>
+      <p class="eyebrow">Teaching and mentorship</p>
+      <h1>Evidence, uncertainty, and visual communication as design pedagogy.</h1>
+      <p class="hero-summary">
+        Teaching blends low-code accessibility with technical depth in Python and Colab,
+        emphasizing reproducibility, design argumentation, and public-facing outputs.
+      </p>
+    </div>
+  </section>
+
+  <section class="surface section-block">
+    <p class="eyebrow">Courses designed and taught at HKU</p>
+    <div class="card-grid">
+      {teaching.courses.map((course) => (
+        <article class="feature-card">
+          <p class="timeline-years">{course.years}</p>
+          <h2>{course.code}: {course.title}</h2>
+          <p>{course.description}</p>
+          <p class="note">{course.audience}</p>
+          <a class="text-link" href={course.href}>Course site</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Pedagogy</p>
+      <h2 class="section-title">How the courses are structured</h2>
+      <p>{teaching.pedagogy}</p>
+      <p class="note">{teaching.prior}</p>
+      <p class="note">Prepared to teach: {teaching.prepared}</p>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Mentorship</p>
+      <h2 class="section-title">Doctoral and thesis supervision</h2>
+      <ul class="stack-list">
+        {supervision.doctoral.map((item) => (
+          <li>{item}</li>
+        ))}
+        {supervision.theses.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Professional service</p>
+      <h2 class="section-title">Standards, reviewing, and collaboration</h2>
+      <ul class="stack-list">
+        {service.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Creative practice and public scholarship</p>
+      <h2 class="section-title">Beyond the classroom</h2>
+      <ul class="stack-list">
+        {publicScholarship.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

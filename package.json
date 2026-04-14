@@ -1,0 +1,19 @@
+{
+  "name": "hongshan-guo-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/newsreader": "^5.1.0",
+    "@fontsource-variable/sora": "^5.1.0",
+    "astro": "^5.14.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

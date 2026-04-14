@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+% Harmonized grayscale palette
+\definecolor{darktext}{RGB}{30,30,30}
+\definecolor{lighttext}{RGB}{100,100,100}
+\definecolor{rulecolor}{RGB}{180,180,180}
+\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=2pt, parsep=0pt}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+\titleformat{\section}{\bfseries\Large\color{darktext}}{}{0pt}{}[{\color{rulecolor}\titlerule[0.4pt]}]
+\titleformat{\subsection}{\bfseries\normalsize\color{darktext}}{}{0pt}{}
+\hypersetup{colorlinks=true, linkcolor=darktext, urlcolor=lighttext, pdfauthor={Hongshan Guo}, pdftitle={Hongshan Guo — Curriculum Vitae}}
+
+\begin{document}
+
+{\LARGE \textbf{Hongshan Guo}}\\[6pt]
+{\normalsize Assistant Professor $\cdot$ Department of Architecture $\cdot$ The University of Hong Kong}\\[4pt]
+\href{mailto:hongshan@hku.hk}{hongshan@hku.hk} $\mid$
+\href{https://orcid.org/0000-0002-8716-0343}{ORCID: 0000-0002-8716-0343} $\mid$
++852 9677 8596\\[2pt]
+
+\section*{Profile}
+\begin{itemize}
+  \item \textbf{Research}: Design science for human--building--climate systems---probabilistic modeling, physics-informed ML, co-simulation, and climate stress-testing for buildings, cities, and public institutions.
+  \item \textbf{Flagship impact}: Published correction of century-old 120 W metabolic default in comfort standards (\emph{Energy and Buildings}, 2025), prompting and winning ASHRAE 1959-TRP (PI, awarded Feb 2026).
+  \item \textbf{Methods and media}: Digital twins, probabilistic simulation, scenario-conditioned weather generation, and computer vision; translated into teaching, open benchmarks, and cross-disciplinary design pedagogy.
+\end{itemize}
+
+\section{Selected Design Science Contributions (2025--2026)}
+\begin{itemize}
+  \item \textbf{Standards intervention}: Demonstrated demographic bias in prevailing metabolic defaults used in global comfort standards; resulting ASHRAE 1959-TRP award positions this work for direct standards revision.
+  \item \textbf{Playable performance models}: Built co-simulation workflows integrating data-driven comfort models with EnergyPlus, validated across 13 climates for robust stress-testing under climate uncertainty.
+  \item \textbf{Design-facing AI infrastructure}: Led AI-enabled pedagogy platforms (Socratic Oracle; AI Design Coach) deployed across Architecture, Geography, and Computer Science to support evidence-based design reasoning.
+\end{itemize}
+
+\section{Appointments}
+\begin{itemize}
+  \item Assistant Professor, Department of Architecture, The University of Hong Kong (Sep 2023--present)
+  \item Principal Data Scientist, Bank of New York Mellon (2020--2023)---led end-to-end ML deployment and model governance for daily \$29--43 billion Federal Reserve account-balance forecasting
+  \item Postdoctoral Researcher, Princeton University (2019--2020)
+\end{itemize}
+
+\section{Education}
+\begin{itemize}
+  \item Ph.D., Architecture (Architectural Technology \& Computational Design), Princeton University, 2019
+  \item M.Eng., Mechanical Engineering, Columbia University, 2013
+  \item B.Eng., Architectural (HVAC) Engineering, Harbin Institute of Technology, 2012
+\end{itemize}
+
+\section{Research Expertise}
+\textbf{Design Science \& Performance Simulation}: Digital twins and co-simulation frameworks, physics-informed machine learning, probabilistic design exploration under uncertainty, building energy modeling (EnergyPlus, Modelica), reduced-order and surrogate models, post-occupancy evaluation, learning-enabled control.
+
+\vspace{2pt}
+\noindent\textbf{AI \& Computational Methods}: Physics-informed neural networks (PINNs), uncertainty quantification (epistemic/aleatoric), Bayesian inference and calibration, ordinal regression, model predictive control, reinforcement learning, computer vision (thermal imagery segmentation), synthetic data generation, domain adaptation.
+
+\vspace{2pt}
+\noindent\textbf{Environmental Systems \& Building Science}: Thermodynamics, heat and mass transfer, HVAC systems and control, thermal comfort prediction, sensor-driven analytics and IoT deployment, wearable sensing, building diagnostics.
+
+\vspace{2pt}
+\noindent\textbf{Climate Science \& Resilience}: Synthetic weather generation (regime-switching models with CORDEX/CMIP), scenario-conditioned climate projections through 2100, infrastructure stress-testing, urban microclimate sensing, thermal equity and heat-wave vulnerability.
+
+\vspace{2pt}
+\noindent\textbf{Tools \& Implementation}: Python/Julia/Matlab; EnergyPlus, Modelica, Grasshopper/Ladybug; PyMC/Stan for probabilistic programming; Git/Docker/cloud ML pipelines.
+
+\section{Mentorship \& Supervision}
+\subsection*{Doctoral students}
+\begin{itemize}
+  \item Kanxuan He --- PhD (HKU, 2025--) on probabilistic control; 1st Place, ICML 2025 CO-BUILD Smart Building Competition; leading manuscript in revision for \emph{Energy and AI}.
+  \item Yu Chang --- PhD (HKU, 2024--) on cross-cultural thermal comfort; first-author review in \emph{Renewable and Sustainable Energy Reviews} (2025) now informing ASHRAE/EN benchmarks.
+\end{itemize}
+\subsection*{MArch thesis advisees (completing 2026)}
+\begin{itemize}
+  \item Multi-agentic, physics-informed occupant modeling for environment evaluation in architectural design.
+  \item Neuroarchitecture thesis using EEG to study occupant responses to spatial design conditions.
+\end{itemize}
+
+\section{Funding \& Honors}
+\begin{itemize}
+  \item ASHRAE Research Project 1959-TRP --- PI, ``Demographic-Aware Metabolic Rate Defaults for Thermal Comfort Standards,'' \$55,000 (15 months; awarded Feb 2026, commencing Apr 2026). Sponsored by TC 4.1 Load Calculations Data and Procedures.
+  \item Competitive internal startup package (HKU; substantial research funding, 2023)
+  \item Teaching Development \& Language Enhancement Grant (TDLEG), HKU --- PI, ``Socratic Oracle: Multimodal Voice-AI Tutor for Evidence-Based Learning,'' HK\$1,000,000 (2025--2028; 31 months)
+  \item Teaching Development Grant (TDG), HKU --- PI, ``AI Design Coach: A Conversational Design Narrative Builder,'' HK\$300,000 (2026--2028). Cross-Faculty deployment across Architecture, Geography, and Computer Science.
+  \item ICML 2025 CO-BUILD Smart Building Competition: 1st Place (faculty mentor/author)
+  \item NeurIPS 2025 Urban AI Workshop (Buildings Challenge): 3rd Place (faculty mentor)
+  \item Gartner ``Eye on Innovation'' Award (Advanced Solutions, BNY Mellon), 2021
+  \item Lowry Methodology Award, International Conference of Urban Climate (AMS), 2018
+\end{itemize}
+
+\section{Patents}
+\begin{itemize}
+  \item Methods and Systems for Generating Predictions Based on Time Series Data Using an Ensemble Model. US 2022/0300860 A1 (published 2022). Co-inventor.
+  \item Wearable Metabolics: Human Heat Dissipation Sensor via Non-Intrusive Core and Skin Temperature Measurement with Custom-Fitting Wearables. US Provisional 63/300,130 (filed 2022). Co-inventor.
+\end{itemize}
+
+\section{Selected Publications}
+\subsection*{Journal articles (published/accepted)}
+\begin{enumerate}
+  \item Guo H., Aviv D. \emph{From Seven Points to Probabilities: Ordinal Learning for Risk-Aware Thermal Comfort Prediction.} Building and Environment, accepted 2026. \textcolor{gray}{[Ordinal learning, risk-aware prediction]}
+  \item Guo H., Pigliautile I., Chang Y., Qiao Q., Li Y. \emph{Toward Smarter HVAC Control: Machine Learning Reveals Hidden Drivers in Thermal Comfort Databases.} Energy and AI, accepted 2026. \textcolor{gray}{[Sensitivity analysis, MRT, data quality]}
+  \item Guo H., Chang Y., Li Y., Zhou Y., Qiao Q., Lai C.Y., Schuldenfrei E. \emph{Ventilation--Energy Trade-offs in Retrofitted Hong Kong Wet Markets.} Energy and Buildings, 116918, 2026. \textcolor{gray}{[Field measurement, retrofit, IEQ--energy trade-offs]}
+  \item Guo H., Sun R., Xu Y. \emph{Correcting the 120-Watt Assumption: Demographic-Aware Metabolic Rates for Energy Savings and Thermal Comfort Equity in Buildings.} Energy and Buildings, 2025. \textcolor{gray}{[Standards impact, equity; prompted ASHRAE 1959-TRP]}
+  \item Guo H., He K., Xu Y., Lei Y. \emph{A Co-Simulation Methodology for Integrating Data-Driven Thermal Sensation Models with Building Energy Control.} Energy and Buildings, accepted Nov 18, 2025. \textcolor{gray}{[Digital twins, co-simulation, 13 climates]}
+  \item Guo H., He K., Luo Y., Chang Y. \emph{Physics-Informed Neural Networks for Robust Thermal Comfort Prediction: Overcoming Data Quality Limitations Through Physiological Constraints.} Building and Environment, 2025. \textcolor{gray}{[PINNs, physiological constraints]}
+  \item Chang Y., Guo H., Li Y., Chi B., Pigliautile I. \emph{A Data-Driven Qualitative Review of Thermal Comfort Studies: Bridging the Gap Between Western and Eastern Perspectives.} Renewable and Sustainable Energy Reviews, 2025. \textcolor{gray}{[Data harmonization, benchmarks]}
+  \item Guo H., Ferrara M., Coleman J., Loyola M., Meggers F. \emph{Simulation and Measurement of Air and Mean Radiant Temperatures in a Radiantly Heated Indoor Space.} Energy, 193:116369, 2020.
+  \item Guo H., Aviv D., Loyola M., Teitelbaum E., Houchois N., Meggers F. \emph{On the Understanding of Mean Radiant Temperature Within Indoor and Outdoor Environments: A Critical Review.} Renewable and Sustainable Energy Reviews, 2019.
+\end{enumerate}
+
+\subsection*{Book chapters}
+\begin{itemize}
+  \item Guo H., Li Y., Zhou Y., Chang Y., Lai C.Y. \emph{From Open Air to Air-Tight: Analyzing the Ventilation Overhaul in Hong Kong's Wet Markets and Its Implications.} In \emph{Multiphysics and Multiscale Building Physics}, Springer, 2025.
+  \item Guo H., Coleman J., Gullapalli I. \emph{Accelerating NZEB Design Optimization Through LLM-Based Standardization and Compliance Checking.} In \emph{Multiphysics and Multiscale Building Physics}, Springer, 2024.
+\end{itemize}
+
+\subsection*{Refereed conference and workshop papers (selected)}
+\begin{itemize}
+  \item He K., Guo H. \emph{A Temporal Features-Enhanced Mixture-of-Experts Approach for Indoor Temperature Prediction.} ICML 2025 CO-BUILD Workshop (Oral); \textbf{1st Place, Smart Building Competition}. \textcolor{gray}{[MoE, temporal modeling, control]}
+  \item Niu S., Guo H., Ferrara M., Anselmo S. \emph{Thermal-SAM: Adversarial Prompt-Based Unsupervised Building Segmentation in Thermal Aerial Imagery.} ICML 2025 CO-BUILD Workshop (Poster); \textbf{3rd Place, NeurIPS 2025 Urban AI Workshop (Buildings Challenge)}. \textcolor{gray}{[Computer vision, envelope diagnostics]}
+  \item Guo H., Chang Y., Hu D. \emph{ML-Driven Sensitivity Analysis for Lean HVAC: New Insights from Large-Scale Comfort Data.} ICML 2025 CO-BUILD Workshop (Poster).
+  \item Guo H., Zhou Y., Lai C.Y., Ren C. \emph{From Open Air to Air-Tight: Ventilation Overhaul in Hong Kong Wet Markets.} IBPC 2024 (International Building Physics Conference), Toronto.
+  \item Guo H., Coleman J., Gullapalli I. \emph{Accelerating NZEB Design Optimization Through LLM-Based Standardization and Compliance Checking.} IBPC 2024.
+\end{itemize}
+
+\subsection*{Manuscripts under review (selected)}
+\emph{Climate \& resilience}:
+\begin{itemize}
+  \item Guo H., He K. \emph{Scenario-Conditioned Actual Meteorological Years (sAMY): A Stochastic Weather Generator Using Multi-Decadal Observations.} Under review, Energy and Buildings, 2026. \textcolor{gray}{[Synthetic weather, scenario-conditioned]}
+  \item Guo H., He K. \emph{Input Quality, Not Statistical Complexity, Determines Climate-Adapted Weather File Fidelity: A Causal Decomposition of Degree-Day Errors.} Under review, Energy, 2026. \textcolor{gray}{[Weather file validation, causal analysis]}
+  \item Guo H., He K. \emph{Controller-Agnostic Benchmarking Across Five Climates: Comfort, Energy, and Peak Trade-offs to 2100.} Under review, Engineering Applications of Artificial Intelligence (special issue), 2025.
+\end{itemize}
+
+\vspace{2pt}
+\noindent\emph{Control \& learning}:
+\begin{itemize}
+  \item Guo H., He K., Xu Y., Shi Z., Aviv D. \emph{Probabilistic Thermal Comfort for Energy-Efficient Building Control: A Risk-Aware Framework.} Under review, Energy Conversion and Management, 2026.
+\end{itemize}
+
+\section{Teaching \& Mentorship}
+\textbf{Courses designed and taught (HKU)}:
+\begin{itemize}
+  \item \href{https://clementinec.github.io/ARCH7476}{ARCH7476: Evidence-Based Generative Design} --- Data-driven decision making in architecture; students frame design problems as testable claims, collect evidence, and produce reproducible analyses with visual communication artifacts. Dual pathways: low-code tools for accessibility, Python/Colab for depth. Mixed MArch/UG/PhD (2025--).
+  \item \href{https://clementinec.github.io/desn2003}{DESN2003: Research for Innovation} --- Research methodology from question framing through evidence gathering to communication; parallel tracks for frontier research and applied/buildable outputs. UG (2023--).
+  \item \href{https://clementinec.github.io/ccgl9065}{CCGL9065: Our Response to Climate Change $\mid$ Hong Kong 2100} --- Climate action through critique, debate, and speculative design; culminates in a public interactive art \& science exhibition envisioning Hong Kong's 2100 landscape. UG (2024--).
+\end{itemize}
+\noindent\textbf{Prior teaching}: Princeton mini-courses on IoT sensing (deploying custom thermal/humidity sensors in campus buildings) and thermodynamics labs (hands-on measurement of radiant environments), 2015--2018.
+
+\vspace{2pt}
+\noindent\textbf{Prepared to teach}: MDes/MDE design science seminars (digital twins, probabilistic modeling, climate futures); core and advanced architecture studios integrating time-based environmental media; building performance and environmental systems; design engineering methods.
+
+\vspace{2pt}
+\noindent\textbf{Pedagogy}: Evidence-based design workflows combining low-code tools with Python/Colab notebooks; emphasis on reproducibility, uncertainty quantification, and visual communication; typical outputs include scenario videos, interactive dashboards, and spatial equity narratives.
+
+\section{Professional Service \& Collaboration}
+\textbf{Standards engagement}: ASHRAE Research Project 1959-TRP (metabolic rate standards revision)---PI, awarded Feb 2026; published research directly prompted the RFP.
+
+\vspace{2pt}
+\noindent\textbf{Reviewing}: CVPR, ICML, NeurIPS workshops; journals including \emph{Energy and Buildings}, \emph{Building and Environment}, \emph{Applied Energy}, \emph{Energy}, \emph{Journal of Building Engineering}, \emph{Sustainable Cities and Society}, \emph{Urban Climate}.
+
+\vspace{2pt}
+\noindent\textbf{Leadership}: Co-Chair, Technical Development \& Proceedings Integration, CAAD Futures 2025.
+
+\vspace{2pt}
+\noindent\textbf{Industry engagement}: Hong Kong Green Building Council (HKGBC), Electrical and Mechanical Services Department (EMSD); prior industry role leading ML productization at Bank of New York Mellon (2020--2023).
+
+\vspace{2pt}
+\noindent\textbf{Interdisciplinary collaborations}: Climate scientists, control theorists, computer vision researchers, urban planners, public health scholars; architecture schools including UPenn, Princeton, Politecnico di Torino, University of Perugia, National University of Singapore, University of Tokyo.
+
+\section{Creative Practice \& Public Scholarship}
+\begin{itemize}
+  \item Exhibitor (co-author), \emph{Social Condenser Extraordinaire: Hong Kong's Municipal Services Buildings}, T1-02, \emph{Projecting Future Heritage: A Hong Kong Archive} (Collateral Event of the 19th International Architecture Exhibition --- La Biennale di Venezia), Campo della Tana, Venice, May--Nov 2025.
+  \item Lead instructor, \emph{Our Response to Climate Change | Hong Kong 2100}: public student exhibition combining speculative design with climate narratives and interactive media (HKU, 2024--).
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SignalField from "../components/SignalField.astro";
+import {
+  contributions,
+  expertise,
+  honors,
+  profile,
+  supervision
+} from "../data/site";
+---
+
+<BaseLayout
+  title="Research | Hongshan Guo"
+  description="Research themes, expertise, and funding for Hongshan Guo."
+  activePath="/research"
+>
+  <section class="page-hero">
+    <div>
+      <p class="eyebrow">Research</p>
+      <h1>Building intelligence for climate-stressed environments.</h1>
+      <p class="hero-summary">
+        Work spans digital twins, probabilistic design exploration, physics-informed
+        learning, and scenario-conditioned climate analysis for buildings, cities, and
+        public institutions.
+      </p>
+    </div>
+    <SignalField className="page-field" />
+  </section>
+
+  <section class="surface section-block">
+    <div class="card-grid">
+      {contributions.map((item) => (
+        <article class="feature-card">
+          <h2>{item.title}</h2>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-grid">
+    {expertise.map((group) => (
+      <div class="surface">
+        <p class="eyebrow">{group.area}</p>
+        <ul class="stack-list">
+          {group.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="content-grid">
+    <div class="surface">
+      <p class="eyebrow">Supervision</p>
+      <h2 class="section-title">Mentorship in progress</h2>
+      <ul class="stack-list">
+        {supervision.doctoral.map((item) => (
+          <li>{item}</li>
+        ))}
+        {supervision.theses.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+    <div class="surface">
+      <p class="eyebrow">Funding and honors</p>
+      <h2 class="section-title">Recent recognition</h2>
+      <ul class="stack-list">
+        {honors.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="surface section-block emphasis-panel">
+    <p class="eyebrow">Research position</p>
+    <h2 class="section-title">A design-science lab mindset</h2>
+    <p>
+      {profile.name}'s work does not sit neatly inside a conventional faculty-template
+      split of “research”, “teaching”, and “service”. The through-line is evidence:
+      methods rigorous enough for standards and policy, but legible enough for design
+      studios, public institutions, and cross-disciplinary collaborations.
+    </p>
+  </section>
+</BaseLayout>

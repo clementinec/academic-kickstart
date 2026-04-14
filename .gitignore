@@ -1,3 +1,5 @@
-public/
+dist/
+node_modules/
+.astro/
 .idea/
 .Rproj.user
