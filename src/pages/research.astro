@@ -11,36 +11,38 @@ import {
 
 <BaseLayout
   title="Research | FORGE"
-  description="Research themes, expertise, and current directions for FORGE."
+  description="Research themes, methods, and current directions for FORGE."
   activePath="/research"
 >
   <section class="page-intro">
     <div>
       <p class="eyebrow">{lab.name}</p>
-      <h1>Building intelligence for climate-stressed environments.</h1>
+      <h1>Research organized around papers, projects, and standards work.</h1>
       <p class="page-summary">
-        Work spans digital twins, probabilistic design exploration, physics-informed
-        learning, and scenario-conditioned climate analysis for buildings, cities, and
-        public institutions.
+        FORGE currently concentrates on four connected lines of work: human heat and
+        thermal comfort, climate forcing and future weather, control and co-simulation,
+        and ventilation or design-facing systems. The themes below are pulled directly
+        from recent papers, grants, and ongoing student projects rather than generic
+        academic categories.
       </p>
     </div>
   </section>
 
   <section class="feature-grid">
-      {contributions.map((item, index) => (
-        <article class="feature-panel">
-          <p class="eyebrow">Contribution 0{index + 1}</p>
-          <h2>{item.title}</h2>
-          <p>{item.text}</p>
-        </article>
-      ))}
+    {contributions.map((item, index) => (
+      <article class="feature-panel">
+        <p class="eyebrow">Current track 0{index + 1}</p>
+        <h2>{item.title}</h2>
+        <p>{item.text}</p>
+      </article>
+    ))}
   </section>
 
   <section class="page-grid">
     {expertise.map((group) => (
       <div class="section-shell">
         <div class="section-header">
-          <p class="eyebrow">Research area</p>
+          <p class="eyebrow">Research theme</p>
           <h2>{group.area}</h2>
         </div>
         <ul class="statement-list">
@@ -55,8 +57,8 @@ import {
   <section class="page-grid">
     <div class="section-shell">
       <div class="section-header">
-        <p class="eyebrow">Supervision</p>
-        <h2>Mentorship in progress</h2>
+        <p class="eyebrow">Current supervision</p>
+        <h2>Student work in motion</h2>
       </div>
       <ul class="statement-list">
         {supervision.doctoral.map((item) => (
@@ -69,8 +71,8 @@ import {
     </div>
     <div class="section-shell">
       <div class="section-header">
-        <p class="eyebrow">Funding and honors</p>
-        <h2>Recent recognition</h2>
+        <p class="eyebrow">Support and recognition</p>
+        <h2>Recent momentum</h2>
       </div>
       <ul class="statement-list">
         {honors.map((item) => (
@@ -80,16 +82,16 @@ import {
     </div>
   </section>
 
-  <section class="section-shell emphasis-shell">
+  <section class="section-shell emphasis-shell research-position-shell">
     <div class="section-header">
-      <p class="eyebrow">Research position</p>
-      <h2>A design-science lab mindset</h2>
+      <p class="eyebrow">Lab position</p>
+      <h2>Technical enough for validation, legible enough for design</h2>
     </div>
     <p>
-      FORGE does not sit neatly inside a conventional faculty-template split of
-      “research”, “teaching”, and “service”. The through-line is evidence: methods
-      rigorous enough for standards and policy, but legible enough for design studios,
-      public institutions, and cross-disciplinary collaborations.
+      FORGE sits between standards work, building simulation, comfort science, and
+      design pedagogy. The aim is to build methods rigorous enough for climate-risk
+      analysis, validation, and technical decision-making, but clear enough to inform
+      architectural judgment, studio teaching, and public-sector collaboration.
     </p>
   </section>
 </BaseLayout>

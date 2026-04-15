@@ -381,6 +381,12 @@ li {
   background: var(--card-yellow);
 }
 
+.research-position-shell {
+  margin-top: 1.75rem;
+  padding-top: 1.7rem;
+  padding-bottom: 1.85rem;
+}
+
 .section-header {
   display: grid;
   gap: 0.45rem;

@@ -216,19 +216,19 @@ export const metrics = [
 
 export const contributions = [
   {
-    title: "Standards intervention",
+    title: "Human heat, comfort, and standards",
     text:
-      "Demonstrated demographic bias in prevailing metabolic defaults used in global thermal comfort standards, positioning the work for direct standards revision."
+      "Research here spans demographic metabolic rates, MRT-aware comfort analysis, ordinal prediction, and physiology-constrained models. The through-line is to replace abstract default occupants with measurable human heat and comfort response."
   },
   {
-    title: "Playable performance models",
+    title: "Climate futures and stochastic weather",
     text:
-      "Built co-simulation workflows that integrate data-driven comfort models with EnergyPlus and tested them across 13 climates."
+      "FORGE studies how future weather assumptions alter building performance using climate forcing, ERA5 or CMIP chains, stochastic generation, and uncertainty propagation. The goal is not just future files, but defensible stress-tests for design and operation."
   },
   {
-    title: "Design-facing AI infrastructure",
+    title: "Operation, ventilation, and design-facing systems",
     text:
-      "Led AI-enabled pedagogy platforms, including Socratic Oracle and AI Design Coach, to support evidence-based design reasoning."
+      "Work extends from EnergyPlus co-simulation and risk-aware control to wet-market ventilation retrofits and AI-supported pedagogy platforms. The point is to turn models into operational, institutional, and design tools rather than leaving them as standalone predictions."
   }
 ];
 
@@ -277,35 +277,43 @@ export const education = [
 
 export const expertise = [
   {
-    area: "Design science and performance simulation",
+    area: "Thermal comfort, human heat, and MRT",
     items: [
-      "Digital twins and co-simulation frameworks",
-      "Physics-informed machine learning",
-      "Probabilistic design exploration under uncertainty",
-      "EnergyPlus and Modelica workflows",
-      "Reduced-order and surrogate models",
-      "Post-occupancy evaluation and learning-enabled control"
+      "Ordinal and probabilistic thermal comfort prediction from seven-point sensation votes",
+      "Physics-informed neural networks with physiological constraints",
+      "Mean radiant temperature sensitivity analysis for HVAC control",
+      "Demographic-aware metabolic-rate modeling and ASHRAE standards revision",
+      "Fan-assisted cooling, gender differences, and cross-cultural comfort evidence"
     ]
   },
   {
-    area: "AI and computational methods",
+    area: "Climate forcing, weather futures, and uncertainty",
     items: [
-      "Physics-informed neural networks",
-      "Bayesian inference and calibration",
-      "Uncertainty quantification",
-      "Ordinal regression",
-      "Model predictive control and reinforcement learning",
-      "Computer vision for thermal imagery and synthetic data generation"
+      "Climate-adapted weather file evaluation using causal decomposition of degree-day errors",
+      "Scenario-conditioned and stochastic weather generation from long observational records",
+      "ERA5 / CMIP6 forcing chains for climate stress-testing",
+      "Monte Carlo propagation and uncertainty benchmarking across future scenarios",
+      "Building performance evaluation under climate-stressed futures through 2100"
     ]
   },
   {
-    area: "Environmental systems and resilience",
+    area: "Control, co-simulation, and interpretable learning",
     items: [
-      "Thermodynamics, heat and mass transfer, and HVAC control",
-      "Thermal comfort prediction and sensor-driven analytics",
-      "Synthetic weather generation with CORDEX and CMIP data",
-      "Scenario-conditioned climate projections through 2100",
-      "Urban microclimate sensing and thermal equity analysis"
+      "EnergyPlus-based co-simulation for occupant-aware building control",
+      "Risk-aware control framing from probabilistic comfort outputs",
+      "Interpretable ML, feature attribution, and sensitivity tracing",
+      "Indoor temperature forecasting and competition-tested predictive workflows",
+      "Digital twins that connect learned models to operational testing"
+    ]
+  },
+  {
+    area: "Ventilation, public institutions, and design-facing AI",
+    items: [
+      "Wet-market ventilation retrofits and IEQ-energy trade-off analysis",
+      "Field measurement in mixed-mode and public-building contexts",
+      "Design pedagogy systems such as Socratic Oracle and AI Design Coach",
+      "Evidence-based generative design workflows for architecture education",
+      "Research legible to design studios, standards work, and public-sector collaboration"
     ]
   }
 ];
