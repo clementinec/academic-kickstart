@@ -3,3 +3,5 @@ node_modules/
 .astro/
 .idea/
 .Rproj.user
+
+.DS_Store

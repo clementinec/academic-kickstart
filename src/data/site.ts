@@ -109,31 +109,31 @@ export const team = {
     {
       name: "Xinting Gao",
       role: "Postdoctoral Researcher",
-      avatar: makePlaceholderAvatar("Xinting Gao", 0),
+      avatar: "/images/xinting-gao.jpg",
       detail: "FORGE, HKU",
       bio:
-        "Works on the ASHRAE 1959-TRP project on updating real human load assumptions in building standards, and on climate stress-testing workflows for future performance evaluation."
+        "Focuses on building energy systems under climate change."
     },
     {
       name: "Yu Chang",
       role: "PhD Student",
-      avatar: makePlaceholderAvatar("Yu Chang", 1),
+      avatar: "/images/yu-chang.jpg",
       detail: "HKU, 2024-present",
       bio:
-        "Researches cross-cultural thermal comfort and contributes to benchmark-driven reviews and data harmonization."
+        "Studies cross-cultural thermal comfort and indoor CO₂, with interests in data harmonization, spatial distribution, and occupancy-related dynamics."
     },
     {
       name: "Kanxuan He",
       role: "PhD Student",
-      avatar: makePlaceholderAvatar("Kanxuan He", 2),
+      avatar: "/images/kanxuan-he.jpg",
       detail: "HKU, 2025-present",
       bio:
-        "Works on climate stress-testing and ordinal thermal comfort at FORGE."
+        "Focuses on climate resilience and thermal dynamics through interpretable modeling."
     },
     {
       name: "Yizhi Liang",
       role: "Research Assistant",
-      avatar: makePlaceholderAvatar("Yizhi Liang", 3),
+      avatar: "/images/yizhi-liang.jpg",
       detail: "Master's student in Mechanical Engineering, FORGE, 2025-present",
       bio:
         "Contributes to the ASHRAE 1959-TRP project on updating real human load assumptions, supporting data, analysis, and modeling work at FORGE."
@@ -141,7 +141,7 @@ export const team = {
     {
       name: "Di Zhang",
       role: "Research Assistant",
-      avatar: makePlaceholderAvatar("Di Zhang", 4),
+      avatar: "/images/di-zhang.jpg",
       detail: "FORGE, 2026-present",
       bio:
         "Works on ordinal thermal comfort, supporting risk-aware comfort modeling and related analysis at FORGE."
@@ -149,15 +149,15 @@ export const team = {
     {
       name: "Shunuke Sani",
       role: "PhD Student / Research Assistant",
-      avatar: makePlaceholderAvatar("Shunuke Sani", 5),
+      avatar: "/images/shunuke-sani.jpg",
       detail: "DUPAD, HKU and FORGE, 2026-present",
       bio:
-        "A current PhD student in DUPAD at HKU who also works with FORGE on Socratic Oracle through the TDLEG grant."
+        "Focuses on architectural education AI and urban pedestrian mobility and trajectory research."
     },
     {
       name: "Akshay Thanipet Padmanabhan",
       role: "Undergraduate Research Assistant",
-      avatar: makePlaceholderAvatar("Akshay Thanipet Padmanabhan", 6),
+      avatar: "/images/akshay-thanipet-padmanabhan.jpg",
       detail: "FORGE, 2026-present",
       bio:
         "Works on the technical implementation and scaling up of Socratic Oracle through the TDLEG grant."
@@ -165,7 +165,7 @@ export const team = {
     {
       name: "Samanyu Gaur",
       role: "Undergraduate Research Assistant",
-      avatar: makePlaceholderAvatar("Samanyu Gaur", 7),
+      avatar: "/images/samanyu-gaur-photo.jpg",
       detail: "FORGE, 2026-present",
       bio:
         "Works on the technical implementation and scaling up of Socratic Oracle through the TDLEG grant."
