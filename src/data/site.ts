@@ -157,7 +157,7 @@ export const team = {
     {
       name: "Akshay Thanipet Padmanabhan",
       role: "Undergraduate Research Assistant",
-      avatar: "/images/akshay-thanipet-padmanabhan.png",
+      avatar: "/images/akshay-thanipet-padmanabhan.jpg",
       detail: "FORGE, 2026-present",
       bio:
         "Works on the technical implementation and scaling up of Socratic Oracle through the TDLEG grant."
@@ -165,7 +165,7 @@ export const team = {
     {
       name: "Samanyu Gaur",
       role: "Undergraduate Research Assistant",
-      avatar: "/images/samanyu-gaur.JPG",
+      avatar: "/images/samanyu-gaur-photo.jpg",
       detail: "FORGE, 2026-present",
       bio:
         "Works on the technical implementation and scaling up of Socratic Oracle through the TDLEG grant."
