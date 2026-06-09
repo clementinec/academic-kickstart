@@ -584,9 +584,7 @@ export const teaching = {
   pedagogy:
     "Evidence-based design workflows that combine low-code tools with Python and Colab notebooks, with strong emphasis on reproducibility, uncertainty quantification, and visual communication.",
   prior:
-    "Princeton mini-courses on IoT sensing and thermodynamics labs, 2015-2018.",
-  prepared:
-    "MDes and MDE design science seminars, architecture studios integrating time-based environmental media, building performance, environmental systems, and design engineering methods."
+    "Princeton mini-courses on IoT sensing and thermodynamics labs, 2015-2018."
 };
 
 export const service = [
