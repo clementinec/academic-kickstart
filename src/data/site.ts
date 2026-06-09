@@ -399,10 +399,11 @@ export const publications = {
         "Scenario-Conditioned Actual Meteorological Years (sAMY): A Stochastic Weather Generator Using Multi-Decadal Observations.",
       venue: "Energy and Buildings",
       year: "2026",
-      status: "Accepted",
+      status: "Published",
       note: "Synthetic weather and scenario conditioning.",
       summary:
         "Develops a stochastic weather-generation workflow using multi-decadal observations to support scenario-conditioned building performance analysis under climate uncertainty.",
+      doi: "https://doi.org/10.1016/j.enbuild.2026.117508",
       tags: ["climate", "energy"]
     },
     {
