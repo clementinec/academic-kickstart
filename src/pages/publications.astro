@@ -53,7 +53,9 @@ const groups = [
         <div class="publication-card-grid">
           {group.items.map((item) => (
             <article class="publication-card">
-              <p class="publication-meta">{item.venue} · {item.year}</p>
+              <p class="publication-meta">
+                {item.venue} · {item.year}{item.status === "Accepted" ? " · Accepted" : ""}
+              </p>
               <h2 class="publication-title">{item.title}</h2>
               {group.kind === "journal" ? (
                 <>

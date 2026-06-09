@@ -394,6 +394,18 @@ export const publications = {
       tags: ["climate", "energy"]
     },
     {
+      authors: "Hongshan Guo, Kanxuan He",
+      title:
+        "Scenario-Conditioned Actual Meteorological Years (sAMY): A Stochastic Weather Generator Using Multi-Decadal Observations.",
+      venue: "Energy and Buildings",
+      year: "2026",
+      status: "Accepted",
+      note: "Synthetic weather and scenario conditioning.",
+      summary:
+        "Develops a stochastic weather-generation workflow using multi-decadal observations to support scenario-conditioned building performance analysis under climate uncertainty.",
+      tags: ["climate", "energy"]
+    },
+    {
       authors:
         "Hongshan Guo, Yu Chang, Yichun Li, Ying Zhou, Qingyao Qiao, Chun Yin Lai, Eric Schuldenfrei",
       title:
@@ -518,15 +530,6 @@ export const publications = {
     }
   ],
   underReview: [
-    {
-      authors: "Guo H., He K.",
-      title:
-        "Scenario-Conditioned Actual Meteorological Years (sAMY): A Stochastic Weather Generator Using Multi-Decadal Observations.",
-      venue: "Energy and Buildings",
-      year: "2026",
-      status: "Under review",
-      note: "Synthetic weather and scenario conditioning."
-    },
     {
       authors: "Guo H., He K.",
       title:
