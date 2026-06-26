@@ -9,17 +9,9 @@ import {
   publications
 } from "../data/site";
 
-const topicColors = {
-  "thermal comfort": "var(--card-pink)",
-  "human heat": "var(--card-cream)",
-  climate: "var(--card-blue)",
-  energy: "var(--card-yellow)",
-  control: "var(--card-blue)",
-  ventilation: "var(--card-yellow)"
-};
-
-const publicationColor = (item) => topicColors[item.tags?.[0]] ?? "var(--card-cream)";
 const featuredPublications = publications.journals.slice(0, 3);
+const publicationMeta = (item) =>
+  `${item.venue} · ${item.year}${item.status === "Accepted" ? " · Accepted" : ""}`;
 ---
 
 <BaseLayout
@@ -119,21 +111,17 @@ const featuredPublications = publications.journals.slice(0, 3);
     <div class="publication-card-grid">
       {featuredPublications.map((paper) => (
         <article class="publication-card">
-          <p class="publication-meta">{paper.venue} · {paper.year}</p>
+          <p class="publication-meta">{publicationMeta(paper)}</p>
           <h3>{paper.title}</h3>
-          <p class="publication-summary">{paper.summary || paper.note || paper.venue}</p>
+          <p class="publication-summary">
+            {paper.summary || paper.note || paper.venue}
+            {paper.doi && (
+              <a class="doi-pill" href={paper.doi} target="_blank" rel="noreferrer">
+                DOI
+              </a>
+            )}
+          </p>
           <p class="note">{paper.authors}</p>
-          {paper.doi && (
-            <a
-              class="publication-link"
-              href={paper.doi}
-              target="_blank"
-              rel="noreferrer"
-              style={`--hover-color: ${publicationColor(paper)};`}
-            >
-              Read paper <span class="link-arrow" aria-hidden="true">-&gt;</span>
-            </a>
-          )}
           <div class="publication-tags">
             {paper.tags?.map((tag) => (
               <span>{tag}</span>

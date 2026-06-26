@@ -2,16 +2,26 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { publications } from "../data/site";
 
-const topicColors = {
-  "thermal comfort": "var(--card-pink)",
-  "human heat": "var(--card-cream)",
-  climate: "var(--card-blue)",
-  energy: "var(--card-yellow)",
-  control: "var(--card-blue)",
-  ventilation: "var(--card-yellow)"
-};
-
-const publicationColor = (item) => topicColors[item.tags?.[0]] ?? "var(--card-cream)";
+const tagId = (tag) => tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const tagOrder = [
+  "energy",
+  "climate",
+  "thermal comfort",
+  "control",
+  "ventilation",
+  "human heat",
+  "design intelligence"
+];
+const allItems = [...publications.journals, ...publications.proceedings];
+const filterTags = tagOrder.filter((tag) => allItems.some((item) => item.tags?.includes(tag)));
+const publicationMeta = (item) =>
+  `${item.venue} · ${item.year}${
+    item.status && item.status !== "Published" && item.status !== "Conference paper"
+      ? ` · ${item.status}`
+      : ""
+  }`;
+const publicationTags = (item) => item.tags ?? [];
+const publicationTagIds = (item) => publicationTags(item).map(tagId).join(" ");
 
 const groups = [
   {
@@ -43,49 +53,69 @@ const groups = [
     </div>
   </section>
 
+  <section class="publication-filter-shell" aria-label="Filter publications by topic">
+    <div class="filter-header">
+      <p class="eyebrow">Filter</p>
+      <p class="filter-status" data-filter-status>Showing all {allItems.length} selected items</p>
+    </div>
+    <div class="publication-filters" role="list" aria-label="Publication topic filters">
+      <button class="filter-chip is-active" type="button" data-filter="all" data-label="All" aria-pressed="true">
+        All
+      </button>
+      {filterTags.map((tag) => (
+        <button class="filter-chip" type="button" data-filter={tagId(tag)} data-label={tag} aria-pressed="false">
+          {tag}
+        </button>
+      ))}
+    </div>
+  </section>
+
   <section class="publication-groups clean-groups">
     {groups.map((group) => (
-      <div class="section-shell">
+      <div class="section-shell publication-section" data-publication-group>
         <div class="section-header compact-header">
           <p class="eyebrow">{group.title}</p>
-          <p class="section-count">{group.items.length} items</p>
+          <p class="section-count" data-section-count>{group.items.length} items</p>
         </div>
         <div class="publication-card-grid">
           {group.items.map((item) => (
-            <article class="publication-card">
+            <article class="publication-card" data-publication-card data-tags={publicationTagIds(item)}>
               <p class="publication-meta">
-                {item.venue} · {item.year}{item.status === "Accepted" ? " · Accepted" : ""}
+                {publicationMeta(item)}
               </p>
               <h2 class="publication-title">{item.title}</h2>
               {group.kind === "journal" ? (
                 <>
-                  <p class="publication-summary">{item.summary || item.note || item.venue}</p>
+                  <p class="publication-summary">
+                    {item.summary || item.note || item.venue}
+                    {item.doi && (
+                      <a class="doi-pill" href={item.doi} target="_blank" rel="noreferrer">
+                        DOI
+                      </a>
+                    )}
+                  </p>
                   <p class="note">{item.authors}</p>
-                  {item.doi && (
-                    <a
-                      class="publication-link"
-                      href={item.doi}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={`--hover-color: ${publicationColor(item)};`}
-                    >
-                      Read paper <span class="link-arrow" aria-hidden="true">-&gt;</span>
-                    </a>
-                  )}
                   <div class="publication-tags">
-                    {item.tags?.map((tag) => (
+                    {publicationTags(item).map((tag) => (
                       <span>{tag}</span>
                     ))}
                   </div>
                 </>
               ) : (
                 <>
-                  <p>{item.note || item.venue}</p>
+                  <p class="publication-summary compact-summary">
+                    {item.note || item.venue}
+                    {item.doi && (
+                      <a class="doi-pill" href={item.doi} target="_blank" rel="noreferrer">
+                        DOI
+                      </a>
+                    )}
+                  </p>
                   <p class="note">{item.authors}</p>
                   <div class="publication-tags">
-                    <span>{item.venue}</span>
-                    <span>{item.year}</span>
-                    <span>{item.status}</span>
+                    {publicationTags(item).map((tag) => (
+                      <span>{tag}</span>
+                    ))}
                   </div>
                 </>
               )}
@@ -95,4 +125,67 @@ const groups = [
       </div>
     ))}
   </section>
+
+  <script>
+    const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
+    const filterStatus = document.querySelector("[data-filter-status]");
+    const groups = Array.from(document.querySelectorAll("[data-publication-group]"));
+    const validFilters = new Set(filterButtons.map((button) => button.dataset.filter));
+
+    const itemLabel = (count) => `${count} selected ${count === 1 ? "item" : "items"}`;
+
+    function applyPublicationFilter(filter, updateUrl = true) {
+      const activeFilter = validFilters.has(filter) ? filter : "all";
+      const activeButton = filterButtons.find((button) => button.dataset.filter === activeFilter);
+      let visibleTotal = 0;
+
+      filterButtons.forEach((button) => {
+        const isActive = button.dataset.filter === activeFilter;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      groups.forEach((group) => {
+        const cards = Array.from(group.querySelectorAll("[data-publication-card]"));
+        let visibleInGroup = 0;
+
+        cards.forEach((card) => {
+          const tags = card.dataset.tags?.split(" ").filter(Boolean) ?? [];
+          const isVisible = activeFilter === "all" || tags.includes(activeFilter);
+          card.hidden = !isVisible;
+          if (isVisible) visibleInGroup += 1;
+        });
+
+        group.hidden = visibleInGroup === 0;
+        const count = group.querySelector("[data-section-count]");
+        if (count) count.textContent = itemLabel(visibleInGroup);
+        visibleTotal += visibleInGroup;
+      });
+
+      if (filterStatus) {
+        const label = activeButton?.dataset.label ?? "All";
+        filterStatus.textContent =
+          activeFilter === "all"
+            ? `Showing all ${itemLabel(visibleTotal)}`
+            : `Showing ${itemLabel(visibleTotal)} tagged ${label}`;
+      }
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (activeFilter === "all") {
+          url.searchParams.delete("tag");
+        } else {
+          url.searchParams.set("tag", activeFilter);
+        }
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => applyPublicationFilter(button.dataset.filter ?? "all"));
+    });
+
+    const initialFilter = new URL(window.location.href).searchParams.get("tag") ?? "all";
+    applyPublicationFilter(initialFilter, false);
+  </script>
 </BaseLayout>

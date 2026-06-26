@@ -342,6 +342,20 @@ export const honors = [
 export const publications = {
   journals: [
     {
+      authors:
+        "Hongshan Guo, Sebastiano Anselmo, Maria Ferrara, Shuai Niu, Binlin Chi, Xuchen Wang",
+      title:
+        "Automated Urban Energy Assessment: From Thermal Flyover to AI-Driven Retrofit Prioritization for Sustainable Cities.",
+      venue: "Sustainable Cities and Society",
+      year: "2026",
+      status: "Published",
+      note: "Thermal flyover, EPC-derived EUI benchmarking, and anomaly triage.",
+      summary:
+        "Uses Thermal-SAM to segment mid-wave infrared flyovers into building patches, pairs ring and context thermal features with EPC-derived EUI benchmarks, and shows thermal data is most useful for triaging anomalous high-EUI or EPC-inconsistent buildings for follow-up audits rather than routine direct EUI regression.",
+      doi: "https://doi.org/10.1016/j.scs.2026.107589",
+      tags: ["energy", "climate"]
+    },
+    {
       authors: "Hongshan Guo, Dorit Aviv",
       title:
         "From Seven Points to Probabilities: Ordinal Learning for Risk-Aware Thermal Comfort Prediction.",
@@ -479,11 +493,23 @@ export const publications = {
     {
       authors: "He K., Guo H.",
       title:
+        "Data-Driven Cross-Regional Climate Zone Classification for Building Codes: A Future-Compatible Framework.",
+      venue: "E3S Web of Conferences 716",
+      year: "2026",
+      status: "Conference paper",
+      note: "Future-compatible climate zoning for building codes.",
+      doi: "https://doi.org/10.1051/e3sconf/202671610011",
+      tags: ["climate", "energy"]
+    },
+    {
+      authors: "He K., Guo H.",
+      title:
         "A Temporal Features-Enhanced Mixture-of-Experts Approach for Indoor Temperature Prediction.",
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Oral, first place",
-      note: "Smart Building Competition winner."
+      note: "Smart Building Competition winner.",
+      tags: ["control", "energy"]
     },
     {
       authors: "Niu S., Guo H., Ferrara M., Anselmo S.",
@@ -492,7 +518,8 @@ export const publications = {
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Poster, third place",
-      note: "Recognized at the NeurIPS 2025 Urban AI Workshop Buildings Challenge."
+      note: "Recognized at the NeurIPS 2025 Urban AI Workshop Buildings Challenge.",
+      tags: ["energy", "climate"]
     },
     {
       authors: "Guo H., Chang Y., Hu D.",
@@ -501,7 +528,8 @@ export const publications = {
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Poster",
-      note: ""
+      note: "",
+      tags: ["thermal comfort", "control", "energy"]
     },
     {
       authors: "Guo H., Zhou Y., Lai C.Y., Ren C.",
@@ -509,7 +537,8 @@ export const publications = {
       venue: "IBPC 2024",
       year: "2024",
       status: "Conference paper",
-      note: ""
+      note: "",
+      tags: ["ventilation", "energy", "climate"]
     },
     {
       authors: "Guo H., Li Y., Zhou Y., Chang Y., Lai C.Y.",
@@ -518,7 +547,8 @@ export const publications = {
       venue: "IBPC 2024",
       year: "2024",
       status: "Conference paper",
-      note: ""
+      note: "",
+      tags: ["ventilation", "energy"]
     },
     {
       authors: "Guo H., Coleman J., Gullapalli I.",
@@ -527,7 +557,8 @@ export const publications = {
       venue: "IBPC 2024",
       year: "2024",
       status: "Conference paper",
-      note: ""
+      note: "",
+      tags: ["energy", "design intelligence"]
     }
   ],
   underReview: [
