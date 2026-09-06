@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A tentative, source-linked ledger of public professional activity across HKU Architecture and Landscape Architecture.">
+  <meta name="theme-color" content="#f3f0e8">
+  <title>Public work ledger · HKU Architecture & Landscape</title>
+  <link rel="stylesheet" href="./ledger.css">
+  <script src="./ledger.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#people">Skip to people</a>
+  <header class="masthead wrap">
+    <a class="wordmark" href="/" aria-label="FORGE home">FORGE<span> / FIELDNOTES</span></a>
+    <span class="edition"><span class="dot"></span> Working report · unlisted</span>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <p class="eyebrow">The University of Hong Kong / Faculty of Architecture</p>
+        <h1 id="title">People &<br><em>public work.</em></h1>
+        <p class="intro">A person-by-person record of publications, projects and recognition across Architecture and Landscape Architecture.</p>
+      </div>
+      <aside class="snapshot">
+        <p class="eyebrow">Last day ingested</p>
+        <p id="ingested" class="ingested">—</p>
+        <p id="ingest-note" class="small">Loading the saved source snapshot…</p>
+        <div class="rule"></div>
+        <p class="eyebrow">Reporting window</p>
+        <p id="window-label">—</p>
+        <p class="small">Dates belong to the source record, not the day this page was opened.</p>
+      </aside>
+    </section>
+
+    <div id="load-error" class="notice" role="alert" hidden></div>
+    <section class="metrics" aria-label="Snapshot overview">
+      <div><strong id="count-people">—</strong><span>people in this view</span></div>
+      <div><strong id="count-matched">—</strong><span>people with records in this view</span></div>
+      <div><strong id="count-records">—</strong><span>distinct records in this view</span></div>
+      <div><strong id="count-sources">—</strong><span>source fetches succeeded</span></div>
+    </section>
+    <p class="scope-note">A discovery aid, not a performance assessment. An empty entry means no matching dated record was found in the checked sources—not that no work was done. Announced events do not establish completion.</p>
+
+    <section class="ledger-section" id="people" aria-labelledby="ledger-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / The ledger</p><h2 id="ledger-title">Every person, in context.</h2></div><button id="export" type="button" disabled>Export current view <span aria-hidden="true">↗</span></button></div>
+      <form class="filters" id="filters" role="search">
+        <label class="search">Find a person or public record<input id="search" type="search" placeholder="Name, role, title…" autocomplete="off"></label>
+        <label>Department / division<select id="department"><option value="all">Both units</option value="architecture">Architecture</option><option value="landscape">Landscape Architecture</option></select></label>
+        <label>Window<select id="window"><option value="60">Last 60 days</option><option value="30">Last 30 days</option></select></label>
+        <label>Record type<select id="kind"><option value="all">All types</option></select></label>
+        <label class="toggle"><input id="with-records" type="checkbox">Only people with records</label>
+      </form>
+      <div class="list-caption"><p id="result-count" role="status" aria-live="polite">Loading roster…</p><span>Alphabetical · no ranking</span></div>
+      <div id="person-list" class="person-list"></div>
+      <p id="empty" class="empty" hidden>No people match these filters. Try a different name or include people without records.</p>
+      <noscript><p class="notice">This interactive report needs JavaScript. The complete <a href="./ledger.json">source-linked JSON snapshot</a> remains available.</p></noscript>
+    </section>
+
+    <details id="publication-queue" class="note-panel publication-queue" hidden>
+      <summary><span class="eyebrow">Publication follow-up / excluded from activity totals</span><span>Leads awaiting date or identity confirmation</span></summary>
+      <div class="panel-body"><p>These manually recorded leads are not verified new publications in this window. Monthly collection does not re-verify them automatically. Check the publisher’s first-online date and author identity before promoting a lead into the dated ledger.</p><div id="publication-leads"></div></div>
+    </details>
+
+    <section class="notes-grid" aria-label="Coverage and interpretation">
+      <details class="note-panel" open>
+        <summary><span class="eyebrow">02 / Read with care</span><span>What this report can say</span></summary>
+        <div class="panel-body">
+          <p>The official staff directories define the roster, including academic, honorary, adjunct and non-academic entries. Current directory membership is not proof of someone’s affiliation on an earlier event date.</p>
+          <p>Public records are tentative until reviewed. A named mention establishes a connection to a source, not sole authorship, project completion or a verified award. Scheduled exhibitions and workshops remain announcements, even after their advertised dates.</p>
+          <p>This first pass checks a bounded set of HKU sources and staff profiles. It is not an exhaustive search of journals, studios, publishers or the wider web. Undated and year-only material is not silently assigned to this month.</p>
+          <p>The page is unlisted and requests no indexing. It is <strong>not password-protected</strong>, and its data contains only public professional information.</p>
+        </div>
+      </details>
+      <details class="note-panel">
+        <summary><span class="eyebrow">03 / Provenance</span><span>Sources & collection health</span></summary>
+        <div class="panel-body"><p id="coverage-summary"></p><div id="source-list" class="source-list"></div><p><a href="./ledger.json" download>Download the full evidence snapshot ↗</a></p></div>
+      </details>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>FORGE / Public work ledger</span><span>Tentative departmental working copy. Not an official HKU evaluation.</span></footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+[
+  {
+    "url": "https://www.arch.hku.hk/event_/drawing-from-the-archigram-archive/",
+    "title": "Drawing from the Archigram Archive",
+    "eventDate": "2026-07-31",
+    "eventEndDate": "2026-08-15",
+    "status": "announced",
+    "kind": "exhibition",
+    "evidenceText": "Course instructor and curator:",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/zhang-haotian/",
+        "role": "course instructor and curator",
+        "evidenceText": "Haotian Zhang"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/tung-mono-c-o/",
+        "role": "support",
+        "evidenceText": "Mono Tung"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/seng-eunice-m-f/",
+        "role": "support",
+        "evidenceText": "Eunice Seng"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/spina-davide/",
+        "role": "support",
+        "evidenceText": "Davide Spina"
+      }
+    ]
+  },
+  {
+    "url": "https://www.arch.hku.hk/event_/pingyao-ancient-city-hackathon/",
+    "title": "Pingyao Ancient City Hackathon",
+    "eventDate": "2026-08-01",
+    "eventEndDate": "2026-08-20",
+    "status": "announced",
+    "kind": "exhibition",
+    "evidenceText": "Tutor:",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/xia-heng/",
+        "role": "course tutor",
+        "evidenceText": "Heng XIA"
+      }
+    ]
+  },
+  {
+    "url": "https://www.arch.hku.hk/event_/the-measure-of-shade/",
+    "title": "The Measure of Shade",
+    "eventDate": "2026-09-04",
+    "eventEndDate": "2026-09-28",
+    "status": "announced",
+    "kind": "exhibition and forum",
+    "evidenceText": "Exhibition Supervisor and Advisor",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/seng-eunice-m-f/",
+        "role": "exhibition supervisor/advisor; listed September 4 forum panelist",
+        "evidenceText": "Professor Eunice Seng"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/yeung-jonathan-t-h/",
+        "role": "exhibition curation/coordination; listed September 4 forum moderator",
+        "evidenceText": "Jonathan Yeung"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/roskam-cole/",
+        "role": "listed September 4 forum panelist",
+        "evidenceText": "Prof. Cole ROSKAM"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/wang-wei-jen/",
+        "role": "listed September 4 forum panelist",
+        "evidenceText": "Prof. Weijen WANG"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/xia-heng/",
+        "role": "listed September 4 forum panelist",
+        "evidenceText": "Prof. Heng XIA"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/zhou-ying/",
+        "role": "listed September 4 forum panelist",
+        "evidenceText": "Prof. Ying ZHOU"
+      }
+    ]
+  },
+  {
+    "url": "https://www.arch.hku.hk/event_/75-in-the-making/",
+    "title": "75: In the Making",
+    "eventDate": "2026-09-04",
+    "eventEndDate": "2026-10-08",
+    "status": "announced",
+    "kind": "exhibition",
+    "evidenceText": "Anthony Lam’s graphic designs",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/lam-anthony-c-w/",
+        "role": "graphic designs featured; creation date not established",
+        "evidenceText": "Anthony Lam’s graphic designs"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hku.hk/press/press-releases/detail/29285.html",
+    "title": "The 1st Urban Systems Forum – Advanced Modeling of Urban Systems for Sustainable Cities",
+    "eventDate": "2026-07-19",
+    "eventEndDate": "2026-07-19",
+    "publicationDate": "2026-07-30",
+    "status": "reported",
+    "kind": "conference",
+    "evidenceText": "On 19 July 2026",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/chen-bin/",
+        "role": "Introduced USI strategic direction and moderated the first roundtable",
+        "evidenceText": "The first roundtable, moderated by Professor Bin Chen"
+      }
+    ]
+  },
+  {
+    "url": "https://www.usi.hku.hk/event-details-registration/urban-systems-institute-usi-summer-programme-urban-intelligence",
+    "title": "Urban Systems Institute Summer Programme: Urban Intelligence",
+    "eventDate": "2026-07-20",
+    "eventEndDate": "2026-07-24",
+    "publicationDate": null,
+    "status": "announced",
+    "kind": "teaching",
+    "evidenceText": "20 July 2026 – 24 July 2026",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/chen-bin/",
+        "role": "Listed programme faculty",
+        "evidenceText": "Prof. Bin Chen"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/ren-chao/",
+        "role": "Listed programme faculty",
+        "evidenceText": "Prof. Chao Ren"
+      }
+    ]
+  },
+  {
+    "url": "https://www.arch.hku.hk/programmes/summer/career-discovery-in-landscape-architecture/",
+    "title": "Career Discovery in Landscape Architecture",
+    "eventDate": "2026-07-20",
+    "eventEndDate": "2026-07-31",
+    "publicationDate": null,
+    "status": "announced",
+    "kind": "teaching",
+    "evidenceText": "July 20 – July 31, 2026",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/liu-olly-y/",
+        "role": "Programme instructor (listed as Liu Yapeng, Olly)",
+        "evidenceText": "Liu Yapeng, Olly"
+      }
+    ]
+  },
+  {
+    "url": "https://www.arch.hku.hk/event_/float-lab/?subcat=summer-program",
+    "title": "Float Lab Summer Workshop 2026",
+    "eventDate": "2026-07-08",
+    "eventEndDate": "2026-07-14",
+    "publicationDate": null,
+    "status": "announced",
+    "kind": "workshop",
+    "evidenceText": "8-14 July 2026 (Sunday off)",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/xu-sonny-m-q/",
+        "role": "Workshop collaborator",
+        "evidenceText": "Sonny Xu"
+      }
+    ]
+  }
+]

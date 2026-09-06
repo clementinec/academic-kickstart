@@ -20,3 +20,11 @@
   for = "index.xml"
   [headers.values]
     Content-Type = "application/rss+xml"
+
+# Unlisted public-professional working report; noindex is not authentication.
+[[headers]]
+  for = "/internal/hku-activity/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"

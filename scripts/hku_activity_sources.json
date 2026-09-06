@@ -1,0 +1,17 @@
+{
+  "directories": [
+    {"id": "architecture", "label": "Department of Architecture", "url": "https://www.arch.hku.hk/people/arch_staff/", "minimumPeople": 60},
+    {"id": "landscape", "label": "Division of Landscape Architecture", "url": "https://www.arch.hku.hk/people/la-staff/", "minimumPeople": 40}
+  ],
+  "indexes": [
+    {"id": "faculty-events", "url": "https://www.arch.hku.hk/events_index/general_events/", "kind": "event", "pagination": "events-json", "maxPages": 6},
+    {"id": "faculty-exhibitions", "url": "https://www.arch.hku.hk/events_index/Exhibitions/", "kind": "event", "pagination": "events-json", "maxPages": 2},
+    {"id": "faculty-news", "url": "https://www.arch.hku.hk/about/news/", "kind": "news", "pagination": "wordpress", "maxPages": 2}
+  ],
+  "publicationSources": [
+    {"id": "faculty-publications", "url": "https://www.arch.hku.hk/research/publications/"},
+    {"id": "scholars-hub-architecture", "url": "https://hub.hku.hk/handle/10722/38526"}
+  ],
+  "maxActivityDetails": 60,
+  "publicationLeadsFile": "scripts/hku_publication_leads.json"
+}

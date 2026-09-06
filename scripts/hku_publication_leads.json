@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Publication follow-up queue only; these leads are not verified dated ledger records and must not contribute to activity counts.",
+  "windowStart": "2026-07-09",
+  "windowEnd": "2026-09-06",
+  "leads": [
+    {
+      "doi": "10.1016/j.cities.2026.107377",
+      "title": "Measuring lockdown travel rebound: Experimental insights from the Hong Kong COVID-19 omicron outbreak",
+      "personName": "Eric H. Schuldenfrei",
+      "rosterProfileUrl": "https://www.arch.hku.hk/staff/arch/schuldenfrei-eric-h/",
+      "metadataEvidenceUrl": "https://api.crossref.org/works/10.1016/j.cities.2026.107377",
+      "publisherUrl": "https://www.sciencedirect.com/science/article/pii/S0264275126006098",
+      "dateEvidenceUrl": "https://www.researchgate.net/publication/390997840_Measuring_Lockdown_Travel_Rebound_Experimental_Insights_from_the_Hong_Kong_Covid-19_Omicron_Outbreak",
+      "suggestedOnlineDate": "2026-07-11",
+      "dateVerificationStatus": "pending_primary_host_verification_author_hosted_vor_text_observed",
+      "dateEvidenceText": "Available online 11 July 2026",
+      "identityEvidenceText": "E-mail address: eschulde@hku.hk (E. Schuldenfrei).",
+      "caveat": "The date is printed on the Elsevier version-of-record first page as indexed from an author-hosted ResearchGate PDF, not verified on a live publisher or institutional host. The ResearchGate wrapper labels an older preprint January 2025; use the journal PDF history, not that wrapper date. Crossref confirms title and authors but omits published-online and gives only November 2026 issue month. Crossref creation on 11 July is not publication-date proof. Direct publisher fetch returned 403. Confirm the journal first-online date before promoting; this does not mean the work had no earlier preprint.",
+      "verifiedAt": "2026-09-06T10:56:24Z",
+      "verificationScope": "Official roster URL and publisher-deposited authorship metadata checked; indexed journal-PDF date text observed; dated-ledger eligibility not approved."
+    },
+    {
+      "doi": "10.1016/j.caeai.2026.100665",
+      "title": "AI-mediated cognitive divergence in built-environment education: Evidence from a mixed-methods study",
+      "personName": "Kristof Crolla",
+      "rosterProfileUrl": "https://www.arch.hku.hk/staff/arch/crolla-kristof/",
+      "metadataEvidenceUrl": "https://api.crossref.org/works/10.1016/j.caeai.2026.100665",
+      "publisherUrl": "https://www.sciencedirect.com/science/article/pii/S2666920X2600127X",
+      "publisherFeedUrl": "https://rss.sciencedirect.com/publication/science/2666920X",
+      "dateEvidenceUrl": "https://ethics.ai/source/x-computers-and-education-artificial-intel",
+      "suggestedOnlineDate": "2026-08-19",
+      "dateVerificationStatus": "pending_primary_verification_secondary_feed_mirror_only",
+      "dateEvidenceText": "Publication date: Available online 19 August 2026",
+      "candidateOrcid": "https://orcid.org/0000-0002-1921-395X",
+      "caveat": "The exact first-online date is currently supported only by a third-party publisher-feed mirror. Crossref and the live official publisher RSS confirm title and authors but give December 2026 issue month; published-online is absent. Crossref creation on 19 August is not publication-date proof. Direct publisher fetch returned 403. The author name matches the official roster, but Crossref affiliations are empty and its ORCID is marked unauthenticated: verify the affiliation or ORCID-to-roster link before promotion or automatic matching.",
+      "verifiedAt": "2026-09-06T10:56:24Z",
+      "verificationScope": "Official roster URL, publisher-deposited metadata and current publisher RSS checked; exact online date and author identity linkage remain pending."
+    }
+  ]
+}

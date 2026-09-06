@@ -5,3 +5,10 @@ node_modules/
 .Rproj.user
 
 .DS_Store
+
+# Raw public-page caches stay local; publish only the normalized evidence ledger.
+data/hku-activity/cache/
+data/hku-activity/runs/
+data/hku-activity/last-attempt.json
+.venv-ledger/
+__pycache__/
