@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "runs": [
+    {
+      "id": "baseline-import-20260906T105604Z_asof-2026-09-06_dc61a87e6265",
+      "attemptAt": "2026-09-06T12:46:49+00:00",
+      "finishedAt": "2026-09-06T12:46:49+00:00",
+      "mode": "baseline-import",
+      "status": "partial",
+      "committed": true,
+      "networkCollection": false,
+      "editionCreated": true,
+      "editionId": "20260906T105604Z_asof-2026-09-06_dc61a87e6265",
+      "sourceFailures": 1,
+      "note": "Registered the existing saved source snapshot; no new requests were made."
+    }
+  ]
+}

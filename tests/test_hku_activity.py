@@ -3,8 +3,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 
 MODULE = Path(__file__).resolve().parents[1] / "scripts/ingest_hku_activity.py"
+sys.path.insert(0, str(MODULE.parent))
 spec = importlib.util.spec_from_file_location("ledger", MODULE)
 ledger = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ledger)

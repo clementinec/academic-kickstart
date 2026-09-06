@@ -32,3 +32,25 @@ Schema version 1.0.0 has `scope`, `ingest`, `coverage`, `people`, `activities`, 
 Manual verification remains necessary before using a candidate as an asserted accomplishment. Do not use activity counts to compare academic, honorary, administrative, technical and support roles, or to infer zero productivity.
 
 The optional `publicationLeads` array is loaded from the separate manually reviewed `scripts/hku_publication_leads.json`, filtered by *suggested* online dates within the reporting window. It is never included in `activities` or counts. Original `verifiedAt` and `verificationScope` are preserved verbatim; neither live ingestion nor cache reparsing re-verifies these leads. See `HKU_PUBLICATION_LOOKUP.md` for promotion criteria. Missing first-online dates, fuzzy names, future issue dates and repository accession dates must not become fabricated publication dates.
+
+## Operating state and channel connections
+
+`scripts/hku_activity_service_config.json` is the explicit operating-policy configuration. `service.json` combines it with saved source health and real edition history. It distinguishes bounded faculty collection, curated university URLs, manual publisher leads, an unconnected Instagram channel, and repository reachability. A named channel is not a promise that it is connected. Activity `sourceChannel` comes from the evidence hostname; publisher follow-up leads remain separate from dated records and retain their original manual-review timestamps.
+
+The initial operating state is `prototype-awaiting-refresh-policy`: manual collection and review artifacts are configured, `scheduleActive` and `autoPublish` are false, and the user's monthly-review versus automatic-publication choice is pending. A workflow URL is a configured retry destination, not proof that the workflow has been deployed or scheduled. No script activates a scheduler, pushes Git commits or deploys the site.
+
+## Real editions and operation history
+
+A successfully committed **live HTTP** sweep automatically creates an immutable normalized JSON edition under `public/internal/hku-activity/editions/`, and appends its provenance to `editions/index.json`. A valid partial sweep also creates an edition, explicitly labelled `partial`; this means the directory safety checks passed, not that all channels are complete or that the edition has been editorially approved. Filename identity uses the actual last source retrieval timestamp, reporting-window end and content hash. Raw HTML stays outside the public archive.
+
+The edition index's `sha256` field and filename digest are **deterministic-JSON content hashes, not hashes of the indented file bytes**. Exact algorithm: `sha256(json.dumps(snapshot, sort_keys=True, ensure_ascii=False, separators=(", ", ": ")).encode("utf-8")).hexdigest()`, with no trailing newline. This uses Python's sorted-key JSON serialization, not RFC 8785/JCS. Parse an archived JSON file and apply that serialization to reproduce its index digest; a plain `sha256sum` of the emitted file will differ. The original baseline archive is not rewritten when presentation/service code changes.
+
+The initial September 6 edition was imported from the existing genuine snapshot with original source timestamps and `origin: baseline-import`. No earlier months or previous collection runs were invented. Running `scripts/hku_activity_service.py --bootstrap` imports a baseline only when no edition exists; repeating it never creates an extra historical edition. The ordinary command without flags rebuilds metadata only. Neither operation performs network requests.
+
+`--reparse-cache` records a **reparse operation**, not a new source collection or edition, and does not advance retrieval dates. Critical directory failure appends a failed-attempt entry while preserving the current ledger, edition files and freshness. `runs.json` and `editorial-log.json` are append-only through the provided tools (not a cryptographic or tamper-proof audit trail). An attributed editorial note can be added without changing activity evidence or dates:
+
+```sh
+.venv-ledger/bin/python scripts/hku_activity_service.py --note "Describe the actual reviewed correction" --reviewer "Reviewer name or role" --record-id ACTIVITY_ID
+```
+
+This command records the supplied attribution; it does not certify a review, alter a source claim or create an edition. Corrections to curated evidence still require the source-backed review procedure. Preserve the full editions and history files when publishing a reviewed artifact; copying only `ledger.json` loses the service's continuity.

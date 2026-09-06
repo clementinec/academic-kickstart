@@ -17,6 +17,7 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
+from hku_activity_service import enrich_channels, record_commit, record_failure
 
 ROOT = Path(__file__).resolve().parents[1]
 HK = ZoneInfo("Asia/Hong_Kong")
@@ -299,8 +300,10 @@ def ingest(args):
         rosters.append((dept, roster))
     if not critical_ok:
         manifest = {"startedAt": started, "finishedAt": now(), "status": "aborted-critical-source-failure",
-                    "snapshotReplaced": False, "sources": fetcher.records}
+                    "snapshotReplaced": False, "sources": fetcher.records,
+                    "mode": "saved-response-reparse" if args.reparse_cache else "live-http"}
         atomic_json(ROOT / "data/hku-activity/last-attempt.json", manifest)
+        record_failure(ROOT, manifest)
         print(json.dumps(manifest, indent=2))
         return 2
     people = merge_people(rosters)
@@ -488,7 +491,9 @@ def ingest(args):
     ledger["publicationLeadContext"] = {"status": "manual-follow-up-queue-not-refetched", "sourceFile": config["publicationLeadsFile"],
         "note": "Suggested dates only; not verified dated activities. Original verifiedAt/verificationScope are preserved; this run does not re-check metadata, identity or publication dates."}
     ledger["coverage"]["limitations"].append("Separate publication leads are a manually checked follow-up queue, not automatic publication ingestion or dated activity counts; their original verification timestamps are not refreshed.")
+    enrich_channels(ledger)
     commit_snapshot(output, ledger, True)
+    record_commit(ROOT, ledger, ledger["ingest"]["mode"])
     atomic_json(ROOT / "data/hku-activity/last-attempt.json", {"startedAt": started, "finishedAt": finished,
         "status": ledger["ingest"]["status"], "snapshotReplaced": True, "sources": ledger["sources"], "errors": errors})
     print(json.dumps({"output": str(output), "status": ledger["ingest"]["status"],

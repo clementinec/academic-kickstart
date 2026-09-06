@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "editions": [
+    {
+      "id": "20260906T105604Z_asof-2026-09-06_dc61a87e6265",
+      "asOf": "2026-09-06",
+      "windowStart": "2026-07-09",
+      "retrievedAt": "2026-09-06T10:56:04+00:00",
+      "registeredAt": "2026-09-06T12:46:49+00:00",
+      "origin": "baseline-import",
+      "status": "partial",
+      "peopleCount": 154,
+      "recordCount": 18,
+      "publicationLeadCount": 2,
+      "href": "./editions/20260906T105604Z_asof-2026-09-06_dc61a87e6265.json",
+      "sha256": "dc61a87e6265f1ed4e82ecdc90a9816ccb78d7502a5505aa0c82663f800729d4",
+      "note": "Imported existing source snapshot; not a new collection run."
+    }
+  ]
+}

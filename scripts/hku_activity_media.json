@@ -1,0 +1,60 @@
+{
+  "https://www.arch.hku.hk/event_/the-measure-of-shade/": {
+    "src": "./media/the-measure-of-shade.jpg",
+    "alt": "Official promotional poster for The Measure of Shade exhibition",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/the-measure-of-shade/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/08/Poster_LHSExhibition2026_FR-424x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/75-in-the-making/": {
+    "src": "./media/75-in-the-making.gif",
+    "alt": "Official promotional poster for 75: In the Making",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/75-in-the-making/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/08/Poster_GRExhibtion_04-424x600.gif"
+  },
+  "https://www.arch.hku.hk/event_/drawing-from-the-archigram-archive/": {
+    "src": "./media/drawing-from-the-archigram-archive.jpg",
+    "alt": "Official promotional poster for Drawing from the Archigram Archive",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/drawing-from-the-archigram-archive/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/07/Poster_WRExhibtion_03-424x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/pingyao-ancient-city-hackathon/": {
+    "src": "./media/pingyao-ancient-city-hackathon.jpg",
+    "alt": "Official promotional poster for the Pingyao Ancient City Hackathon exhibition",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/pingyao-ancient-city-hackathon/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/08/Poster_PingyaoExhibition-424x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/float-lab/": {
+    "src": "./media/float-lab.jpg",
+    "alt": "Official promotional poster for Float Lab Summer Workshop 2026",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/float-lab/",
+    "thumbnailSourceUrl": "https://www.arch.hku.hk/events_index/general_events/page/4/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/04/POSTER-260708-Workshop-Lamma-Fishing-Raft--424x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/ground-works/": {
+    "src": "./media/ground-works.jpg",
+    "alt": "Official Ground Works public-space co-design and co-building workshop call poster",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/ground-works/",
+    "thumbnailSourceUrl": "https://www.arch.hku.hk/events_index/general_events/page/2/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/07/Poster_CallforAnthoFest_OPT1-424x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/architalks-edu-ep-4/": {
+    "src": "./media/architalks-catherine-seavitt.jpg",
+    "alt": "Official architalks education episode 4 poster featuring Catherine Seavitt",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/architalks-edu-ep-4/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/09/Poster_EDEP4_architalks-480x600.jpg"
+  },
+  "https://www.arch.hku.hk/event_/architalks-edu-ep-3/": {
+    "src": "./media/architalks-guy-nordenson.jpg",
+    "alt": "Official architalks education episode 3 poster featuring Guy Nordenson",
+    "credit": "HKU Faculty of Architecture / original event artwork",
+    "sourceUrl": "https://www.arch.hku.hk/event_/architalks-edu-ep-3/",
+    "imageUrl": "https://foa-media.arch.hku.hk/media/upload/2026/08/Poster_EDEP3_architalks_r-480x600.jpg"
+  }
+}

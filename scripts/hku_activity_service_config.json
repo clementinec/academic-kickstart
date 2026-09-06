@@ -1,0 +1,30 @@
+{
+  "name": "HKU Architecture + Landscape Observatory",
+  "operatingState": "prototype-awaiting-refresh-policy",
+  "publicAccess": "public-unlisted-not-authenticated",
+  "refresh": {
+    "mode": "manual",
+    "scheduleActive": false,
+    "nextScheduledAt": null,
+    "workflowConfigured": true,
+    "workflowAvailabilityVerified": true,
+    "workflowAvailabilityVerifiedAt": "2026-09-06T12:55:42+00:00",
+    "workflowAvailabilityEvidenceUrl": "https://api.github.com/repos/clementinec/academic-kickstart/actions/workflows/hku-activity-ledger.yml",
+    "workflowUrl": "https://github.com/clementinec/academic-kickstart/actions/workflows/hku-activity-ledger.yml",
+    "manualCommand": ".venv-ledger/bin/python scripts/ingest_hku_activity.py",
+    "note": "Manual local collection and a workflow_dispatch review-artifact workflow are configured. No monthly cron or automatic publication is activated."
+  },
+  "review": {
+    "policyDecision": "pending-user-choice",
+    "currentPolicy": "manual-review-before-publication",
+    "autoPublish": false,
+    "note": "Monthly collection/review versus automatic publication has not been selected. Collection does not deploy the website."
+  },
+  "channels": [
+    {"id": "faculty_web", "label": "Faculty websites", "state": "configured-bounded", "collectionMode": "bounded-public-web", "coverageNote": "Current Architecture and Landscape directories, every deduplicated profile, and finite official faculty news/events pages. Not an exhaustive faculty-site crawl."},
+    {"id": "university_news", "label": "University news", "state": "configured-bounded", "collectionMode": "curated-primary-source-urls", "coverageNote": "Only curated HKU news/programme URLs are rechecked. A general university-wide news feed is not connected."},
+    {"id": "publishers", "label": "Publishers", "state": "manual-leads-only", "collectionMode": "manual-follow-up-queue", "coverageNote": "Two initial publication leads carry original manual-check timestamps. There is no automatic author-disambiguated publisher or Crossref ingestion."},
+    {"id": "instagram", "label": "Instagram", "state": "not-connected", "collectionMode": "none", "coverageNote": "No account/API connection or collection workflow is configured; no Instagram content has been ingested. Suggested account identities below are not connected sources.", "suggestedAccounts": [{"url": "https://www.instagram.com/hkuarchitecture/", "identityStatus": "linked-by-official-department-website", "identityEvidenceUrl": "https://www.doa.arch.hku.hk/", "collectionStatus": "not-connected"}, {"url": "https://www.instagram.com/hkulandscape/", "identityStatus": "branded-linktree-observed-institution-host-confirmation-pending", "identityEvidenceUrl": "https://linktr.ee/hkulandscape", "collectionStatus": "not-connected"}]},
+    {"id": "repositories", "label": "Institutional repositories", "state": "configured-bounded", "collectionMode": "gateway-reachability-only", "coverageNote": "Only HKU Scholars Hub Architecture collection reachability is checked; see the saved check status. No per-author repository bibliography is ingested."}
+  ]
+}
