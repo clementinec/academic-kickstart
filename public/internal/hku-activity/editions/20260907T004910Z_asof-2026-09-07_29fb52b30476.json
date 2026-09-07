@@ -23,14 +23,14 @@
     "rosterBasis": "Current directory membership at retrieval, not historical affiliation throughout window"
   },
   "ingest": {
-    "startedAt": "2026-09-07T00:57:01.989324+00:00",
-    "finishedAt": "2026-09-07T00:59:30+00:00",
+    "startedAt": "2026-09-07T00:47:39+00:00",
+    "finishedAt": "2026-09-07T00:49:10+00:00",
     "lastDayIngested": "2026-09-07",
     "lastSuccessfulIngestAt": null,
     "mode": "live-public-instagram",
     "status": "partial",
     "snapshotCommitted": true,
-    "note": "Instagram records updated; faculty and roster sources retain their earlier individual retrieval dates."
+    "note": "Instagram public posts refreshed; faculty and roster sources retain their earlier individual retrieval dates."
   },
   "coverage": {
     "people": {
@@ -39,9 +39,9 @@
       "profilesFailed": 0
     },
     "sources": {
-      "attempted": 227,
+      "attempted": 226,
       "failed": 1,
-      "succeeded": 226
+      "succeeded": 225
     },
     "activityDetailsConsidered": 26,
     "activityDetailLimit": 60,
@@ -84,10 +84,10 @@
       "Separate publication leads are a manually checked follow-up queue, not automatic publication ingestion or dated activity counts; their original verification timestamps are not refreshed."
     ],
     "instagram": {
-      "collectedAt": "2026-09-07T00:59:30+00:00",
+      "collectedAt": "2026-09-07T00:49:10+00:00",
       "status": "success",
       "gridLimitPerAccount": 12,
-      "verifiedPostsThisRun": 1,
+      "verifiedPostsThisRun": 23,
       "note": "Public visible profile grids only, not an exhaustive 60-day feed. Saved post timestamps are retained when another channel is refreshed. Source records are not unique accomplishments."
     }
   },
@@ -753,8 +753,7 @@
       "followupSearchUrl": "https://www.google.com/search?q=%22Yung+Ho+Chang%22+HKU+after%3A2026-07-08+before%3A2026-09-07",
       "followupSearchNote": "Suggested manual web query; results have NOT been searched by this ingestion.",
       "activityIds": [
-        "activity-5197eb9f17b54c",
-        "instagram-DbuvksGn0w8"
+        "activity-5197eb9f17b54c"
       ],
       "activityCoverage": {
         "status": "evidence-found",
@@ -5564,7 +5563,6 @@
         "activity-a292c51c4a98b7",
         "activity-5197eb9f17b54c",
         "instagram-Dbu7uqcH30m",
-        "instagram-DbuvksGn0w8",
         "activity-e9955ad915844b",
         "activity-0f8ea67848feb8",
         "activity-118f2077b2f2e3",
@@ -9372,60 +9370,6 @@
       "advertisedEventDate": "2026-09-04"
     },
     {
-      "id": "instagram-DbuvksGn0w8",
-      "title": "Architectural-education podcast with Ursprung, Chang and Seng",
-      "summary": "Promotes the first architectural-education podcast episode, in which Philip Ursprung, Yung Ho Chang and Eunice Seng discuss architectural and design education. Earlier work shown in the post is historical context.",
-      "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
-      "sourceUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
-      "sourceId": "instagram-source-DbuvksGn0w8",
-      "sourceChannel": "instagram",
-      "sourceAccount": {
-        "handle": "hkuarchitecture",
-        "url": "https://www.instagram.com/hkuarchitecture/"
-      },
-      "discoveredAccounts": [],
-      "departmentIds": [
-        "architecture"
-      ],
-      "eventDate": "2026-08-07",
-      "eventEndDate": null,
-      "eventDatePrecision": "day",
-      "dateBasis": "publication-date",
-      "publicationDate": "2026-08-07",
-      "postedAt": "2026-08-07T07:23:06+00:00",
-      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
-      "discoveredAt": "2026-09-07T00:47:58+00:00",
-      "lastVerifiedAt": "2026-09-07T00:57:06.641344+00:00",
-      "kind": "social post",
-      "status": "public-post",
-      "reviewState": "source-checked",
-      "tentative": true,
-      "personIds": [
-        "person-05707ceedd5251",
-        "person-0b6b08dcb6fe2e"
-      ],
-      "personEvidence": [
-        {
-          "personId": "person-05707ceedd5251",
-          "role": "Podcast participant explicitly named in the caption",
-          "matchMethod": "named-in-post-caption",
-          "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/"
-        },
-        {
-          "personId": "person-0b6b08dcb6fe2e",
-          "role": "Podcast participant explicitly named in the caption",
-          "matchMethod": "named-in-post-caption",
-          "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/"
-        }
-      ],
-      "relatedRecordIds": [
-        "activity-5197eb9f17b54c"
-      ],
-      "evidenceExcerpt": "",
-      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
-      "discoveryMethod": "curated-public-permalink"
-    },
-    {
       "id": "instagram-DbnLOhiE4ct",
       "title": "Chiang Mai studio model-making showcase",
       "summary": "The caption credits Bin Jiang and Mutsing Li for studio teaching. It showcases the same Chiang Mai studio as the final-review post, without establishing new August teaching.",
@@ -10931,24 +10875,6 @@
       "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
       "error": null,
       "sha256": "74211357864d82ccabc4c2eab3f3718787ec8b64da8aaca15c95f774e3e58194"
-    },
-    {
-      "id": "instagram-source-DbuvksGn0w8",
-      "url": "https://www.instagram.com/p/DbuvksGn0w8/",
-      "sourceChannel": "instagram",
-      "kind": "social-post",
-      "lastAttemptAt": "2026-09-07T00:57:01.989324+00:00",
-      "lastSuccessfulFetchAt": "2026-09-07T00:57:06.641344+00:00",
-      "status": "success",
-      "itemsFound": 1,
-      "fetchMode": "ordinary-public-browser-no-login",
-      "browserEngine": "webkit",
-      "playwrightVersion": "1.61.0",
-      "httpStatus": 200,
-      "finalUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
-      "sha256": "1cf3d19d6ce281a6b8bf79b8802a4314f5e5e44487303883fb46dd29baf7fb3c",
-      "error": null,
-      "discoveryMethod": "curated-public-permalink"
     },
     {
       "id": "instagram-source-Dc0WGMTn9NV",

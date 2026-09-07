@@ -17,7 +17,8 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
-from hku_activity_service import enrich_channels, record_commit, record_failure
+from hku_activity_service import enrich_channels, record_commit, record_failure, valid_times
+from ingest_hku_instagram import merge_instagram
 
 ROOT = Path(__file__).resolve().parents[1]
 HK = ZoneInfo("Asia/Hong_Kong")
@@ -268,6 +269,25 @@ def activity_base(item, source, discovered, status="announced"):
             "evidenceExcerpt": "", "reviewState": "automated-candidate"}
 
 
+def merge_saved_instagram(ledger, social, attempt, previous):
+    """Saved successes cannot stand in for a newer failed or absent social sweep."""
+    merge_instagram(ledger, social)
+    attempted = valid_times([attempt.get("finishedAt")])
+    saved = valid_times([social.get("finishedAt")])
+    matching = (attempt.get("mode") == "live-public-instagram"
+                and attempt.get("status") == "success" and attempted and attempted == saved
+                and valid_times([attempt.get("startedAt")])
+                and valid_times([attempt.get("startedAt")]) == valid_times([social.get("startedAt")]))
+    fresh = bool(matching and datetime.fromisoformat(attempted[0]).astimezone(HK).date().isoformat()
+                 == ledger["ingest"]["lastDayIngested"]
+                 and ledger["ingest"].get("mode") != "saved-response-reparse")
+    if ledger["coverage"]["sources"]["failed"] or not fresh:
+        ledger["ingest"]["status"] = "partial"
+        ledger["ingest"]["lastSuccessfulIngestAt"] = previous.get("ingest", {}).get("lastSuccessfulIngestAt")
+    ledger["coverage"]["instagram"]["sameRetrievalDaySuccessfulAttempt"] = fresh
+    return ledger
+
+
 def ingest(args):
     config = json.loads((ROOT / "scripts/hku_activity_sources.json").read_text())
     overrides = json.loads((ROOT / "scripts/hku_activity_curated.json").read_text())
@@ -491,6 +511,16 @@ def ingest(args):
     ledger["publicationLeadContext"] = {"status": "manual-follow-up-queue-not-refetched", "sourceFile": config["publicationLeadsFile"],
         "note": "Suggested dates only; not verified dated activities. Original verifiedAt/verificationScope are preserved; this run does not re-check metadata, identity or publication dates."}
     ledger["coverage"]["limitations"].append("Separate publication leads are a manually checked follow-up queue, not automatic publication ingestion or dated activity counts; their original verification timestamps are not refreshed.")
+    social_path = ROOT / "public/internal/hku-activity/instagram.json"
+    if social_path.exists():
+        social = json.loads(social_path.read_text())
+        attempt_path = social_path.with_name("instagram-attempt.json")
+        attempt = json.loads(attempt_path.read_text()) if attempt_path.exists() else {}
+        merge_saved_instagram(ledger, social, attempt, previous)
+    elif social_path.with_name("instagram-attempt.json").exists():
+        # A first-ever blocked social collection has no saved sidecar to merge.
+        ledger["ingest"]["status"] = "partial"
+        ledger["ingest"]["lastSuccessfulIngestAt"] = previous.get("ingest", {}).get("lastSuccessfulIngestAt")
     enrich_channels(ledger)
     commit_snapshot(output, ledger, True)
     record_commit(ROOT, ledger, ledger["ingest"]["mode"])

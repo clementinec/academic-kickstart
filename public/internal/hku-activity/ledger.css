@@ -281,21 +281,21 @@ h2 { font: 600 36px/1.2 var(--display); letter-spacing: -.5px; margin: 0; }
   .source-totals { margin-bottom: 20px; }
   .source-total { padding: 9px 6px; }
   .source-total span, .source-total small { font-size: 8px; }
-  .record-grid { column-gap: 12px; row-gap: 25px; }
+  .record-grid { grid-template-columns: minmax(0, 1fr); row-gap: 25px; }
   .record-media img, .record-fallback { height: 155px; min-height: 155px; }
   .record-fallback { padding: 12px; background-size: 18px 18px; }
   .record-number { font-size: 48px; }
-  .record-fallback > span:not(.record-number) { font-size: 7px; }
-  .record-media figcaption, .record-media .media-credit { font-size: 6px; }
-  .record-card h3 { font-size: 21px; }
-  .record-type, .record-channel { font-size: 7px; }
-  .record-dates { font-size: 8px; }
-  .record-content { padding-top: 10px; }
-  .person-chip { font-size: 8px; padding: 3px 4px; }
-  .record-status .pill { font-size: 7px; }
-  .record-provenance a { font-size: 8px; }
-  .record-card p:not(.record-dates) { font-size: 9px; }
-  .record-role-details summary { font-size: 8px; }
+  .record-fallback > span:not(.record-number) { font-size: 10px; }
+  .record-media figcaption, .record-media .media-credit { font-size: 10px; }
+  .record-card h3 { font-size: 25px; }
+  .record-type, .record-channel { font-size: 10px; }
+  .record-dates { font-size: 10px; }
+  .record-content { padding-top: 10px; overflow-wrap: anywhere; }
+  .person-chip { font-size: 11px; min-height: 32px; padding: 5px 8px; }
+  .record-status .pill { font-size: 10px; }
+  .record-provenance a, .evidence .citation { font-size: 10px; }
+  .record-card p:not(.record-dates), .evidence p:not(.record-dates) { font-size: 12px; }
+  .record-role-details summary { font-size: 10px; min-height: 24px; }
   .record-people { gap: 4px; }
   .person > summary { grid-template-columns: 1fr 18px; gap: 8px; padding: 16px 2px; }
   .person > summary::after { grid-column: 2; grid-row: 1/3; }

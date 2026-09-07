@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-09-07T00:57:01.989324+00:00",
+  "finishedAt": "2026-09-07T00:59:30+00:00",
+  "mode": "live-public-instagram",
+  "channel": "instagram",
+  "status": "success",
+  "verifiedPostCount": 1,
+  "sources": [
+    {
+      "id": "instagram-source-DbuvksGn0w8",
+      "url": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:57:01.989324+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:57:06.641344+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "browserEngine": "webkit",
+      "playwrightVersion": "1.61.0",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sha256": "1cf3d19d6ce281a6b8bf79b8802a4314f5e5e44487303883fb46dd29baf7fb3c",
+      "error": null,
+      "discoveryMethod": "curated-public-permalink"
+    }
+  ],
+  "note": "One additional configured public permalink verified; earlier profile-grid records and their retrieval timestamps retained."
+}

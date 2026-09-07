@@ -15,6 +15,7 @@ const labels = {
   'not-connected': 'Not connected', blocked: 'Blocked', unknown: 'State unavailable',
   tentative: 'Tentative match', confirmed: 'Source checked', publication: 'Publication', event: 'Event',
   teaching: 'Teaching', exhibition: 'Exhibition', workshop: 'Workshop', conference: 'Conference',
+  'social post': 'Social post', 'public-post': 'Public post · not an outcome', 'source-checked': 'Source checked',
 };
 const readable = (value) => labels[value] || String(value || 'Unspecified').replaceAll('_', ' ').replaceAll('-', ' ');
 function element(tag, text, className) {
@@ -62,13 +63,18 @@ function validDay(value) {
 }
 function dateLabel(value) {
   const iso = day(value);
-  return validDay(iso) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${iso}T12:00:00Z`)) : 'Date not established';
+  if (!validDay(iso)) return 'Date not established';
+  const timestamp = typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T.+(?:Z|[+-]\d{2}:\d{2})$/.test(value);
+  const date = new Date(timestamp ? value : `${iso}T12:00:00Z`);
+  return Number.isFinite(date.valueOf()) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Hong_Kong' }).format(date) : 'Date not established';
 }
 function shiftedDay(value, offset) { const date = new Date(`${value}T12:00:00Z`); date.setUTCDate(date.getUTCDate() + offset); return date.toISOString().slice(0, 10); }
 function memberships(person) { return (person.departmentMemberships || []).map((m) => typeof m === 'string' ? { id: m, label: readable(m) } : m); }
-function activityStart(a) { return day(a.eventDate || a.date || a.publicationDate); }
-function activityEnd(a) { return day(a.eventEndDate || a.endDate || a.eventDate?.end) || activityStart(a); }
+function isSocialPost(a) { return a.kind === 'social post' || a.status === 'public-post'; }
+function activityStart(a) { return day(isSocialPost(a) ? a.publicationDate || a.eventDate || a.date : a.eventDate || a.date || a.publicationDate); }
+function activityEnd(a) { return isSocialPost(a) ? activityStart(a) : day(a.eventEndDate || a.endDate || a.eventDate?.end) || activityStart(a); }
 function activityDateLabel(a) {
+  if (isSocialPost(a)) return 'Post published';
   if (a.kind === 'dated profile reference' || a.dateBasis === 'date-in-profile-text') return 'Profile reference dated';
   if (a.dateBasis === 'publication-date') return 'Source publication';
   return /announc/.test(a.status || '') ? 'Scheduled' : 'Event';
@@ -88,12 +94,32 @@ function deduplicate(records) {
     if (!seen.has(key)) seen.set(key, { ...record, personIds: [...new Set(record.personIds || [])], personEvidence: [...(record.personEvidence || [])] });
     else {
       const previous = seen.get(key); previous.personIds = [...new Set([...previous.personIds, ...(record.personIds || [])])];
-      for (const evidence of record.personEvidence || []) if (!previous.personEvidence.some((p) => p.personId === evidence.personId && p.role === evidence.role)) previous.personEvidence.push(evidence);
+      for (const field of ['departmentIds', 'relatedRecordIds']) previous[field] = [...new Set([...(previous[field] || []), ...(record[field] || [])])];
+      previous.discoveredAccounts = [...(previous.discoveredAccounts || []), ...(record.discoveredAccounts || [])];
+      for (const evidence of record.personEvidence || []) if (!previous.personEvidence.some((p) => p.personId === evidence.personId && p.role === evidence.role && p.evidenceUrl === evidence.evidenceUrl)) previous.personEvidence.push(evidence);
     }
   }
   return [...seen.values()].sort((a, b) => (activityStart(b) || '').localeCompare(activityStart(a) || '') || a.title.localeCompare(b.title));
 }
 function linkedPeople(a) { return (a.personIds || []).map((id) => state.ledger.people.find((p) => p.id === id)).filter(Boolean); }
+function recordDepartmentIds(a) { return [...new Set((a.departmentIds || []).filter((id) => ['architecture', 'landscape'].includes(id)))]; }
+function accountReference(value) {
+  const raw = typeof value === 'string' ? value : value?.url || value?.accountUrl || value?.handle || value?.username;
+  if (typeof raw !== 'string') return null;
+  const normalized = /^@?[a-zA-Z0-9_.]{1,30}$/.test(raw) ? `https://www.instagram.com/${raw.replace(/^@/, '')}/` : raw;
+  const parsed = httpUrl(normalized);
+  if (!parsed || sourceChannel(parsed.href) !== 'instagram' || !/^\/[a-zA-Z0-9_.]{1,30}\/?$/.test(parsed.pathname)) return null;
+  const handle = parsed.pathname.replaceAll('/', '');
+  if (['p', 'reel', 'reels', 'stories', 'accounts', 'explore'].includes(handle.toLowerCase())) return null;
+  return { label: `@${handle}`, url: `https://www.instagram.com/${handle}/` };
+}
+function accountReferences(values) {
+  const seen = new Map();
+  for (const value of values) { const account = accountReference(value); if (account) seen.set(canonicalUrl(account.url).toLowerCase(), account); }
+  return [...seen.values()];
+}
+function associatedAccounts(a) { return accountReferences([a.sourceAccount, ...(a.discoveredAccounts || [])]); }
+function relatedRecords(a) { return [...new Set(a.relatedRecordIds || [])].filter((id) => id !== a.id).map((id) => state.records.find((r) => r.id === id)).filter(Boolean); }
 function profileStatus(p) { return typeof p.profileCheck === 'string' ? p.profileCheck : p.profileCheck?.status || 'not_checked'; }
 function checkPassed(status) { return ['ok', 'success', 'succeeded', 'checked', 'fetched'].includes(status); }
 function publicationLeads() { const leads = state.ledger?.publicationLeads; return Array.isArray(leads) ? leads : leads?.leads || []; }
@@ -107,8 +133,8 @@ function activityMatches(a, selected, ignoreChannel = false) {
   const people = linkedPeople(a);
   return inWindow(a) && (selected.kind === 'all' || a.kind === selected.kind)
     && (ignoreChannel || selected.channel === 'all' || sourceChannel(a.evidenceUrl) === selected.channel)
-    && (selected.department === 'all' || people.some((p) => matchesDepartment(p, selected.department)))
-    && (!selected.query || [a.title, a.summary || '', ...people.map(personSearch)].join(' ').toLocaleLowerCase().includes(selected.query));
+    && (selected.department === 'all' || recordDepartmentIds(a).includes(selected.department) || people.some((p) => matchesDepartment(p, selected.department)))
+    && (!selected.query || [a.title, a.summary || '', ...people.map(personSearch), ...associatedAccounts(a).map((account) => account.label), ...recordDepartmentIds(a).map(readable)].join(' ').toLocaleLowerCase().includes(selected.query));
 }
 function filteredLeads() {
   const selected = filters();
@@ -122,6 +148,7 @@ function groupedLeads(leads) {
   return [...groups.values()];
 }
 function warningText(a) {
+  if (isSocialPost(a)) return `Public-post evidence, not a verified outcome. Account association does not establish individual authorship, attendance or completion.${a.caution ? ` ${a.caution}` : ''}`;
   if (/announc/.test(a.status || '')) return 'Announced role or event; attendance, completion and outcomes are not independently established.';
   if (a.reviewState === 'automated-candidate') return 'Automated source match; the person’s role and identity link require review.';
   return a.caution || 'Source-linked evidence; this record is not a productivity or impact assessment.';
@@ -154,16 +181,42 @@ function renderActivity(activity, index = 0, person = null) {
   const dateName = activityDateLabel(activity);
   const dates = element('p', `${dateName}: ${dateLabel(start)}${end !== start ? ` – ${dateLabel(end)}` : ''}`, 'record-dates');
   if (activity.publicationDate && activity.dateBasis !== 'publication-date') dates.append(element('span', ` · Report published ${dateLabel(activity.publicationDate)}`));
+  if (validDay(day(activity.advertisedEventDate))) {
+    const advertisedEnd = day(activity.advertisedEventEndDate || activity.advertisedEventDate?.end);
+    dates.append(element('span', ` · Advertised event: ${dateLabel(activity.advertisedEventDate)}${validDay(advertisedEnd) && advertisedEnd !== day(activity.advertisedEventDate) ? ` – ${dateLabel(advertisedEnd)}` : ''} (scheduled, not established as completed)`));
+  }
   dates.append(element('span', ` · First ingested ${dateLabel(activity.discoveredAt || state.ledger.ingest.lastDayIngested)}`)); body.append(dates);
   const statuses = element('div', null, 'record-status'); statuses.append(element('span', readable(activity.status || 'tentative'), 'pill warn'));
-  if (activity.reviewState) statuses.append(element('span', readable(activity.reviewState), activity.reviewState === 'automated-candidate' ? 'pill warn' : 'pill quiet')); body.append(statuses);
+  if (activity.reviewState) statuses.append(element('span', isSocialPost(activity) && activity.reviewState === 'source-checked' ? 'Caption/date checked · staff links separate' : readable(activity.reviewState), activity.reviewState === 'automated-candidate' ? 'pill warn' : 'pill quiet')); body.append(statuses);
   if (activity.summary || activity.evidenceExcerpt) body.append(element('p', activity.summary || activity.evidenceExcerpt, 'record-excerpt'));
   const people = linkedPeople(activity), links = element('div', null, 'record-people');
   for (const p of people) { const button = element('button', p.name, 'person-chip'); button.type = 'button'; button.addEventListener('click', () => showPerson(p)); links.append(button); } if (people.length) body.append(links);
+  if (isSocialPost(activity)) {
+    if (!people.length) body.append(element('p', 'Department/account source record; no individual staff attribution established.', 'no-record'));
+    const departments = recordDepartmentIds(activity);
+    if (departments.length) body.append(element('p', `Record associated with: ${departments.map(readable).join(' / ')}. This is not staff authorship.`, 'record-departments'));
+    for (const [label, accounts] of [['Account shown on post', accountReferences([activity.sourceAccount])], ['Found via public account grid(s)', accountReferences(activity.discoveredAccounts || [])]]) {
+      if (!accounts.length) continue;
+      const row = element('p', `${label}: `, 'record-accounts');
+      accounts.forEach((account, i) => { if (i) row.append(element('span', ' · ')); row.append(safeLink(account.label, account.url)); }); body.append(row);
+    }
+  }
   const roleItems = (activity.personEvidence || []).filter((item) => !person || item.personId === person.id);
   if (roleItems.length) {
     const details = element('details', null, 'record-role-details'); details.append(element('summary', `Person linkage${roleItems.length > 1 ? `s (${roleItems.length})` : ''} & source evidence`));
-    for (const item of roleItems) { const name = people.find((p) => p.id === item.personId)?.name || 'Roster match'; details.append(element('p', `${name}: ${item.role || 'Role not established'}${item.matchMethod ? ` · ${readable(item.matchMethod)}` : ''}`)); if (item.evidenceText) details.append(element('p', item.evidenceText, 'source-excerpt')); } body.append(details);
+    for (const item of roleItems) {
+      const name = people.find((p) => p.id === item.personId)?.name || 'Roster match'; details.append(element('p', `${name}: ${item.role || 'Role not established'}${item.matchMethod ? ` · ${readable(item.matchMethod)}` : ''}`));
+      if (item.evidenceText) details.append(element('p', item.evidenceText, 'source-excerpt'));
+      if (httpUrl(item.evidenceUrl)) {
+        const crossSource = canonicalUrl(item.evidenceUrl) !== canonicalUrl(activity.evidenceUrl), evidence = element('p', crossSource ? 'Role evidence from linked coverage, not the post caption: ' : 'Person-link evidence: ');
+        evidence.append(safeLink('Open supporting source ↗', item.evidenceUrl)); details.append(evidence);
+      }
+    } body.append(details);
+  }
+  const related = relatedRecords(activity);
+  if (related.length) {
+    const coverage = element('div', null, 'related-coverage'); coverage.append(element('p', 'Related coverage of the same work; not another accomplishment:'));
+    for (const record of related) { const row = element('p'); row.append(safeLink(`${record.title} (${readable(sourceChannel(record.evidenceUrl))}) ↗`, record.evidenceUrl)); coverage.append(row); } body.append(coverage);
   }
   body.append(element('p', warningText(activity), 'uncertainty'));
   const url = httpUrl(activity.evidenceUrl), provenance = element('p', null, 'record-provenance'); provenance.append(safeLink(url ? `Source: ${url.hostname} ↗` : 'Source URL unavailable', activity.evidenceUrl, 'citation'));
@@ -200,10 +253,23 @@ function renderChannels() {
     }); totals.append(button);
     if (byId('channel').value !== 'all' && byId('channel').value !== id) continue;
     const card = element('article', null, 'channel-card'); card.dataset.channel = id; card.append(element('h3', info.label || readable(id)), element('span', readable(info.state), 'pill quiet'));
-    card.append(element('p', `${count.records} distinct dated records matching department, search, type and window. ${count.successes}/${count.fetches} collection-level HTTP fetches succeeded; fetches are not activity records.`));
+    card.append(element('p', `${count.records} distinct dated records matching department, search, type and window. ${count.successes}/${count.fetches} saved-snapshot HTTP fetches succeeded; fetches are not activity records.`));
     if (info.coverageNote) card.append(element('p', info.coverageNote));
+    const attempt = info.latestAttempt;
+    if (attempt && typeof attempt === 'object') {
+      card.append(element('p', `Latest channel attempt: ${dateLabel(attempt.attemptAt)} (Hong Kong) · ${readable(attempt.status)} · ${attempt.failedChecks ?? 'Unknown'}/${attempt.checksAttempted ?? 'unknown'} source checks failed · ${attempt.committed ? 'snapshot committed' : 'no snapshot committed'}. These attempt checks are separate from saved-snapshot counts.`, 'channel-attempt'));
+      if (attempt.note) card.append(element('p', attempt.note));
+      const errors = Array.isArray(info.latestAttemptErrors) ? info.latestAttemptErrors : (attempt.sources || []).filter((source) => source.error);
+      if (errors.length) {
+        const failures = element('details', null, 'record-role-details channel-attempt-errors'); failures.append(element('summary', `Latest-attempt source errors (${errors.length})`));
+        for (const failure of errors) {
+          const row = element('p'); row.append(safeLink(failure.url || 'Source URL unavailable', failure.url), element('span', `${failure.httpStatus ? ` · HTTP ${failure.httpStatus}` : ''} · ${failure.error || 'Check failed; no detail supplied'}`)); failures.append(row);
+        }
+        card.append(failures);
+      }
+    }
     if (Array.isArray(info.suggestedAccounts) && info.suggestedAccounts.length) {
-      const accounts = element('details', null, 'record-role-details'); accounts.append(element('summary', 'Suggested account identities · not connected'));
+      const accounts = element('details', null, 'record-role-details'); accounts.append(element('summary', info.state === 'not-connected' ? 'Suggested account identities · not connected' : 'Account identities & collection scope'));
       for (const account of info.suggestedAccounts.filter((a) => a && typeof a === 'object')) {
         const item = element('p'); item.append(safeLink(httpUrl(account.url)?.pathname || 'Suggested account', account.url), element('span', ` · ${readable(account.identityStatus)} · ${readable(account.collectionStatus)}`));
         if (account.identityEvidenceUrl) item.append(element('span', ' · '), safeLink('Identity evidence ↗', account.identityEvidenceUrl)); accounts.append(item);
@@ -229,7 +295,7 @@ function renderService() {
   else {
     const refresh = state.service.refresh || {}, active = refresh.scheduleActive === true;
     summary.append(element('p', `Collection mode: ${readable(refresh.mode || 'unknown')}. ${active ? 'A collection schedule is marked active.' : 'No automatic refresh schedule is active.'}`, 'service-line'));
-    summary.append(element('p', `Last retrieval attempt: ${dateLabel(refresh.lastAttemptAt)} · Last committed retrieval: ${dateLabel(refresh.lastCommittedRetrievalAt)}.`, 'service-line'));
+    summary.append(element('p', `Last retrieval attempt: ${dateLabel(refresh.lastAttemptAt)} · ${readable(refresh.lastAttemptStatus || 'unknown')}. Last committed retrieval: ${dateLabel(refresh.lastCommittedRetrievalAt)}. Attempt status does not replace saved-snapshot evidence.`, 'service-line'));
     summary.append(element('p', active && refresh.nextScheduledAt ? `Next scheduled retrieval: ${dateLabel(refresh.nextScheduledAt)}.` : 'Next scheduled retrieval: none established.', 'service-line'));
     summary.append(element('p', state.service.review?.autoPublish === true ? 'Automatic publication is enabled in service metadata.' : 'Automatic publication is not enabled. Review policy: manual review before publication.', 'service-line'));
     if (refresh.workflowUrl) summary.append(safeLink('Collection workflow ↗', refresh.workflowUrl));
@@ -248,7 +314,7 @@ function renderSources() {
   for (const source of sources) { const item = element('div', null, 'source-item'); item.append(safeLink(source.label || source.url || source.id, source.url), element('span', `${readable(source.status)} · ${readable(sourceChannel(source.url))}${source.error ? ` · ${source.error}` : ''}`)); if (source.coverageNote) item.append(element('span', source.coverageNote)); fragment.append(item); }
   for (const warning of state.ledger.errors || []) { const item = element('div', null, 'source-item'); item.append(element('span', warning.error || 'Evidence requires review')); if (warning.sourceUrl) item.append(safeLink('Affected source ↗', warning.sourceUrl)); fragment.append(item); } replace('source-list', fragment);
   const checked = state.ledger.people.filter((p) => checkPassed(profileStatus(p))).length;
-  setText('coverage-summary', `${checked}/${state.ledger.people.length} profiles retrieved. ${sources.filter((s) => checkPassed(s.status)).length}/${sources.length} HTTP fetches succeeded in the selected channel. Fetch health is collection-level, not restricted by person or event-date filters. No complete publication or professional-output census is claimed.`);
+  setText('coverage-summary', `${checked}/${state.ledger.people.length} profiles retrieved. ${sources.filter((s) => checkPassed(s.status)).length}/${sources.length} saved-snapshot HTTP fetches succeeded in the selected channel. Fetch health is collection-level, not restricted by person or event-date filters; latest-attempt results are shown separately. No complete publication or professional-output census is claimed.`);
   renderChannels(); renderLeads(); renderService();
 }
 function setView(view, focusTab = false) {
@@ -278,8 +344,8 @@ function csvRows(view = state.view) {
     for (const source of (state.ledger.sources || []).filter((s) => byId('channel').value === 'all' || sourceChannel(s.url) === byId('channel').value)) rows.push(['HTTP fetch', readable(sourceChannel(source.url)), source.label || source.id, source.url, source.status, '', checkPassed(source.status) ? 1 : 0, 1, '']);
     for (const group of groupedLeads(filteredLeads())) rows.push(['Manual lead', 'Publishers', group[0].title, group[0].publisherUrl, 'Verification pending; excluded from dated totals', '', '', '', 1]); return rows;
   }
-  const headers = ['Record ID', 'Title', 'Channel', 'Type', 'Evidence status', 'Review state', 'Event / source date', 'End date', 'Report publication date', 'First ingested', 'People (source links, not sole authorship)', 'Evidence URL'];
-  const activityRow = (a) => [a.id, a.title, readable(sourceChannel(a.evidenceUrl)), a.kind, a.status, a.reviewState, activityStart(a), activityEnd(a), a.publicationDate, day(a.discoveredAt), linkedPeople(a).map((p) => p.name).join('; '), a.evidenceUrl];
+  const headers = ['Record ID', 'Title', 'Channel', 'Type', 'Evidence status', 'Review state', 'Event / source date', 'End date', 'Report publication date', 'First ingested', 'People (source links, not sole authorship)', 'Evidence URL', 'Associated units (not staff authorship)', 'Account shown on post', 'Discovered account grids', 'Advertised event date (not completion)', 'Related source record IDs (not additional accomplishments)', 'Related coverage URLs'];
+  const activityRow = (a) => [a.id, a.title, readable(sourceChannel(a.evidenceUrl)), a.kind, a.status, a.reviewState, activityStart(a), activityEnd(a), a.publicationDate, day(a.discoveredAt), linkedPeople(a).map((p) => p.name).join('; '), a.evidenceUrl, recordDepartmentIds(a).map(readable).join('; '), accountReference(a.sourceAccount)?.url || '', accountReferences(a.discoveredAccounts || []).map((account) => account.url).join('; '), day(a.advertisedEventDate), (a.relatedRecordIds || []).join('; '), relatedRecords(a).map((r) => r.evidenceUrl).join('; ')];
   if (view === 'records') return [headers, ...state.activities.map(activityRow)];
   const rows = [['Person', 'Department / division', 'Roster role', 'Profile URL', 'Profile check', 'Coverage note', ...headers]];
   for (const person of state.visible) for (const activity of personActivities(person).length ? personActivities(person) : [null]) rows.push([person.name, memberships(person).map((m) => m.label || readable(m.id)).join('; '), (person.roles || []).join('; '), person.profileUrl, profileStatus(person), activity ? 'Person-record row; shared records repeat in this export' : checkPassed(profileStatus(person)) ? 'No matching record in checked sources; not evidence of inactivity' : 'Coverage incomplete; no conclusion about activity', ...(activity ? activityRow(activity) : headers.map(() => ''))]); return rows;
@@ -309,7 +375,9 @@ async function initialize() {
     const data = await loadJson('./ledger.json');
     if (!Array.isArray(data.people) || !Array.isArray(data.activities) || !Array.isArray(data.sources || []) || !validDay(data.scope?.asOf || data.asOf) || !validDay(data.ingest?.lastDayIngested)) throw new Error('Invalid snapshot schema or dates');
     if (data.people.some((p) => !p.id || typeof p.name !== 'string') || data.activities.some((a) => !a.id || typeof a.title !== 'string')) throw new Error('Invalid person or record schema'); state.ledger = data; state.records = deduplicate(data.activities);
-    setText('ingested', dateLabel(data.ingest.lastDayIngested)); setText('ingest-note', `${checkPassed(data.ingest.status) ? 'Saved source snapshot.' : 'Partial source coverage.'} Reloading this page does not collect new evidence.`);
+    const requestedChannel = new URL(window.location.href).searchParams.get('channel');
+    if (['all', ...CHANNELS].includes(requestedChannel)) byId('channel').value = requestedChannel;
+    setText('ingested', dateLabel(data.ingest.lastDayIngested)); setText('ingest-note', [checkPassed(data.ingest.status) ? 'Saved source snapshot.' : 'Partial source coverage.', typeof data.ingest.note === 'string' ? data.ingest.note.trim() : '', 'Reloading this page does not collect new evidence.'].filter(Boolean).join(' '));
     for (const kind of [...new Set(state.records.map((a) => a.kind).filter(Boolean))].sort()) { const option = element('option', readable(kind)); option.value = kind; byId('kind').append(option); } byId('export').disabled = false; setView('records');
     const [service, media] = await Promise.all([optionalJson('service', (d) => d && typeof d === 'object' && !Array.isArray(d) && Array.isArray(d.channels) && d.channels.every((c) => c && typeof c.id === 'string') && (!d.editions || (Array.isArray(d.editions) && d.editions.every((e) => e && typeof e === 'object'))) && (!d.runHistory || (Array.isArray(d.runHistory) && d.runHistory.every((r) => r && typeof r === 'object')))), optionalJson('media', (d) => d && typeof d === 'object' && !Array.isArray(d))]);
     if (!state.ledger) return; state.service = service; state.media = media || {}; render();

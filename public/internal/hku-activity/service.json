@@ -18,13 +18,13 @@
     "workflowUrl": "https://github.com/clementinec/academic-kickstart/actions/workflows/hku-activity-ledger.yml",
     "manualCommand": ".venv-ledger/bin/python scripts/ingest_hku_activity.py",
     "note": "Manual local collection and a workflow_dispatch review-artifact workflow are configured. No monthly cron or automatic publication is activated.",
-    "lastAttemptAt": "2026-09-06T10:56:02+00:00",
-    "lastCommittedRetrievalAt": "2026-09-06T10:56:04+00:00",
-    "lastDayIngested": "2026-09-06",
+    "lastAttemptAt": "2026-09-07T00:57:01+00:00",
+    "lastCommittedRetrievalAt": "2026-09-07T00:57:06+00:00",
+    "lastDayIngested": "2026-09-07",
     "lastSuccessfulIngestAt": null,
-    "lastAttemptStatus": "partial",
+    "lastAttemptStatus": "success",
     "lastOperationStatus": "partial",
-    "lastOperationMode": "baseline-import"
+    "lastOperationMode": "live-public-instagram"
   },
   "channels": [
     {
@@ -33,6 +33,7 @@
       "state": "configured-bounded",
       "collectionMode": "bounded-public-web",
       "coverageNote": "Current Architecture and Landscape directories, every deduplicated profile, and finite official faculty news/events pages. Not an exhaustive faculty-site crawl.",
+      "configuredState": "configured-bounded",
       "sourceIds": [
         "curated-1aefea71f72bf1",
         "curated-3024d9da48f923",
@@ -236,7 +237,11 @@
       "checksInSavedSnapshot": 198,
       "failedChecksInSavedSnapshot": 0,
       "savedCheckErrors": [],
-      "lastSuccessfulFetchAt": "2026-09-06T10:56:04+00:00"
+      "lastSuccessfulFetchAt": "2026-09-06T10:56:04+00:00",
+      "latestAttempt": null,
+      "latestAttemptAt": null,
+      "latestAttemptStatus": null,
+      "latestAttemptErrors": []
     },
     {
       "id": "university_news",
@@ -244,6 +249,7 @@
       "state": "configured-bounded",
       "collectionMode": "curated-primary-source-urls",
       "coverageNote": "Only curated HKU news/programme URLs are rechecked. A general university-wide news feed is not connected.",
+      "configuredState": "configured-bounded",
       "sourceIds": [
         "curated-6f02a2b00a2e9a",
         "curated-da1de6312081b5"
@@ -251,7 +257,11 @@
       "checksInSavedSnapshot": 2,
       "failedChecksInSavedSnapshot": 0,
       "savedCheckErrors": [],
-      "lastSuccessfulFetchAt": "2026-09-06T10:54:11+00:00"
+      "lastSuccessfulFetchAt": "2026-09-06T10:54:11+00:00",
+      "latestAttempt": null,
+      "latestAttemptAt": null,
+      "latestAttemptStatus": null,
+      "latestAttemptErrors": []
     },
     {
       "id": "publishers",
@@ -259,39 +269,105 @@
       "state": "manual-leads-only",
       "collectionMode": "manual-follow-up-queue",
       "coverageNote": "Two initial publication leads carry original manual-check timestamps. There is no automatic author-disambiguated publisher or Crossref ingestion.",
+      "configuredState": "manual-leads-only",
       "sourceIds": [],
       "checksInSavedSnapshot": 0,
       "failedChecksInSavedSnapshot": 0,
       "savedCheckErrors": [],
       "lastSuccessfulFetchAt": null,
+      "latestAttempt": null,
+      "latestAttemptAt": null,
+      "latestAttemptStatus": null,
+      "latestAttemptErrors": [],
       "pendingLeadCount": 2,
       "lastManualLeadCheckAt": "2026-09-06T10:56:24+00:00"
     },
     {
       "id": "instagram",
       "label": "Instagram",
-      "state": "not-connected",
-      "collectionMode": "none",
-      "coverageNote": "No account/API connection or collection workflow is configured; no Instagram content has been ingested. Suggested account identities below are not connected sources.",
+      "state": "configured-bounded",
+      "collectionMode": "ordinary-public-browser-no-login",
+      "coverageNote": "A bounded public-browser collector checks the initially visible grids (up to 12 posts per account), plus up to four configured public post links. Shared permalinks count once. No login, private API, exhaustive pagination or guaranteed feed coverage; access blocks are recorded without bypass.",
+      "collectionBounds": {
+        "maxGridPostsPerAccount": 12,
+        "pagination": "none",
+        "authenticatedApi": false,
+        "exhaustive": false,
+        "maxCuratedPostLinks": 4
+      },
       "suggestedAccounts": [
         {
           "url": "https://www.instagram.com/hkuarchitecture/",
           "identityStatus": "linked-by-official-department-website",
           "identityEvidenceUrl": "https://www.doa.arch.hku.hk/",
-          "collectionStatus": "not-connected"
+          "collectionStatus": "public-grid-configured-no-api"
         },
         {
           "url": "https://www.instagram.com/hkulandscape/",
-          "identityStatus": "branded-linktree-observed-institution-host-confirmation-pending",
-          "identityEvidenceUrl": "https://linktr.ee/hkulandscape",
-          "collectionStatus": "not-connected"
+          "identityStatus": "instagram-handle-published-in-official-hku-faculty-brochure",
+          "identityEvidenceUrl": "https://admissions.hku.hk/sites/default/files/2023-10/DIGITAL_FacultyLeaflet2024-25.pdf",
+          "identityEvidenceLocation": "2024/25 brochure, printed page 17 (PDF page 9), Instagram icon beside hkulandscape",
+          "collectionStatus": "public-grid-configured-no-api"
         }
       ],
-      "sourceIds": [],
-      "checksInSavedSnapshot": 0,
+      "configuredState": "configured-bounded",
+      "sourceIds": [
+        "instagram-profile-hkuarchitecture",
+        "instagram-profile-hkulandscape",
+        "instagram-source-Db5Q4WRH0DB",
+        "instagram-source-DbakpLDkyzy",
+        "instagram-source-DbkJpNKk60p",
+        "instagram-source-DbnBrT1EyMD",
+        "instagram-source-DbnLOhiE4ct",
+        "instagram-source-Dbu7HDwnyej",
+        "instagram-source-Dbu7uqcH30m",
+        "instagram-source-DbuvksGn0w8",
+        "instagram-source-Dc0WGMTn9NV",
+        "instagram-source-Dc2vPN1H3Sv",
+        "instagram-source-Dc3SyMiTJ6M",
+        "instagram-source-DcAfZFLN5XI",
+        "instagram-source-DcBsm0aE9SW",
+        "instagram-source-DcEHgrLTiPY",
+        "instagram-source-DcNMUdJn8q6",
+        "instagram-source-DcNwKRgE2q2",
+        "instagram-source-DcaOjxinw2s",
+        "instagram-source-DcaiUmBk1Ty",
+        "instagram-source-DccqLGckwOp",
+        "instagram-source-DcfbiT8NHvS",
+        "instagram-source-DciFWsVGmOu",
+        "instagram-source-Dckq1NGHw_w",
+        "instagram-source-Dcs0OePH8JB",
+        "instagram-source-DcyD-kDk4PC"
+      ],
+      "checksInSavedSnapshot": 26,
       "failedChecksInSavedSnapshot": 0,
       "savedCheckErrors": [],
-      "lastSuccessfulFetchAt": null
+      "lastSuccessfulFetchAt": "2026-09-07T00:57:06+00:00",
+      "latestAttempt": {
+        "attemptAt": "2026-09-07T00:57:01+00:00",
+        "finishedAt": "2026-09-07T00:59:30+00:00",
+        "mode": "live-public-instagram",
+        "status": "success",
+        "committed": true,
+        "checksAttempted": 1,
+        "failedChecks": 0,
+        "sources": [
+          {
+            "id": "instagram-source-DbuvksGn0w8",
+            "url": "https://www.instagram.com/p/DbuvksGn0w8/",
+            "channel": "instagram",
+            "status": "success",
+            "httpStatus": 200,
+            "error": null,
+            "attemptAt": "2026-09-07T00:57:01+00:00",
+            "lastSuccessfulFetchAt": "2026-09-07T00:57:06.641344+00:00"
+          }
+        ],
+        "note": "Actual saved Instagram attempt; collect-only evidence does not itself create a ledger edition."
+      },
+      "latestAttemptAt": "2026-09-07T00:57:01+00:00",
+      "latestAttemptStatus": "success",
+      "latestAttemptErrors": []
     },
     {
       "id": "repositories",
@@ -299,6 +375,7 @@
       "state": "blocked",
       "collectionMode": "gateway-reachability-only",
       "coverageNote": "Only HKU Scholars Hub Architecture collection reachability is checked; see the saved check status. No per-author repository bibliography is ingested.",
+      "configuredState": "configured-bounded",
       "sourceIds": [
         "scholars-hub-architecture"
       ],
@@ -307,7 +384,11 @@
       "savedCheckErrors": [
         "HTTP Error 403: Forbidden"
       ],
-      "lastSuccessfulFetchAt": null
+      "lastSuccessfulFetchAt": null,
+      "latestAttempt": null,
+      "latestAttemptAt": null,
+      "latestAttemptStatus": null,
+      "latestAttemptErrors": []
     }
   ],
   "review": {
@@ -317,21 +398,54 @@
     "note": "Monthly collection/review versus automatic publication has not been selected. Collection does not deploy the website."
   },
   "latestEdition": {
-    "id": "20260906T105604Z_asof-2026-09-06_dc61a87e6265",
-    "asOf": "2026-09-06",
-    "windowStart": "2026-07-09",
-    "retrievedAt": "2026-09-06T10:56:04+00:00",
-    "registeredAt": "2026-09-06T12:46:49+00:00",
-    "origin": "baseline-import",
+    "id": "20260907T005706Z_asof-2026-09-07_628694da95a8",
+    "asOf": "2026-09-07",
+    "windowStart": "2026-07-10",
+    "retrievedAt": "2026-09-07T00:57:06+00:00",
+    "registeredAt": "2026-09-07T00:59:30+00:00",
+    "origin": "live-ingest",
+    "collectionMode": "live-public-instagram",
     "status": "partial",
     "peopleCount": 154,
-    "recordCount": 18,
+    "recordCount": 42,
     "publicationLeadCount": 2,
-    "href": "./editions/20260906T105604Z_asof-2026-09-06_dc61a87e6265.json",
-    "sha256": "dc61a87e6265f1ed4e82ecdc90a9816ccb78d7502a5505aa0c82663f800729d4",
-    "note": "Imported existing source snapshot; not a new collection run."
+    "href": "./editions/20260907T005706Z_asof-2026-09-07_628694da95a8.json",
+    "sha256": "628694da95a896578e6497ffe41702db614fe45e4e3a9cdb0c24a4d56b49eb1e",
+    "note": "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
   },
   "editions": [
+    {
+      "id": "20260907T005706Z_asof-2026-09-07_628694da95a8",
+      "asOf": "2026-09-07",
+      "windowStart": "2026-07-10",
+      "retrievedAt": "2026-09-07T00:57:06+00:00",
+      "registeredAt": "2026-09-07T00:59:30+00:00",
+      "origin": "live-ingest",
+      "collectionMode": "live-public-instagram",
+      "status": "partial",
+      "peopleCount": 154,
+      "recordCount": 42,
+      "publicationLeadCount": 2,
+      "href": "./editions/20260907T005706Z_asof-2026-09-07_628694da95a8.json",
+      "sha256": "628694da95a896578e6497ffe41702db614fe45e4e3a9cdb0c24a4d56b49eb1e",
+      "note": "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
+    },
+    {
+      "id": "20260907T004910Z_asof-2026-09-07_29fb52b30476",
+      "asOf": "2026-09-07",
+      "windowStart": "2026-07-10",
+      "retrievedAt": "2026-09-07T00:49:10+00:00",
+      "registeredAt": "2026-09-07T00:49:10+00:00",
+      "origin": "live-ingest",
+      "collectionMode": "live-public-instagram",
+      "status": "partial",
+      "peopleCount": 154,
+      "recordCount": 41,
+      "publicationLeadCount": 2,
+      "href": "./editions/20260907T004910Z_asof-2026-09-07_29fb52b30476.json",
+      "sha256": "29fb52b30476aac83dc5f4ff1e57d3be2934d0e78a0449102ed12e143ca6bccd",
+      "note": "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
+    },
     {
       "id": "20260906T105604Z_asof-2026-09-06_dc61a87e6265",
       "asOf": "2026-09-06",
@@ -349,6 +463,304 @@
     }
   ],
   "runHistory": [
+    {
+      "id": "5f34e5f105654b0cb0e1",
+      "attemptAt": "2026-09-07T00:57:01.989324+00:00",
+      "finishedAt": "2026-09-07T00:59:30+00:00",
+      "mode": "live-public-instagram",
+      "status": "partial",
+      "committed": true,
+      "networkCollection": true,
+      "editionCreated": true,
+      "channel": "instagram",
+      "channels": [
+        "instagram"
+      ],
+      "sourceOutcomes": [
+        {
+          "id": "instagram-source-DbuvksGn0w8",
+          "url": "https://www.instagram.com/p/DbuvksGn0w8/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:57:01+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:57:06.641344+00:00"
+        }
+      ],
+      "editionId": "20260907T005706Z_asof-2026-09-07_628694da95a8",
+      "sourceFailures": 0,
+      "note": "Bounded public Instagram collection; earlier checks from other channels were not repeated."
+    },
+    {
+      "id": "854cae21d969c2ae5b71",
+      "attemptAt": "2026-09-07T00:47:39+00:00",
+      "finishedAt": "2026-09-07T00:49:10+00:00",
+      "mode": "live-public-instagram",
+      "status": "partial",
+      "committed": true,
+      "networkCollection": true,
+      "editionCreated": true,
+      "channel": "instagram",
+      "channels": [
+        "instagram"
+      ],
+      "sourceOutcomes": [
+        {
+          "id": "instagram-profile-hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:47:40+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:47:45+00:00"
+        },
+        {
+          "id": "instagram-profile-hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:47:45+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:47:50+00:00"
+        },
+        {
+          "id": "instagram-source-Db5Q4WRH0DB",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Db5Q4WRH0DB/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:24+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:28+00:00"
+        },
+        {
+          "id": "instagram-source-DbakpLDkyzy",
+          "url": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:49:07+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:49:10+00:00"
+        },
+        {
+          "id": "instagram-source-DbkJpNKk60p",
+          "url": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:49:03+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:49:07+00:00"
+        },
+        {
+          "id": "instagram-source-DbnBrT1EyMD",
+          "url": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:49:00+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:49:03+00:00"
+        },
+        {
+          "id": "instagram-source-DbnLOhiE4ct",
+          "url": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:55+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:49:00+00:00"
+        },
+        {
+          "id": "instagram-source-Dbu7HDwnyej",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:28+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:31+00:00"
+        },
+        {
+          "id": "instagram-source-Dbu7uqcH30m",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:47:58+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:01+00:00"
+        },
+        {
+          "id": "instagram-source-Dc0WGMTn9NV",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dc0WGMTn9NV/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:47:50+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:47:54+00:00"
+        },
+        {
+          "id": "instagram-source-Dc2vPN1H3Sv",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dc2vPN1H3Sv/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:01+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:05+00:00"
+        },
+        {
+          "id": "instagram-source-Dc3SyMiTJ6M",
+          "url": "https://www.instagram.com/hkulandscape/reel/Dc3SyMiTJ6M/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:31+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:34+00:00"
+        },
+        {
+          "id": "instagram-source-DcAfZFLN5XI",
+          "url": "https://www.instagram.com/hkuarchitecture/reel/DcAfZFLN5XI/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:22+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:24+00:00"
+        },
+        {
+          "id": "instagram-source-DcBsm0aE9SW",
+          "url": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:52+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:55+00:00"
+        },
+        {
+          "id": "instagram-source-DcEHgrLTiPY",
+          "url": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:49+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:52+00:00"
+        },
+        {
+          "id": "instagram-source-DcNMUdJn8q6",
+          "url": "https://www.instagram.com/hkuarchitecture/p/DcNMUdJn8q6/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:19+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:22+00:00"
+        },
+        {
+          "id": "instagram-source-DcNwKRgE2q2",
+          "url": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:45+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:49+00:00"
+        },
+        {
+          "id": "instagram-source-DcaOjxinw2s",
+          "url": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:15+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:19+00:00"
+        },
+        {
+          "id": "instagram-source-DcaiUmBk1Ty",
+          "url": "https://www.instagram.com/hkulandscape/p/DcaiUmBk1Ty/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:41+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:45+00:00"
+        },
+        {
+          "id": "instagram-source-DccqLGckwOp",
+          "url": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:37+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:41+00:00"
+        },
+        {
+          "id": "instagram-source-DcfbiT8NHvS",
+          "url": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:47:54+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:47:58+00:00"
+        },
+        {
+          "id": "instagram-source-DciFWsVGmOu",
+          "url": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:12+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:15+00:00"
+        },
+        {
+          "id": "instagram-source-Dckq1NGHw_w",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dckq1NGHw_w/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:08+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:12+00:00"
+        },
+        {
+          "id": "instagram-source-Dcs0OePH8JB",
+          "url": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:05+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:08+00:00"
+        },
+        {
+          "id": "instagram-source-DcyD-kDk4PC",
+          "url": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/",
+          "channel": "instagram",
+          "status": "success",
+          "httpStatus": 200,
+          "error": null,
+          "attemptAt": "2026-09-07T00:48:34+00:00",
+          "lastSuccessfulFetchAt": "2026-09-07T00:48:37+00:00"
+        }
+      ],
+      "editionId": "20260907T004910Z_asof-2026-09-07_29fb52b30476",
+      "sourceFailures": 0,
+      "note": "Bounded public Instagram collection; earlier checks from other channels were not repeated."
+    },
     {
       "id": "baseline-import-20260906T105604Z_asof-2026-09-06_dc61a87e6265",
       "attemptAt": "2026-09-06T12:46:49+00:00",

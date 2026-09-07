@@ -15,6 +15,38 @@
       "href": "./editions/20260906T105604Z_asof-2026-09-06_dc61a87e6265.json",
       "sha256": "dc61a87e6265f1ed4e82ecdc90a9816ccb78d7502a5505aa0c82663f800729d4",
       "note": "Imported existing source snapshot; not a new collection run."
+    },
+    {
+      "id": "20260907T004910Z_asof-2026-09-07_29fb52b30476",
+      "asOf": "2026-09-07",
+      "windowStart": "2026-07-10",
+      "retrievedAt": "2026-09-07T00:49:10+00:00",
+      "registeredAt": "2026-09-07T00:49:10+00:00",
+      "origin": "live-ingest",
+      "collectionMode": "live-public-instagram",
+      "status": "partial",
+      "peopleCount": 154,
+      "recordCount": 41,
+      "publicationLeadCount": 2,
+      "href": "./editions/20260907T004910Z_asof-2026-09-07_29fb52b30476.json",
+      "sha256": "29fb52b30476aac83dc5f4ff1e57d3be2934d0e78a0449102ed12e143ca6bccd",
+      "note": "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
+    },
+    {
+      "id": "20260907T005706Z_asof-2026-09-07_628694da95a8",
+      "asOf": "2026-09-07",
+      "windowStart": "2026-07-10",
+      "retrievedAt": "2026-09-07T00:57:06+00:00",
+      "registeredAt": "2026-09-07T00:59:30+00:00",
+      "origin": "live-ingest",
+      "collectionMode": "live-public-instagram",
+      "status": "partial",
+      "peopleCount": 154,
+      "recordCount": 42,
+      "publicationLeadCount": 2,
+      "href": "./editions/20260907T005706Z_asof-2026-09-07_628694da95a8.json",
+      "sha256": "628694da95a896578e6497ffe41702db614fe45e4e3a9cdb0c24a4d56b49eb1e",
+      "note": "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
     }
   ]
 }

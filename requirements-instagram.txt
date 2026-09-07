@@ -1,0 +1,2 @@
+# Optional ordinary-public-browser collection; no Instagram SDK or credentials.
+playwright==1.61.0

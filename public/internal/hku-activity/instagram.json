@@ -1,0 +1,1680 @@
+{
+  "startedAt": "2026-09-07T00:57:01.989324+00:00",
+  "finishedAt": "2026-09-07T00:59:30+00:00",
+  "mode": "live-public-instagram",
+  "channel": "instagram",
+  "sources": [
+    {
+      "id": "instagram-profile-hkuarchitecture",
+      "url": "https://www.instagram.com/hkuarchitecture/",
+      "sourceChannel": "instagram",
+      "kind": "social-profile-grid",
+      "lastAttemptAt": "2026-09-07T00:47:40+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:47:45+00:00",
+      "status": "success",
+      "itemsFound": 12,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/",
+      "error": null,
+      "sha256": "09945b223e8bc21d636696501c3c3c4d91164ff09e8bb57e0472c243e5ce1a17",
+      "coverageNote": "At most 12 visible public grid links; no pagination, login or complete-feed claim."
+    },
+    {
+      "id": "instagram-profile-hkulandscape",
+      "url": "https://www.instagram.com/hkulandscape/",
+      "sourceChannel": "instagram",
+      "kind": "social-profile-grid",
+      "lastAttemptAt": "2026-09-07T00:47:45+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:47:50+00:00",
+      "status": "success",
+      "itemsFound": 12,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/",
+      "error": null,
+      "sha256": "179b84ac2361d1f6af6dac0f0df05ada5332eda06ae3837d36fa9aa1e68662e5",
+      "coverageNote": "At most 12 visible public grid links; no pagination, login or complete-feed claim."
+    },
+    {
+      "id": "instagram-source-Dc0WGMTn9NV",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dc0WGMTn9NV/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:47:50+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:47:54+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dc0WGMTn9NV/",
+      "error": null,
+      "sha256": "5a29ca3269cec9645a26efab523b7cb6a517f0f95783b9f81433669b720c62c9"
+    },
+    {
+      "id": "instagram-source-DcfbiT8NHvS",
+      "url": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:47:54+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:47:58+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/",
+      "error": null,
+      "sha256": "c72698bdbc2936dbf8d4411d899a16dc86c643e29929599fee6c26e0df7bb944"
+    },
+    {
+      "id": "instagram-source-Dbu7uqcH30m",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:47:58+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:01+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
+      "error": null,
+      "sha256": "74211357864d82ccabc4c2eab3f3718787ec8b64da8aaca15c95f774e3e58194"
+    },
+    {
+      "id": "instagram-source-Dc2vPN1H3Sv",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dc2vPN1H3Sv/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:01+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:05+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dc2vPN1H3Sv/",
+      "error": null,
+      "sha256": "43f73aa5d8d833baec7aaca3f865ddbe8ed2fda43fb5bd7857317b68ad65046b"
+    },
+    {
+      "id": "instagram-source-Dcs0OePH8JB",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:05+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:08+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/",
+      "error": null,
+      "sha256": "58efc3e61f980387ba0bafcf069c0fbe355a5c31207766dd37a6aa462f0b6bb2"
+    },
+    {
+      "id": "instagram-source-Dckq1NGHw_w",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dckq1NGHw_w/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:08+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:12+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dckq1NGHw_w/",
+      "error": null,
+      "sha256": "1b1b04c1fd77fe7265813fffb9bd2f59b745df8ec423f7c67da8196bdf7ab454"
+    },
+    {
+      "id": "instagram-source-DciFWsVGmOu",
+      "url": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:12+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:15+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/",
+      "error": null,
+      "sha256": "84ceb700649fc7ea29d1f3404d7205ad729a26510c73ebe9fb4f40458e061b0c"
+    },
+    {
+      "id": "instagram-source-DcaOjxinw2s",
+      "url": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:15+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:19+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/",
+      "error": null,
+      "sha256": "083e79699f3e0d1f2dc97dfb4f6bfb02fd24233762b5c2de853155de4557f660"
+    },
+    {
+      "id": "instagram-source-DcNMUdJn8q6",
+      "url": "https://www.instagram.com/hkuarchitecture/p/DcNMUdJn8q6/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:19+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:22+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/DcNMUdJn8q6/",
+      "error": null,
+      "sha256": "14bf04e6d8ed067b12759710f65dc4ab449fb30058c75d6329c8d10b14d09234"
+    },
+    {
+      "id": "instagram-source-DcAfZFLN5XI",
+      "url": "https://www.instagram.com/hkuarchitecture/reel/DcAfZFLN5XI/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:22+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:24+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/reel/DcAfZFLN5XI/",
+      "error": null,
+      "sha256": "e147c42102f9ec5e66306e3606f18726bad3595a403bd467a552e0a93be4d535"
+    },
+    {
+      "id": "instagram-source-Db5Q4WRH0DB",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Db5Q4WRH0DB/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:24+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:28+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Db5Q4WRH0DB/",
+      "error": null,
+      "sha256": "a7b53732ba3ccaac2ead0fb27a79715aba829b3a0e604080033948d7964de6dd"
+    },
+    {
+      "id": "instagram-source-Dbu7HDwnyej",
+      "url": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:28+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:31+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/",
+      "error": null,
+      "sha256": "775fac42bdf09034a9716d00fa809b2db03236c95a1d1a22aae9dcd9d72b1ed0"
+    },
+    {
+      "id": "instagram-source-Dc3SyMiTJ6M",
+      "url": "https://www.instagram.com/hkulandscape/reel/Dc3SyMiTJ6M/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:31+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:34+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/reel/Dc3SyMiTJ6M/",
+      "error": null,
+      "sha256": "30a442fe2e3dbc396b9222970a813bcc031af5b8b24d638be50253e1ac27411d"
+    },
+    {
+      "id": "instagram-source-DcyD-kDk4PC",
+      "url": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:34+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:37+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/",
+      "error": null,
+      "sha256": "d3f1f7d747c746580e55f8e49a8c326951d9620cc9765a6ce6f22736d77f1bd3"
+    },
+    {
+      "id": "instagram-source-DccqLGckwOp",
+      "url": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:37+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:41+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/",
+      "error": null,
+      "sha256": "ab10e5ede2b35add11140bcaf4618aef8933e353a5e5bf01c1dc6716700f024e"
+    },
+    {
+      "id": "instagram-source-DcaiUmBk1Ty",
+      "url": "https://www.instagram.com/hkulandscape/p/DcaiUmBk1Ty/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:41+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:45+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DcaiUmBk1Ty/",
+      "error": null,
+      "sha256": "a47715a5a3dc2ab28f6924aecf0178129d11013742fda36e5b1db9f8b2965117"
+    },
+    {
+      "id": "instagram-source-DcNwKRgE2q2",
+      "url": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:45+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:49+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/",
+      "error": null,
+      "sha256": "6322543bcc1129d11a8464a50b0a42e7d0246709a3c757ecdfdffff9309a5ed2"
+    },
+    {
+      "id": "instagram-source-DcEHgrLTiPY",
+      "url": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:49+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:52+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/",
+      "error": null,
+      "sha256": "26465c38da76b831323f16cba87546132e900701e100ad35c082c952c21fde7b"
+    },
+    {
+      "id": "instagram-source-DcBsm0aE9SW",
+      "url": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:52+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:48:55+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/",
+      "error": null,
+      "sha256": "7432018e703dae177b4fce0317e02ecc6902d848087ac9410c59452ab7cb934a"
+    },
+    {
+      "id": "instagram-source-DbnLOhiE4ct",
+      "url": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:48:55+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:49:00+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/",
+      "error": null,
+      "sha256": "b9d60f6eb510ed6431c43161874f3d7f157a76ed7d218e76bd7d8ee244b40a46"
+    },
+    {
+      "id": "instagram-source-DbnBrT1EyMD",
+      "url": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:49:00+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:49:03+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/",
+      "error": null,
+      "sha256": "ac01593e1dcdf4549ff106f04bd6916e042dcf01d35e93331c382c761ea1c636"
+    },
+    {
+      "id": "instagram-source-DbkJpNKk60p",
+      "url": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:49:03+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:49:07+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/",
+      "error": null,
+      "sha256": "0723183b662f641e54371e8f072c0cdb63af1d120e64a07b71aa0fe72284acaa"
+    },
+    {
+      "id": "instagram-source-DbakpLDkyzy",
+      "url": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:49:07+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:49:10+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/",
+      "error": null,
+      "sha256": "d3f4ea77a88341bc3501423d2adeb87066fa461c4d3fdd72bc7998c0976be73b"
+    },
+    {
+      "id": "instagram-source-DbuvksGn0w8",
+      "url": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sourceChannel": "instagram",
+      "kind": "social-post",
+      "lastAttemptAt": "2026-09-07T00:57:01.989324+00:00",
+      "lastSuccessfulFetchAt": "2026-09-07T00:57:06.641344+00:00",
+      "status": "success",
+      "itemsFound": 1,
+      "fetchMode": "ordinary-public-browser-no-login",
+      "browserEngine": "webkit",
+      "playwrightVersion": "1.61.0",
+      "httpStatus": 200,
+      "finalUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sha256": "1cf3d19d6ce281a6b8bf79b8802a4314f5e5e44487303883fb46dd29baf7fb3c",
+      "error": null,
+      "discoveryMethod": "curated-public-permalink"
+    }
+  ],
+  "status": "success",
+  "verifiedPostCount": 1,
+  "schemaVersion": "1.0.0",
+  "asOf": "2026-09-07",
+  "windowStart": "2026-07-10",
+  "activities": [
+    {
+      "id": "instagram-Dc0WGMTn9NV",
+      "title": "Bangkok Tokyo Architecture lecture announcement",
+      "summary": "Promotes Wtanya Chanvitan and Takahiro Kume's public lecture on 11 September. The caption names external speakers, not a current roster member.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dc0WGMTn9NV/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dc0WGMTn9NV/",
+      "sourceId": "instagram-source-Dc0WGMTn9NV",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-09-03",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-09-03",
+      "postedAt": "2026-09-03T08:07:19+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:47:54+00:00",
+      "lastVerifiedAt": "2026-09-07T00:47:54+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-11"
+    },
+    {
+      "id": "instagram-DcfbiT8NHvS",
+      "title": "Faculty anniversary exhibition announcement",
+      "summary": "Announces the 75: In the Making exhibition and identifies Anthony Lam's graphic design work among the displayed anniversary materials; the work's creation date is not established.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/",
+      "sourceId": "instagram-source-DcfbiT8NHvS",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-26",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-26",
+      "postedAt": "2026-08-26T05:11:06+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:47:58+00:00",
+      "lastVerifiedAt": "2026-09-07T00:47:58+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-861e6d7d4cfdd5"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-861e6d7d4cfdd5",
+          "role": "Graphic design work featured in the exhibition; creation date not established",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/reel/DcfbiT8NHvS/"
+        }
+      ],
+      "relatedRecordIds": [
+        "activity-48935f08a9994f"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-04"
+    },
+    {
+      "id": "instagram-Dbu7uqcH30m",
+      "title": "Luke Him Sau exhibition and opening forum announcement",
+      "summary": "Announces The Measure of Shade exhibition, its curatorial team and the opening forum about climate-responsive Hong Kong architecture. Listed roles do not establish attendance.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/",
+      "sourceId": "instagram-source-Dbu7uqcH30m",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-07",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-07",
+      "postedAt": "2026-08-07T09:09:19+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:01+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:01+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-0aff027c49c1b4",
+        "person-0b6b08dcb6fe2e",
+        "person-3b74eb99f7b009",
+        "person-635fc3d740e774",
+        "person-ca0e2bd2a10a68",
+        "person-db9bf4d9ee4554"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-0b6b08dcb6fe2e",
+          "role": "Exhibition supervisor/advisor and listed forum panelist",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        },
+        {
+          "personId": "person-ca0e2bd2a10a68",
+          "role": "Exhibition curation/coordination and listed forum moderator",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        },
+        {
+          "personId": "person-635fc3d740e774",
+          "role": "Listed forum panelist",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        },
+        {
+          "personId": "person-3b74eb99f7b009",
+          "role": "Listed forum panelist",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        },
+        {
+          "personId": "person-db9bf4d9ee4554",
+          "role": "Listed forum panelist",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        },
+        {
+          "personId": "person-0aff027c49c1b4",
+          "role": "Listed forum panelist",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7uqcH30m/"
+        }
+      ],
+      "relatedRecordIds": [
+        "activity-58ffb517320898"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-04"
+    },
+    {
+      "id": "instagram-Dc2vPN1H3Sv",
+      "title": "Catherine Seavitt podcast episode announcement",
+      "summary": "Promotes the fourth architectural-education podcast episode, discussing lessons from plants with Catherine Seavitt. The caption does not name a current roster member.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dc2vPN1H3Sv/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dc2vPN1H3Sv/",
+      "sourceId": "instagram-source-Dc2vPN1H3Sv",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-09-04",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-09-04",
+      "postedAt": "2026-09-04T06:25:29+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:05+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:05+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [
+        "activity-cd7c1279642156"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-Dcs0OePH8JB",
+      "title": "Sabine Storp community-design workshop announcement",
+      "summary": "Announces Sabine Storp's lunchtime session on community participation in design, scheduled for 15 September.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/",
+      "sourceId": "instagram-source-Dcs0OePH8JB",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-31",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-31",
+      "postedAt": "2026-08-31T09:56:40+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:08+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:08+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-6cf622095ed212"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-6cf622095ed212",
+          "role": "Announced speaker; caption identifies HKU adjunct professorship",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dcs0OePH8JB/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-15"
+    },
+    {
+      "id": "instagram-Dckq1NGHw_w",
+      "title": "Guy Nordenson podcast episode announcement",
+      "summary": "Promotes the third architectural-education podcast episode on collaboration between architects and engineers, with Guy Nordenson. Earlier project-image dates are background, not new work dates.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dckq1NGHw_w/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dckq1NGHw_w/",
+      "sourceId": "instagram-source-Dckq1NGHw_w",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-28",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-28",
+      "postedAt": "2026-08-28T06:00:39+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:12+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:12+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [
+        "activity-e3025fdede4660"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DciFWsVGmOu",
+      "title": "CHAT neighbourhood-observation workshop announcement",
+      "summary": "CHAT advertises a September 12 walk, zine-making workshop and public talk involving sp/n and HKU's Su Chang. The post belongs to mill6chat and was discovered on Architecture's profile.",
+      "evidenceUrl": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/",
+      "sourceUrl": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/",
+      "sourceId": "instagram-source-DciFWsVGmOu",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "mill6chat",
+        "url": "https://www.instagram.com/mill6chat/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-27",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-27",
+      "postedAt": "2026-08-27T05:54:42+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:15+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:15+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-fbe1b685370a7e"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-fbe1b685370a7e",
+          "role": "Announced workshop guide and public-talk speaker; caption identifies HKU appointment",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/mill6chat/p/DciFWsVGmOu/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-12"
+    },
+    {
+      "id": "instagram-DcaOjxinw2s",
+      "title": "Raimund Krenmueller material-making discussion announcement",
+      "summary": "Announces a September 8 discussion of physical making and digital design, naming the speaker, three respondents and moderator.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/",
+      "sourceId": "instagram-source-DcaOjxinw2s",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-24",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-24",
+      "postedAt": "2026-08-24T04:41:12+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:19+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:19+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-54d9975478544d",
+        "person-65d542731b21a6",
+        "person-786bd7c8b8f9bf",
+        "person-c43bd575fa7c29",
+        "person-ee76371e2ce14c"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-54d9975478544d",
+          "role": "Announced speaker",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/"
+        },
+        {
+          "personId": "person-786bd7c8b8f9bf",
+          "role": "Listed respondent",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/"
+        },
+        {
+          "personId": "person-c43bd575fa7c29",
+          "role": "Listed respondent",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/"
+        },
+        {
+          "personId": "person-65d542731b21a6",
+          "role": "Listed respondent",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/"
+        },
+        {
+          "personId": "person-ee76371e2ce14c",
+          "role": "Listed moderator",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcaOjxinw2s/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-08"
+    },
+    {
+      "id": "instagram-DcNMUdJn8q6",
+      "title": "Undergraduate induction welcome recap",
+      "summary": "The Faculty welcomes its new undergraduate cohort and reports an induction gathering. The caption names no individual roster member and does not establish a separate event date.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/DcNMUdJn8q6/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/DcNMUdJn8q6/",
+      "sourceId": "instagram-source-DcNMUdJn8q6",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        },
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "architecture",
+        "landscape"
+      ],
+      "eventDate": "2026-08-19",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-19",
+      "postedAt": "2026-08-19T03:11:30+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:22+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:22+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcAfZFLN5XI",
+      "title": "Adrian Lahoud podcast episode announcement",
+      "summary": "Promotes the second architectural-education podcast episode, covering ecological thinking and climate-related changes in education with Adrian Lahoud. The caption does not name a current roster member.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/reel/DcAfZFLN5XI/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/reel/DcAfZFLN5XI/",
+      "sourceId": "instagram-source-DcAfZFLN5XI",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-14",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-14",
+      "postedAt": "2026-08-14T04:48:38+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:24+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:24+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [
+        "activity-a292c51c4a98b7"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-Db5Q4WRH0DB",
+      "title": "Housing Authority community-social invitation",
+      "summary": "Invites the HKU architectural community to a September 4 gathering supported by alumni Ada Fung, Helen Leung and Stephen Ho. These named alumni are not current roster matches.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Db5Q4WRH0DB/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Db5Q4WRH0DB/",
+      "sourceId": "instagram-source-Db5Q4WRH0DB",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-11",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-11",
+      "postedAt": "2026-08-11T09:26:33+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:28+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:28+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-09-04"
+    },
+    {
+      "id": "instagram-Dbu7HDwnyej",
+      "title": "Pingyao fieldwork exhibition announcement",
+      "summary": "Promotes an exhibition of drawings, models and material studies from a Pingyao summer course taught by Heng Xia. The post appeared after the exhibition began.",
+      "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/",
+      "sourceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/",
+      "sourceId": "instagram-source-Dbu7HDwnyej",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkuarchitecture",
+          "url": "https://www.instagram.com/hkuarchitecture/"
+        }
+      ],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-07",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-07",
+      "postedAt": "2026-08-07T09:03:55+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:31+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:31+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-db9bf4d9ee4554"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-db9bf4d9ee4554",
+          "role": "Course tutor named in caption",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkuarchitecture/p/Dbu7HDwnyej/"
+        }
+      ],
+      "relatedRecordIds": [
+        "activity-1aefea71f72bf1"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "advertisedEventDate": "2026-08-01"
+    },
+    {
+      "id": "instagram-Dc3SyMiTJ6M",
+      "title": "MSc Conservation cohort welcome",
+      "summary": "The account reports welcoming the 2026/27 MSc Conservation cohort through introductory activities. No roster staff are named in the caption.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/reel/Dc3SyMiTJ6M/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/reel/Dc3SyMiTJ6M/",
+      "sourceId": "instagram-source-Dc3SyMiTJ6M",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-09-04",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-09-04",
+      "postedAt": "2026-09-04T11:38:32+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:34+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:34+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcyD-kDk4PC",
+      "title": "Sand Unfixed: a supervised MLA thesis showcase",
+      "summary": "A spring 2025/26 thesis showcase credits William Shivers as supervisor. Its September posting does not establish that the thesis was newly completed in September.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/",
+      "sourceId": "instagram-source-DcyD-kDk4PC",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-09-02",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-09-02",
+      "postedAt": "2026-09-02T10:50:31+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:37+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:37+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-d7d8d67fc09420"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-d7d8d67fc09420",
+          "role": "Thesis supervisor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcyD-kDk4PC/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DccqLGckwOp",
+      "title": "PDLA Landscape Media II course showcase",
+      "summary": "A teaching showcase credits Hana Qijin Huang as instructor. A caption-listed assistant needs name confirmation before being linked to the roster.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/",
+      "sourceId": "instagram-source-DccqLGckwOp",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-25",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-25",
+      "postedAt": "2026-08-25T03:20:59+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:41+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:41+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-7fbbebe8c2fba2"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-7fbbebe8c2fba2",
+          "role": "Course instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DccqLGckwOp/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcaiUmBk1Ty",
+      "title": "MSc Conservation thesis completion announcement",
+      "summary": "The account celebrates graduate thesis completion and summarises research themes, without naming roster staff or exact completion dates.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcaiUmBk1Ty/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DcaiUmBk1Ty/",
+      "sourceId": "instagram-source-DcaiUmBk1Ty",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-24",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-24",
+      "postedAt": "2026-08-24T07:33:54+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:45+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:45+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [],
+      "personEvidence": [],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcNwKRgE2q2",
+      "title": "Landscape Technology I teaching and fieldwork showcase",
+      "summary": "A course showcase credits Gavin Coates as instructor and Mutsing Li as teaching assistant. Dates of the teaching and fieldwork are not specified.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/",
+      "sourceId": "instagram-source-DcNwKRgE2q2",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-19",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-19",
+      "postedAt": "2026-08-19T08:24:41+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:49+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:49+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-13b27184a49328",
+        "person-3dcf29897153f8"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-3dcf29897153f8",
+          "role": "Course instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/"
+        },
+        {
+          "personId": "person-13b27184a49328",
+          "role": "Teaching assistant",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcNwKRgE2q2/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcEHgrLTiPY",
+      "title": "Ho Chi Minh City Futures studio showcase — reel",
+      "summary": "The reel credits Francisco Cevallos Barragan as instructor and Olly Liu as teaching assistant. It repeats the caption of the companion photo post.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/",
+      "sourceId": "instagram-source-DcEHgrLTiPY",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-15",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-15",
+      "postedAt": "2026-08-15T14:37:45+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:52+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:52+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-60bb1e10430b60",
+        "person-8075f346a3bcff"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-8075f346a3bcff",
+          "role": "Studio instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/"
+        },
+        {
+          "personId": "person-60bb1e10430b60",
+          "role": "Teaching assistant",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/reel/DcEHgrLTiPY/"
+        }
+      ],
+      "relatedRecordIds": [
+        "instagram-DcBsm0aE9SW"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DcBsm0aE9SW",
+      "title": "Ho Chi Minh City Futures studio showcase — photos",
+      "summary": "The photo post credits Francisco Cevallos Barragan as instructor and Olly Liu as teaching assistant. Underlying studio dates are not established.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/",
+      "sourceId": "instagram-source-DcBsm0aE9SW",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-15",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-15",
+      "postedAt": "2026-08-14T16:02:45+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:48:55+00:00",
+      "lastVerifiedAt": "2026-09-07T00:48:55+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-60bb1e10430b60",
+        "person-8075f346a3bcff"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-8075f346a3bcff",
+          "role": "Studio instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/"
+        },
+        {
+          "personId": "person-60bb1e10430b60",
+          "role": "Teaching assistant",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DcBsm0aE9SW/"
+        }
+      ],
+      "relatedRecordIds": [
+        "instagram-DcEHgrLTiPY"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DbnLOhiE4ct",
+      "title": "Chiang Mai studio model-making showcase",
+      "summary": "The caption credits Bin Jiang and Mutsing Li for studio teaching. It showcases the same Chiang Mai studio as the final-review post, without establishing new August teaching.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/",
+      "sourceId": "instagram-source-DbnLOhiE4ct",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-04",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-04",
+      "postedAt": "2026-08-04T08:50:49+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:49:00+00:00",
+      "lastVerifiedAt": "2026-09-07T00:49:00+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-0d2a99656354e4",
+        "person-13b27184a49328"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-0d2a99656354e4",
+          "role": "Studio instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/"
+        },
+        {
+          "personId": "person-13b27184a49328",
+          "role": "Design tutorial instructor and general teaching assistant",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnLOhiE4ct/"
+        }
+      ],
+      "relatedRecordIds": [
+        "instagram-DbnBrT1EyMD"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DbnBrT1EyMD",
+      "title": "Chiang Mai studio final-review retrospective",
+      "summary": "The account credits Bin Jiang and Mutsing Li while looking back on a May 6 review. This is an August communication record, not evidence that the review happened in August.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/",
+      "sourceId": "instagram-source-DbnBrT1EyMD",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-04",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-04",
+      "postedAt": "2026-08-04T07:27:22+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by account/date Open Graph metadata; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:49:03+00:00",
+      "lastVerifiedAt": "2026-09-07T00:49:03+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-0d2a99656354e4",
+        "person-13b27184a49328"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-0d2a99656354e4",
+          "role": "Studio instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/"
+        },
+        {
+          "personId": "person-13b27184a49328",
+          "role": "Design tutorial instructor and general teaching assistant",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbnBrT1EyMD/"
+        }
+      ],
+      "relatedRecordIds": [
+        "instagram-DbnLOhiE4ct"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DbkJpNKk60p",
+      "title": "Nature in the City course exhibition report",
+      "summary": "The account reports a July 23 course exhibition led by Gavin Coates and thanks named guests including Ivan Valin, Ashley Scott Kelly, Linda Shetabi and Ting Wang.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/",
+      "sourceId": "instagram-source-DbkJpNKk60p",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-08-03",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-03",
+      "postedAt": "2026-08-03T04:39:16+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by account/date Open Graph metadata; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:49:07+00:00",
+      "lastVerifiedAt": "2026-09-07T00:49:07+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-3dcf29897153f8",
+        "person-43e5ae06c6ce6f",
+        "person-715644f1c3fc31",
+        "person-b9be76c0fb5a6b",
+        "person-d9c63a33aca127"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-3dcf29897153f8",
+          "role": "Course instructor",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/"
+        },
+        {
+          "personId": "person-b9be76c0fb5a6b",
+          "role": "Listed exhibition guest",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/"
+        },
+        {
+          "personId": "person-d9c63a33aca127",
+          "role": "Listed exhibition guest",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/"
+        },
+        {
+          "personId": "person-715644f1c3fc31",
+          "role": "Listed exhibition guest",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/"
+        },
+        {
+          "personId": "person-43e5ae06c6ce6f",
+          "role": "Listed exhibition guest",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbkJpNKk60p/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DbakpLDkyzy",
+      "title": "Supervised doctoral student receives HKU Foundation recognition",
+      "summary": "The account reports an award to doctoral candidate Renfeng Wang and names Chao Ren as supervisor. The award belongs to the student, not the supervisor; a March 2027 ceremony remains future.",
+      "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/",
+      "sourceUrl": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/",
+      "sourceId": "instagram-source-DbakpLDkyzy",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkulandscape",
+        "url": "https://www.instagram.com/hkulandscape/"
+      },
+      "discoveredAccounts": [
+        {
+          "handle": "hkulandscape",
+          "url": "https://www.instagram.com/hkulandscape/"
+        }
+      ],
+      "departmentIds": [
+        "landscape"
+      ],
+      "eventDate": "2026-07-30",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-07-30",
+      "postedAt": "2026-07-30T11:22:47+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:49:10+00:00",
+      "lastVerifiedAt": "2026-09-07T00:49:10+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-51c3a661737411"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-51c3a661737411",
+          "role": "Named doctoral supervisor, not award recipient",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/hkulandscape/p/DbakpLDkyzy/"
+        }
+      ],
+      "relatedRecordIds": [],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship."
+    },
+    {
+      "id": "instagram-DbuvksGn0w8",
+      "title": "Architectural-education podcast with Ursprung, Chang and Seng",
+      "summary": "Promotes the first architectural-education podcast episode, in which Philip Ursprung, Yung Ho Chang and Eunice Seng discuss architectural and design education. Earlier work shown in the post is historical context.",
+      "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sourceUrl": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "sourceId": "instagram-source-DbuvksGn0w8",
+      "sourceChannel": "instagram",
+      "sourceAccount": {
+        "handle": "hkuarchitecture",
+        "url": "https://www.instagram.com/hkuarchitecture/"
+      },
+      "discoveredAccounts": [],
+      "departmentIds": [
+        "architecture"
+      ],
+      "eventDate": "2026-08-07",
+      "eventEndDate": null,
+      "eventDatePrecision": "day",
+      "dateBasis": "publication-date",
+      "publicationDate": "2026-08-07",
+      "postedAt": "2026-08-07T07:23:06+00:00",
+      "dateEvidence": "Permalink-matched public media taken_at, corroborated by matching HTML time datetime; date converted to Asia/Hong_Kong.",
+      "discoveredAt": "2026-09-07T00:47:58+00:00",
+      "lastVerifiedAt": "2026-09-07T00:57:06.641344+00:00",
+      "kind": "social post",
+      "status": "public-post",
+      "reviewState": "source-checked",
+      "tentative": true,
+      "personIds": [
+        "person-05707ceedd5251",
+        "person-0b6b08dcb6fe2e"
+      ],
+      "personEvidence": [
+        {
+          "personId": "person-05707ceedd5251",
+          "role": "Podcast participant explicitly named in the caption",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/"
+        },
+        {
+          "personId": "person-0b6b08dcb6fe2e",
+          "role": "Podcast participant explicitly named in the caption",
+          "matchMethod": "named-in-post-caption",
+          "evidenceUrl": "https://www.instagram.com/p/DbuvksGn0w8/"
+        }
+      ],
+      "relatedRecordIds": [
+        "activity-5197eb9f17b54c"
+      ],
+      "evidenceExcerpt": "",
+      "caution": "The date is the post publication date, not proof that the work was completed then. Departmental account coverage is not individual staff authorship.",
+      "discoveryMethod": "curated-public-permalink"
+    }
+  ],
+  "coverageNote": "Visible public grids (12 links/account) plus up to four configured post links; shared permalinks count once. Not exhaustive 60-day feed coverage.",
+  "note": "One additional configured public permalink verified; earlier profile-grid records and their retrieval timestamps retained."
+}

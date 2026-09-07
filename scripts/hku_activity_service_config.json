@@ -21,10 +21,62 @@
     "note": "Monthly collection/review versus automatic publication has not been selected. Collection does not deploy the website."
   },
   "channels": [
-    {"id": "faculty_web", "label": "Faculty websites", "state": "configured-bounded", "collectionMode": "bounded-public-web", "coverageNote": "Current Architecture and Landscape directories, every deduplicated profile, and finite official faculty news/events pages. Not an exhaustive faculty-site crawl."},
-    {"id": "university_news", "label": "University news", "state": "configured-bounded", "collectionMode": "curated-primary-source-urls", "coverageNote": "Only curated HKU news/programme URLs are rechecked. A general university-wide news feed is not connected."},
-    {"id": "publishers", "label": "Publishers", "state": "manual-leads-only", "collectionMode": "manual-follow-up-queue", "coverageNote": "Two initial publication leads carry original manual-check timestamps. There is no automatic author-disambiguated publisher or Crossref ingestion."},
-    {"id": "instagram", "label": "Instagram", "state": "not-connected", "collectionMode": "none", "coverageNote": "No account/API connection or collection workflow is configured; no Instagram content has been ingested. Suggested account identities below are not connected sources.", "suggestedAccounts": [{"url": "https://www.instagram.com/hkuarchitecture/", "identityStatus": "linked-by-official-department-website", "identityEvidenceUrl": "https://www.doa.arch.hku.hk/", "collectionStatus": "not-connected"}, {"url": "https://www.instagram.com/hkulandscape/", "identityStatus": "branded-linktree-observed-institution-host-confirmation-pending", "identityEvidenceUrl": "https://linktr.ee/hkulandscape", "collectionStatus": "not-connected"}]},
-    {"id": "repositories", "label": "Institutional repositories", "state": "configured-bounded", "collectionMode": "gateway-reachability-only", "coverageNote": "Only HKU Scholars Hub Architecture collection reachability is checked; see the saved check status. No per-author repository bibliography is ingested."}
+    {
+      "id": "faculty_web",
+      "label": "Faculty websites",
+      "state": "configured-bounded",
+      "collectionMode": "bounded-public-web",
+      "coverageNote": "Current Architecture and Landscape directories, every deduplicated profile, and finite official faculty news/events pages. Not an exhaustive faculty-site crawl."
+    },
+    {
+      "id": "university_news",
+      "label": "University news",
+      "state": "configured-bounded",
+      "collectionMode": "curated-primary-source-urls",
+      "coverageNote": "Only curated HKU news/programme URLs are rechecked. A general university-wide news feed is not connected."
+    },
+    {
+      "id": "publishers",
+      "label": "Publishers",
+      "state": "manual-leads-only",
+      "collectionMode": "manual-follow-up-queue",
+      "coverageNote": "Two initial publication leads carry original manual-check timestamps. There is no automatic author-disambiguated publisher or Crossref ingestion."
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "state": "configured-bounded",
+      "collectionMode": "ordinary-public-browser-no-login",
+      "coverageNote": "A bounded public-browser collector checks the initially visible grids (up to 12 posts per account), plus up to four configured public post links. Shared permalinks count once. No login, private API, exhaustive pagination or guaranteed feed coverage; access blocks are recorded without bypass.",
+      "collectionBounds": {
+        "maxGridPostsPerAccount": 12,
+        "pagination": "none",
+        "authenticatedApi": false,
+        "exhaustive": false,
+        "maxCuratedPostLinks": 4
+      },
+      "suggestedAccounts": [
+        {
+          "url": "https://www.instagram.com/hkuarchitecture/",
+          "identityStatus": "linked-by-official-department-website",
+          "identityEvidenceUrl": "https://www.doa.arch.hku.hk/",
+          "collectionStatus": "public-grid-configured-no-api"
+        },
+        {
+          "url": "https://www.instagram.com/hkulandscape/",
+          "identityStatus": "instagram-handle-published-in-official-hku-faculty-brochure",
+          "identityEvidenceUrl": "https://admissions.hku.hk/sites/default/files/2023-10/DIGITAL_FacultyLeaflet2024-25.pdf",
+          "identityEvidenceLocation": "2024/25 brochure, printed page 17 (PDF page 9), Instagram icon beside hkulandscape",
+          "collectionStatus": "public-grid-configured-no-api"
+        }
+      ]
+    },
+    {
+      "id": "repositories",
+      "label": "Institutional repositories",
+      "state": "configured-bounded",
+      "collectionMode": "gateway-reachability-only",
+      "coverageNote": "Only HKU Scholars Hub Architecture collection reachability is checked; see the saved check status. No per-author repository bibliography is ingested."
+    }
   ]
 }

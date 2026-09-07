@@ -98,6 +98,75 @@ class ServiceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             service.register_edition(self.root, ledger)
 
+    def test_collect_only_success_supersedes_block_without_fabricating_history(self):
+        ledger = example()
+        report = self.root / service.REPORT_PATH
+        service.atomic_json(report / "ledger.json", ledger)
+        service.record_commit(self.root, ledger, "saved-response-reparse", baseline=True)
+        failure = {"startedAt": "2026-09-07T00:00:00Z", "finishedAt": "2026-09-07T00:01:00Z",
+                   "status": "blocked-public-instagram", "mode": "live-public-instagram", "sources": []}
+        service.record_failure(self.root, failure)
+        before_runs = (report / "runs.json").read_bytes()
+        before_editions = (report / "editions/index.json").read_bytes()
+        before_ledger = (report / "ledger.json").read_bytes()
+        attempt = {"startedAt": "2026-09-08T00:00:00Z", "finishedAt": "2026-09-08T00:01:00Z",
+                   "status": "success", "mode": "live-public-instagram", "sources": [{
+                       "id": "ig", "url": "https://www.instagram.com/hkulandscape/", "status": "success",
+                       "lastAttemptAt": "2026-09-08T00:00:10Z", "lastSuccessfulFetchAt": "2026-09-08T00:00:11Z"}]}
+        service.atomic_json(report / "instagram-attempt.json", attempt)
+        latest = service.build_service(self.root, ledger)
+        channel = next(c for c in latest["channels"] if c["id"] == "instagram")
+        self.assertEqual(channel["state"], "configured-bounded")
+        self.assertEqual(channel["latestAttemptStatus"], "success")
+        self.assertEqual(channel["latestAttemptAt"], "2026-09-08T00:00:00+00:00")
+        self.assertEqual(channel["latestAttempt"]["checksAttempted"], 1)
+        self.assertFalse(channel["latestAttempt"]["committed"])
+        self.assertIsNone(channel["lastSuccessfulFetchAt"])
+        self.assertEqual((report / "runs.json").read_bytes(), before_runs)
+        self.assertEqual((report / "editions/index.json").read_bytes(), before_editions)
+        self.assertEqual((report / "ledger.json").read_bytes(), before_ledger)
+
+    def test_live_public_instagram_is_new_network_edition_with_channel_only_attempts(self):
+        ledger = example()
+        service.record_commit(self.root, ledger, "saved-response-reparse", baseline=True)
+        ledger["ingest"].update({"startedAt": "2026-09-07T00:00:00+00:00", "finishedAt": "2026-09-07T00:01:00+00:00",
+                                 "lastDayIngested": "2026-09-07", "mode": "live-public-instagram"})
+        ledger["scope"]["asOf"] = "2026-09-07"
+        ledger["sources"].append({"id": "instagram-one", "url": "https://www.instagram.com/hkulandscape/p/example/",
+            "status": "success", "lastAttemptAt": "2026-09-07T00:00:10+00:00", "lastSuccessfulFetchAt": "2026-09-07T00:00:11+00:00"})
+        latest = service.record_commit(self.root, ledger, "live-public-instagram")
+        self.assertEqual(len(latest["editions"]), 2)
+        self.assertTrue(latest["runHistory"][0]["networkCollection"])
+        self.assertEqual(latest["latestEdition"]["collectionMode"], "live-public-instagram")
+        instagram = next(c for c in latest["channels"] if c["id"] == "instagram")
+        faculty = next(c for c in latest["channels"] if c["id"] == "faculty_web")
+        self.assertEqual(instagram["latestAttempt"]["checksAttempted"], 1)
+        self.assertEqual(instagram["latestAttemptAt"], "2026-09-07T00:00:00+00:00")
+        self.assertIsNone(faculty["latestAttemptAt"])
+        self.assertEqual(faculty["lastSuccessfulFetchAt"], "2026-09-06T10:00:01+00:00")
+
+    def test_blocked_instagram_attempt_retains_url_error_without_advancing_snapshot(self):
+        ledger = example()
+        report = self.root / service.REPORT_PATH
+        service.atomic_json(report / "ledger.json", ledger)
+        service.record_commit(self.root, ledger, "saved-response-reparse", baseline=True)
+        before = (report / "ledger.json").read_bytes()
+        archive = (report / "editions/index.json").read_bytes()
+        url = "https://www.instagram.com/hkulandscape/"
+        manifest = {"startedAt": "2026-09-07T00:00:00+00:00", "finishedAt": "2026-09-07T00:01:00+00:00",
+            "status": "blocked-public-instagram", "mode": "live-public-instagram", "channel": "instagram",
+            "sources": [{"url": url, "status": "failed", "httpStatus": 429, "error": "Public page rate-limited; no retry or bypass",
+                         "lastAttemptAt": "2026-09-07T00:00:10+00:00"}]}
+        latest = service.record_failure(self.root, manifest)
+        instagram = next(c for c in latest["channels"] if c["id"] == "instagram")
+        self.assertEqual(instagram["state"], "blocked")
+        self.assertEqual(instagram["latestAttemptErrors"][0]["url"], url)
+        self.assertEqual(instagram["latestAttemptErrors"][0]["httpStatus"], 429)
+        self.assertEqual(latest["refresh"]["lastDayIngested"], "2026-09-06")
+        self.assertEqual(latest["refresh"]["lastAttemptAt"], "2026-09-07T00:00:00+00:00")
+        self.assertEqual((report / "ledger.json").read_bytes(), before)
+        self.assertEqual((report / "editions/index.json").read_bytes(), archive)
+
 
 if __name__ == "__main__":
     unittest.main()

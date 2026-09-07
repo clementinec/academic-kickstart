@@ -10,6 +10,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_PATH = Path("public/internal/hku-activity")
+LIVE_COLLECTION_MODES = {"live-http", "live-public-instagram"}
 PUBLISHER_DOMAINS = (
     "sciencedirect.com", "elsevier.com", "wiley.com", "tandfonline.com", "springer.com",
     "springerlink.com", "nature.com", "sagepub.com", "taylorfrancis.com", "cambridge.org",
@@ -94,6 +95,26 @@ def append_unique(path, key, item):
     return data
 
 
+def run_source_details(sources, started_at, channel=None, keep_undated=False):
+    """Record this attempt only; carried-forward source checks never become fresh."""
+    start = valid_times([started_at])
+    details = []
+    for source in sources:
+        source_id = source_channel(source.get("url"))
+        if channel and source_id != channel:
+            continue
+        attempted = valid_times([source.get("lastAttemptAt")])
+        if not attempted and not keep_undated:
+            continue
+        if attempted and start and attempted[0] < start[0]:
+            continue
+        details.append({"id": source.get("id"), "url": source.get("url"), "channel": source_id,
+                        "status": source.get("status", "failed"), "httpStatus": source.get("httpStatus"),
+                        "error": source.get("error"), "attemptAt": attempted[0] if attempted else None,
+                        "lastSuccessfulFetchAt": source.get("lastSuccessfulFetchAt")})
+    return details
+
+
 def register_edition(root, ledger, origin="live-ingest"):
     """Only new live collections (or a single honest baseline import) create editions."""
     report = Path(root) / REPORT_PATH
@@ -121,10 +142,13 @@ def register_edition(root, ledger, origin="live-ingest"):
         return existing, False
     entry = {"id": edition_id, "asOf": as_of, "windowStart": ledger["scope"].get("windowStart"),
              "retrievedAt": retrieved_at, "registeredAt": utc_now(), "origin": origin,
+             "collectionMode": ledger["ingest"].get("mode"),
              "status": ledger["ingest"]["status"], "peopleCount": len(ledger.get("people", [])),
              "recordCount": len(ledger.get("activities", [])), "publicationLeadCount": len(ledger.get("publicationLeads", [])),
              "href": "./editions/" + edition_id + ".json", "sha256": digest,
-             "note": "Imported existing source snapshot; not a new collection run." if origin == "baseline-import" else "Collected snapshot; publication still requires manual review."}
+             "note": "Imported existing source snapshot; not a new collection run." if origin == "baseline-import" else (
+                 "Bounded public Instagram collection; other channels retain their earlier check timestamps. Review before publication."
+                 if ledger["ingest"].get("mode") == "live-public-instagram" else "Collected snapshot; publication still requires manual review.")}
     edition_path = report / "editions" / (edition_id + ".json")
     if edition_path.exists():
         # Never silently overwrite an immutable archived edition.
@@ -147,8 +171,22 @@ def build_service(root, ledger):
     runs = read_json(report / "runs.json", {"runs": []})["runs"]
     editorial = read_json(report / "editorial-log.json", {"changes": []})["changes"]
     source_attempts = valid_times(s.get("lastAttemptAt") for s in ledger.get("sources", []))
-    live_attempts = [r["attemptAt"] for r in runs if r["mode"] == "live-http"]
-    live_runs = [r for r in runs if r["mode"] == "live-http"]
+    live_runs = [r for r in runs if r["mode"] in LIVE_COLLECTION_MODES]
+    # --collect-only has real channel evidence but deliberately creates no run
+    # or edition. Consult its manifest without inventing either history entry.
+    social_attempt = read_json(report / "instagram-attempt.json", {})
+    social_start = valid_times([social_attempt.get("startedAt")])
+    if social_attempt.get("mode") == "live-public-instagram" and social_start:
+        matching = next((r for r in live_runs if r.get("channel") == "instagram"
+                         and valid_times([r["attemptAt"]]) == social_start), None)
+        live_runs.append({"attemptAt": social_start[0], "finishedAt": social_attempt.get("finishedAt"),
+            "mode": "live-public-instagram", "status": social_attempt.get("status", "unknown"),
+            "channel": "instagram", "channels": ["instagram"],
+            "committed": bool(matching and matching.get("committed")),
+            "sourceOutcomes": run_source_details(social_attempt.get("sources", []), social_start[0], "instagram", keep_undated=True),
+            "note": "Actual saved Instagram attempt; collect-only evidence does not itself create a ledger edition."})
+    live_runs.sort(key=lambda r: (valid_times([r["attemptAt"]]) or [""])[0])
+    live_attempts = valid_times(r["attemptAt"] for r in live_runs)
     last_attempt = max(source_attempts + live_attempts) if source_attempts or live_attempts else None
     refresh = deepcopy(config["refresh"])
     refresh.update({"lastAttemptAt": last_attempt, "lastCommittedRetrievalAt": retrieval_time(ledger),
@@ -159,6 +197,7 @@ def build_service(root, ledger):
                     "lastOperationMode": runs[-1]["mode"] if runs else None})
     channels = deepcopy(config["channels"])
     for channel in channels:
+        channel["configuredState"] = channel["state"]
         sources = [s for s in ledger.get("sources", []) if source_channel(s.get("url")) == channel["id"]]
         channel["sourceIds"] = [s["id"] for s in sources]
         channel["checksInSavedSnapshot"] = len(sources)
@@ -166,6 +205,24 @@ def build_service(root, ledger):
         channel["savedCheckErrors"] = list(dict.fromkeys(s["error"] for s in sources if s.get("error")))
         successes = valid_times(s.get("lastSuccessfulFetchAt") for s in sources)
         channel["lastSuccessfulFetchAt"] = max(successes) if successes else None
+        channel_runs = [r for r in live_runs if r.get("channel") == channel["id"] or channel["id"] in r.get("channels", [])]
+        channel["latestAttempt"] = None
+        channel["latestAttemptAt"] = None
+        channel["latestAttemptStatus"] = None
+        channel["latestAttemptErrors"] = []
+        if channel_runs:
+            latest = channel_runs[-1]
+            outcomes = [s for s in latest.get("sourceOutcomes", []) if s["channel"] == channel["id"]]
+            channel["latestAttempt"] = {"attemptAt": latest["attemptAt"], "finishedAt": latest.get("finishedAt"),
+                "mode": latest["mode"], "status": latest["status"], "committed": latest["committed"],
+                "checksAttempted": len(outcomes), "failedChecks": sum(s["status"] != "success" for s in outcomes),
+                "sources": outcomes, "note": latest.get("note")}
+            channel["latestAttemptAt"] = latest["attemptAt"]
+            channel["latestAttemptStatus"] = latest["status"]
+            channel["latestAttemptErrors"] = [{"url": s["url"], "error": s["error"], "httpStatus": s["httpStatus"]}
+                                               for s in outcomes if s["error"]]
+            if not latest["committed"] and (latest["status"].startswith("blocked") or any(s.get("httpStatus") in {401, 403, 429} for s in outcomes)):
+                channel["state"] = "blocked"
         if channel["id"] == "repositories" and sources and all(s.get("status") != "success" for s in sources):
             channel["state"] = "blocked"
         if channel["id"] == "publishers":
@@ -187,7 +244,7 @@ def record_commit(root, ledger, mode, baseline=False):
     report = Path(root) / REPORT_PATH
     enrich_channels(ledger)
     edition, created = register_edition(root, ledger, "baseline-import" if baseline else (
-        "live-ingest" if mode == "live-http" else "cache-reparse"))
+        "live-ingest" if mode in LIVE_COLLECTION_MODES else "cache-reparse"))
     if baseline and not created:
         return build_service(root, ledger)
     if baseline:
@@ -197,14 +254,19 @@ def record_commit(root, ledger, mode, baseline=False):
     else:
         attempt_at = ledger["ingest"]["startedAt"]
         run_id = hashlib.sha256((mode + attempt_at).encode()).hexdigest()[:20]
+    channel = "instagram" if mode == "live-public-instagram" else ledger["ingest"].get("channel")
+    outcomes = run_source_details(ledger.get("sources", []), attempt_at, channel) if mode in LIVE_COLLECTION_MODES and not baseline else []
+    channels = sorted(set([s["channel"] for s in outcomes] + ([channel] if channel else [])))
     append_unique(report / "runs.json", "runs", {"id": run_id, "attemptAt": attempt_at,
         "finishedAt": ledger["ingest"].get("finishedAt") if not baseline else attempt_at,
         "mode": "baseline-import" if baseline else mode, "status": ledger["ingest"]["status"], "committed": True,
-        "networkCollection": mode == "live-http" and not baseline, "editionCreated": created,
+        "networkCollection": mode in LIVE_COLLECTION_MODES and not baseline, "editionCreated": created,
+        "channel": channel, "channels": channels, "sourceOutcomes": outcomes,
         "editionId": edition["id"] if edition else None,
-        "sourceFailures": ledger.get("coverage", {}).get("sources", {}).get("failed", 0),
+        "sourceFailures": ledger.get("coverage", {}).get("sources", {}).get("failed", 0) if baseline else sum(s["status"] != "success" for s in outcomes),
         "note": "Registered the existing saved source snapshot; no new requests were made." if baseline else (
-            "Reparsed saved responses; no new edition or retrieval date." if mode != "live-http" else "New source collection; review before publishing.")})
+            "Reparsed saved responses; no new edition or retrieval date." if mode not in LIVE_COLLECTION_MODES else (
+                "Bounded public Instagram collection; earlier checks from other channels were not repeated." if mode == "live-public-instagram" else "New source collection; review before publishing."))})
     if not (report / "editorial-log.json").exists():
         atomic_json(report / "editorial-log.json", {"schemaVersion": "1.0.0", "changes": []})
     return build_service(root, ledger)
@@ -217,12 +279,16 @@ def record_failure(root, manifest):
     if ledger is None:
         return None
     mode = manifest.get("mode", "live-http")
+    channel = manifest.get("channel") or ("instagram" if mode == "live-public-instagram" else None)
+    outcomes = run_source_details(manifest.get("sources", []), manifest["startedAt"], channel, keep_undated=True)
+    channels = sorted(set([s["channel"] for s in outcomes] + ([channel] if channel else [])))
     run_id = hashlib.sha256((mode + manifest["startedAt"]).encode()).hexdigest()[:20]
     append_unique(report / "runs.json", "runs", {"id": run_id, "attemptAt": manifest["startedAt"],
         "finishedAt": manifest["finishedAt"], "mode": mode, "status": manifest["status"], "committed": False,
-        "networkCollection": mode == "live-http", "editionCreated": False, "editionId": None,
-        "sourceFailures": sum(s.get("status") != "success" for s in manifest.get("sources", [])),
-        "note": "Critical source failure; previous snapshot and editions were preserved."})
+        "networkCollection": mode in LIVE_COLLECTION_MODES, "editionCreated": False, "editionId": None,
+        "channel": channel, "channels": channels, "sourceOutcomes": outcomes,
+        "sourceFailures": sum(s["status"] != "success" for s in outcomes),
+        "note": manifest.get("note") or "Collection attempt was not committed; previous snapshot, editions and retrieval dates were preserved."})
     return build_service(root, ledger)
 
 

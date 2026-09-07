@@ -1,0 +1,16 @@
+{
+  "maxPosts": 4,
+  "posts": [
+    {
+      "url": "https://www.instagram.com/p/DbuvksGn0w8/",
+      "account": "hkuarchitecture",
+      "title": "ARCHITALKS discussion of architectural education"
+    },
+    {
+      "url": "https://www.instagram.com/p/Dbu7HDwnyej/",
+      "account": "hkuarchitecture",
+      "title": "Pingyao fieldwork exhibition"
+    }
+  ],
+  "discoveryNote": "Additional manually located public post URLs, checked alongside the two bounded profile grids. At most four entries; posts already discovered in a grid are not fetched or counted twice. Each post must be verified directly from its public Instagram page."
+}

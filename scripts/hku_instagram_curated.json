@@ -1,0 +1,494 @@
+{
+  "Dc3SyMiTJ6M": {
+    "title": "MSc Conservation cohort welcome",
+    "summary": "The account reports welcoming the 2026/27 MSc Conservation cohort through introductory activities. No roster staff are named in the caption.",
+    "people": [],
+    "postType": "programme-update",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "MSc Conservation (2026-27 Cohort)"
+    ]
+  },
+  "DcyD-kDk4PC": {
+    "title": "Sand Unfixed: a supervised MLA thesis showcase",
+    "summary": "A spring 2025/26 thesis showcase credits William Shivers as supervisor. Its September posting does not establish that the thesis was newly completed in September.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/shivers-william/",
+        "role": "Thesis supervisor",
+        "evidenceText": "William Shivers"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "Sand Unfixed"
+    ]
+  },
+  "DccqLGckwOp": {
+    "title": "PDLA Landscape Media II course showcase",
+    "summary": "A teaching showcase credits Hana Qijin Huang as instructor. A caption-listed assistant needs name confirmation before being linked to the roster.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/huang-hana-q/",
+        "role": "Course instructor",
+        "evidenceText": "Qijin Huang, Hana"
+      }
+    ],
+    "unresolvedRosterNames": [
+      {
+        "captionName": "Jonson Jin",
+        "candidateProfileUrl": "https://www.arch.hku.hk/staff/dla/jin-johnson-q/",
+        "reason": "Caption Jonson differs from roster Johnson Q.; do not assume equivalence."
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "Landscape Media II"
+    ]
+  },
+  "DcaiUmBk1Ty": {
+    "title": "MSc Conservation thesis completion announcement",
+    "summary": "The account celebrates graduate thesis completion and summarises research themes, without naming roster staff or exact completion dates.",
+    "people": [],
+    "postType": "programme-update",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "completing their master’s thesis"
+    ]
+  },
+  "DcNwKRgE2q2": {
+    "title": "Landscape Technology I teaching and fieldwork showcase",
+    "summary": "A course showcase credits Gavin Coates as instructor and Mutsing Li as teaching assistant. Dates of the teaching and fieldwork are not specified.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/coates-gavin/",
+        "role": "Course instructor",
+        "evidenceText": "Gavin COATES"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/li-mutsing-h/",
+        "role": "Teaching assistant",
+        "evidenceText": "LI Huanyang, Mutsing"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "LAND7151"
+    ]
+  },
+  "DcNMUdJn8q6": {
+    "title": "Undergraduate induction welcome recap",
+    "summary": "The Faculty welcomes its new undergraduate cohort and reports an induction gathering. The caption names no individual roster member and does not establish a separate event date.",
+    "captionContains": [
+      "UG Induction Talk 2026",
+      "our new undergraduate students"
+    ],
+    "people": [],
+    "relatedUrls": []
+  },
+  "DcEHgrLTiPY": {
+    "title": "Ho Chi Minh City Futures studio showcase — reel",
+    "summary": "The reel credits Francisco Cevallos Barragan as instructor and Olly Liu as teaching assistant. It repeats the caption of the companion photo post.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/cevallos-barragan-francisco/",
+        "role": "Studio instructor",
+        "evidenceText": "Francisco Cevallos"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/liu-olly-y/",
+        "role": "Teaching assistant",
+        "evidenceText": "Yapeng Liu Olly"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "underlyingActivityGroup": "ho-chi-minh-city-futures-studio",
+    "duplicateNote": "Identical caption to DcBsm0aE9SW; two posts, one underlying studio showcase—not two teaching achievements.",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "Ho Chi Minh City Futures"
+    ],
+    "relatedPostCodes": [
+      "DcBsm0aE9SW"
+    ]
+  },
+  "DcBsm0aE9SW": {
+    "title": "Ho Chi Minh City Futures studio showcase — photos",
+    "summary": "The photo post credits Francisco Cevallos Barragan as instructor and Olly Liu as teaching assistant. Underlying studio dates are not established.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/cevallos-barragan-francisco/",
+        "role": "Studio instructor",
+        "evidenceText": "Francisco Cevallos"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/liu-olly-y/",
+        "role": "Teaching assistant",
+        "evidenceText": "Yapeng Liu Olly"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "underlyingActivityGroup": "ho-chi-minh-city-futures-studio",
+    "duplicateNote": "Identical caption to DcEHgrLTiPY; two posts, one underlying studio showcase—not two teaching achievements.",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "Ho Chi Minh City Futures"
+    ],
+    "relatedPostCodes": [
+      "DcEHgrLTiPY"
+    ]
+  },
+  "DbnLOhiE4ct": {
+    "title": "Chiang Mai studio model-making showcase",
+    "summary": "The caption credits Bin Jiang and Mutsing Li for studio teaching. It showcases the same Chiang Mai studio as the final-review post, without establishing new August teaching.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/jiang-bin/",
+        "role": "Studio instructor",
+        "evidenceText": "Bin Jiang"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/li-mutsing-h/",
+        "role": "Design tutorial instructor and general teaching assistant",
+        "evidenceText": "Mutsing Li"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "underlyingActivityGroup": "chiang-mai-invisible-space-studio",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "iterative physical modeling"
+    ],
+    "relatedPostCodes": [
+      "DbnBrT1EyMD"
+    ]
+  },
+  "DbnBrT1EyMD": {
+    "title": "Chiang Mai studio final-review retrospective",
+    "summary": "The account credits Bin Jiang and Mutsing Li while looking back on a May 6 review. This is an August communication record, not evidence that the review happened in August.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/jiang-bin/",
+        "role": "Studio instructor",
+        "evidenceText": "Bin Jiang"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/li-mutsing-h/",
+        "role": "Design tutorial instructor and general teaching assistant",
+        "evidenceText": "Mutsing Li"
+      }
+    ],
+    "postType": "retrospective-showcase",
+    "underlyingActivityGroup": "chiang-mai-invisible-space-studio",
+    "underlyingActivityDateText": "May 6th; year/course labels are inconsistent within the caption (2026 heading, Section 2D 2025 label).",
+    "caution": "Do not normalize an exact underlying event year from this internally inconsistent caption.",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "May 6th",
+      "Chiang Mai"
+    ],
+    "relatedPostCodes": [
+      "DbnLOhiE4ct"
+    ]
+  },
+  "DbkJpNKk60p": {
+    "title": "Nature in the City course exhibition report",
+    "summary": "The account reports a July 23 course exhibition led by Gavin Coates and thanks named guests including Ivan Valin, Ashley Scott Kelly, Linda Shetabi and Ting Wang.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/coates-gavin/",
+        "role": "Course instructor",
+        "evidenceText": "Gavin Coates"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/valin-ivan/",
+        "role": "Listed exhibition guest",
+        "evidenceText": "Valin"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/kelly-ashley-scott/",
+        "role": "Listed exhibition guest",
+        "evidenceText": "Kelly"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/shetabi-linda/",
+        "role": "Listed exhibition guest",
+        "evidenceText": "Shetabi"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/wang-ting-2/",
+        "role": "Listed exhibition guest",
+        "evidenceText": "Wang"
+      }
+    ],
+    "postType": "retrospective-event-report",
+    "advertisedEventDate": null,
+    "underlyingEventDateBasis": "Caption explicitly says course concluded 23 July 2026 with an exhibition.",
+    "captionContains": [
+      "CCHU9058",
+      "23 July 2026"
+    ],
+    "reportedEventDate": "2026-07-23"
+  },
+  "DbakpLDkyzy": {
+    "title": "Supervised doctoral student receives HKU Foundation recognition",
+    "summary": "The account reports an award to doctoral candidate Renfeng Wang and names Chao Ren as supervisor. The award belongs to the student, not the supervisor; a March 2027 ceremony remains future.",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/dla/ren-chao/",
+        "role": "Named doctoral supervisor, not award recipient",
+        "evidenceText": "Professor Chao Ren"
+      }
+    ],
+    "postType": "recognition-report",
+    "advertisedEventMonth": "2027-03",
+    "advertisedEventDateText": "March 2027 award presentation ceremony",
+    "advertisedEventDatePrecision": "month",
+    "advertisedEventDate": null,
+    "captionContains": [
+      "Renfeng Wang",
+      "Excellent PhD Award"
+    ]
+  },
+  "Dc0WGMTn9NV": {
+    "title": "Bangkok Tokyo Architecture lecture announcement",
+    "summary": "Promotes Wtanya Chanvitan and Takahiro Kume's public lecture on 11 September. The caption names external speakers, not a current roster member.",
+    "captionContains": [
+      "Generic Specific explores",
+      "Bangkok Tokyo Architecture"
+    ],
+    "advertisedEventDate": "2026-09-11",
+    "people": [],
+    "relatedUrls": []
+  },
+  "DcfbiT8NHvS": {
+    "title": "Faculty anniversary exhibition announcement",
+    "summary": "Announces the 75: In the Making exhibition and identifies Anthony Lam's graphic design work among the displayed anniversary materials; the work's creation date is not established.",
+    "captionContains": [
+      "Anthony Lam’s graphic designs",
+      "Friday, 4 September 2026"
+    ],
+    "advertisedEventDate": "2026-09-04",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/lam-anthony-c-w/",
+        "role": "Graphic design work featured in the exhibition; creation date not established",
+        "evidenceText": "Anthony Lam"
+      }
+    ],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/75-in-the-making/"
+    ]
+  },
+  "Dbu7uqcH30m": {
+    "title": "Luke Him Sau exhibition and opening forum announcement",
+    "summary": "Announces The Measure of Shade exhibition, its curatorial team and the opening forum about climate-responsive Hong Kong architecture. Listed roles do not establish attendance.",
+    "captionContains": [
+      "Exhibition Supervisor and Advisor",
+      "Jonathan Yeung",
+      "Forum Panelists:"
+    ],
+    "advertisedEventDate": "2026-09-04",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/seng-eunice-m-f/",
+        "role": "Exhibition supervisor/advisor and listed forum panelist",
+        "evidenceText": "Professor Eunice Seng"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/yeung-jonathan-t-h/",
+        "role": "Exhibition curation/coordination and listed forum moderator",
+        "evidenceText": "Jonathan Yeung"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/roskam-cole/",
+        "role": "Listed forum panelist",
+        "evidenceText": "Cole ROSKAM"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/wang-wei-jen/",
+        "role": "Listed forum panelist",
+        "evidenceText": "Weijen WANG"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/xia-heng/",
+        "role": "Listed forum panelist",
+        "evidenceText": "Heng XIA"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/zhou-ying/",
+        "role": "Listed forum panelist",
+        "evidenceText": "Ying ZHOU"
+      }
+    ],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/the-measure-of-shade/"
+    ]
+  },
+  "Dc2vPN1H3Sv": {
+    "title": "Catherine Seavitt podcast episode announcement",
+    "summary": "Promotes the fourth architectural-education podcast episode, discussing lessons from plants with Catherine Seavitt. The caption does not name a current roster member.",
+    "captionContains": [
+      "Catherine Seavitt, Meyerson Professor",
+      "what we can learn from plants"
+    ],
+    "people": [],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/architalks-edu-ep-4/"
+    ]
+  },
+  "Dcs0OePH8JB": {
+    "title": "Sabine Storp community-design workshop announcement",
+    "summary": "Announces Sabine Storp's lunchtime session on community participation in design, scheduled for 15 September.",
+    "captionContains": [
+      "Sabine Storp is an architect and educator",
+      "currently Adjunct Professor at the University of Hong Kong"
+    ],
+    "advertisedEventDate": "2026-09-15",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/storp-sabine/",
+        "role": "Announced speaker; caption identifies HKU adjunct professorship",
+        "evidenceText": "Sabine Storp"
+      }
+    ],
+    "relatedUrls": []
+  },
+  "Dckq1NGHw_w": {
+    "title": "Guy Nordenson podcast episode announcement",
+    "summary": "Promotes the third architectural-education podcast episode on collaboration between architects and engineers, with Guy Nordenson. Earlier project-image dates are background, not new work dates.",
+    "captionContains": [
+      "Guy Nordenson, Professor of Architecture and Engineering",
+      "collaborative practice of the architect-engineer"
+    ],
+    "people": [],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/architalks-edu-ep-3/"
+    ]
+  },
+  "DciFWsVGmOu": {
+    "title": "CHAT neighbourhood-observation workshop announcement",
+    "summary": "CHAT advertises a September 12 walk, zine-making workshop and public talk involving sp/n and HKU's Su Chang. The post belongs to mill6chat and was discovered on Architecture's profile.",
+    "captionContains": [
+      "sp/n and Su Chang",
+      "Date: 12.09.2026",
+      "Co-Design Research Impact Think Tank"
+    ],
+    "advertisedEventDate": "2026-09-12",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/su-chang/",
+        "role": "Announced workshop guide and public-talk speaker; caption identifies HKU appointment",
+        "evidenceText": "Su Chang"
+      }
+    ],
+    "relatedUrls": []
+  },
+  "DcaOjxinw2s": {
+    "title": "Raimund Krenmueller material-making discussion announcement",
+    "summary": "Announces a September 8 discussion of physical making and digital design, naming the speaker, three respondents and moderator.",
+    "captionContains": [
+      "Raimund Krenmueller is an Austrian",
+      "Respondents:",
+      "Moderator:"
+    ],
+    "advertisedEventDate": "2026-09-08",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/krenmueller-raimund-wolfgang/",
+        "role": "Announced speaker",
+        "evidenceText": "Raimund Krenmueller"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/ottevaere-olivier/",
+        "role": "Listed respondent",
+        "evidenceText": "Olivier Ottevaere"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/goepel-garvin/",
+        "role": "Listed respondent",
+        "evidenceText": "Garvin Goepel"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/lange-christian-j/",
+        "role": "Listed respondent",
+        "evidenceText": "Christian Lange"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/tsang-thomas-h-k/",
+        "role": "Listed moderator",
+        "evidenceText": "Thomas Tsang"
+      }
+    ],
+    "relatedUrls": []
+  },
+  "DcAfZFLN5XI": {
+    "title": "Adrian Lahoud podcast episode announcement",
+    "summary": "Promotes the second architectural-education podcast episode, covering ecological thinking and climate-related changes in education with Adrian Lahoud. The caption does not name a current roster member.",
+    "captionContains": [
+      "Adrian Lahoud, Professor of Architecture and Urban Design",
+      "how the climate crisis has reshaped architectural education"
+    ],
+    "people": [],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/architalks-edu-ep-2/"
+    ]
+  },
+  "Db5Q4WRH0DB": {
+    "title": "Housing Authority community-social invitation",
+    "summary": "Invites the HKU architectural community to a September 4 gathering supported by alumni Ada Fung, Helen Leung and Stephen Ho. These named alumni are not current roster matches.",
+    "captionContains": [
+      "Community Social 8.0",
+      "When We Cross Paths at Housing Authority",
+      "Ada Fung"
+    ],
+    "advertisedEventDate": "2026-09-04",
+    "people": [],
+    "relatedUrls": []
+  },
+  "Dbu7HDwnyej": {
+    "title": "Pingyao fieldwork exhibition announcement",
+    "summary": "Promotes an exhibition of drawings, models and material studies from a Pingyao summer course taught by Heng Xia. The post appeared after the exhibition began.",
+    "captionContains": [
+      "ARCH 7364 summer course (Prof. Xia Heng)",
+      "Heng XIA, Assistant Professor"
+    ],
+    "advertisedEventDate": "2026-08-01",
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/xia-heng/",
+        "role": "Course tutor named in caption",
+        "evidenceText": "Heng XIA"
+      }
+    ],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/pingyao-ancient-city-hackathon/"
+    ]
+  },
+  "DbuvksGn0w8": {
+    "title": "Architectural-education podcast with Ursprung, Chang and Seng",
+    "summary": "Promotes the first architectural-education podcast episode, in which Philip Ursprung, Yung Ho Chang and Eunice Seng discuss architectural and design education. Earlier work shown in the post is historical context.",
+    "captionContains": [
+      "Yung Ho Chang, Dean of the Faculty of Architecture",
+      "Eunice Seng, Head of the Department of Architecture at HKU"
+    ],
+    "people": [
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/chang-yung-ho/",
+        "role": "Podcast participant explicitly named in the caption",
+        "evidenceText": "Yung Ho Chang"
+      },
+      {
+        "profileUrl": "https://www.arch.hku.hk/staff/arch/seng-eunice-m-f/",
+        "role": "Podcast participant explicitly named in the caption",
+        "evidenceText": "Eunice Seng"
+      }
+    ],
+    "relatedUrls": [
+      "https://www.arch.hku.hk/event_/architalks-edu-ep-1/"
+    ]
+  }
+}

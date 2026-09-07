@@ -13,6 +13,28 @@ spec.loader.exec_module(ledger)
 
 
 class LedgerTests(unittest.TestCase):
+    def test_saved_social_success_cannot_mask_new_failure_or_staleness(self):
+        from copy import deepcopy
+        previous = {"ingest": {"lastSuccessfulIngestAt": "2026-09-01T00:00:00Z"}}
+        current = {"scope": {"windowStart": "2026-07-11", "asOf": "2026-09-08"},
+                   "ingest": {"status": "success", "mode": "live-http", "lastDayIngested": "2026-09-08",
+                              "lastSuccessfulIngestAt": "2026-09-08T01:00:00Z"},
+                   "sources": [], "activities": [], "people": [], "coverage": {}}
+        social = {"startedAt": "2026-09-08T00:00:00Z", "finishedAt": "2026-09-08T00:01:00Z",
+                  "status": "success", "sources": [], "activities": []}
+        success = dict(social, mode="live-public-instagram")
+        merged = ledger.merge_saved_instagram(deepcopy(current), social, success, previous)
+        self.assertEqual(merged["ingest"]["status"], "success")
+        failed = dict(success, status="blocked-public-instagram", startedAt="2026-09-08T00:02:00Z", finishedAt="2026-09-08T00:03:00Z")
+        for attempt in (failed, {}):
+            merged = ledger.merge_saved_instagram(deepcopy(current), social, attempt, previous)
+            self.assertEqual(merged["ingest"]["status"], "partial")
+            self.assertEqual(merged["ingest"]["lastSuccessfulIngestAt"], previous["ingest"]["lastSuccessfulIngestAt"])
+        stale = deepcopy(current)
+        stale["ingest"]["lastDayIngested"] = "2026-09-09"
+        merged = ledger.merge_saved_instagram(stale, social, success, previous)
+        self.assertEqual(merged["ingest"]["status"], "partial")
+
     def test_day_precision_and_invalid_dates(self):
         self.assertEqual(ledger.parse_dates("20–24 July 2026"), ["2026-07-20", "2026-07-24"])
         self.assertEqual(ledger.parse_dates("2026-09-06; 31-Feb-2026; publication 2026"), ["2026-09-06"])
