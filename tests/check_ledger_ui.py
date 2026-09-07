@@ -31,6 +31,25 @@ def publisher_key(value):
     return urlunsplit((parts.scheme, parts.netloc.lower(), parts.path.rstrip('/'), query, ''))
 
 
+def check_title_arrow(page):
+    arrow = page.locator('#title svg.title-mark')
+    assert arrow.count() == 1, 'Title arrow must use a fixed SVG, not an OS-dependent glyph'
+    assert arrow.get_attribute('aria-hidden') == 'true'
+    assert arrow.get_attribute('focusable') == 'false'
+    assert '↗' not in page.locator('#title').text_content()
+    assert arrow.evaluate('''(node) => {
+        const arrow = node.getBoundingClientRect();
+        const title = node.closest('.hero-title').getBoundingClientRect();
+        const text = document.createRange();
+        text.selectNodeContents(node.parentNode.firstChild);
+        const works = text.getBoundingClientRect();
+        return arrow.width > 0 && arrow.height > 0 &&
+            arrow.left >= works.right - 1 && arrow.right <= title.right + 1 &&
+            arrow.top < works.bottom && arrow.bottom > works.top &&
+            getComputedStyle(node).stroke === getComputedStyle(node.parentNode).color;
+    }'''), 'Title arrow must remain red and beside WORKS within the hero column'
+
+
 def main():
     url = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:8765/internal/hku-activity/'
     data = json.load(urlopen(url + 'ledger.json'))
@@ -51,6 +70,11 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(url)
         page.wait_for_function("document.querySelectorAll('#record-list .record-card').length > 0")
+        page.evaluate('document.fonts.ready')
+        for width in (320, 390, 541, 820, 1440):
+            page.set_viewport_size({'width': width, 'height': 1050})
+            check_title_arrow(page)
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'), f'Horizontal overflow at {width}px'
         assert page.locator('#panel-records').is_visible()
         assert not page.locator('#panel-people').is_visible()
         assert page.locator('#record-list .record-card').count() == len(expected)

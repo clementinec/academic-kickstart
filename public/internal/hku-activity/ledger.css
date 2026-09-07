@@ -39,8 +39,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .hero { display: grid; grid-template-columns: 1.3fr 1fr .8fr; gap: 48px; align-items: center; padding: 30px 0 34px; }
 .eyebrow { margin: 0 0 13px; color: var(--muted); line-height: 1.6; }
 h1 { font: 600 clamp(58px, 6.1vw, 94px)/1.02 var(--display); letter-spacing: -1.5px; margin: 0; }
-h1 > span { display: block; color: var(--red); }
-.title-mark { font: 400 .66em var(--sans); margin-left: 8px; vertical-align: 7px; }
+h1 > span { display: block; color: var(--red); white-space: nowrap; }
+.title-mark { display: inline-block; width: .66em; height: .66em; margin-left: 8px; vertical-align: 7px; }
 .hero-intro { padding-top: 25px; }
 .hero-intro .intro { font-size: 22px; font-weight: 600; line-height: 1.4; letter-spacing: -.6px; margin: 0 0 13px; }
 .hero-intro > p:not(.intro) { max-width: 370px; color: var(--muted); font-size: 12px; }
