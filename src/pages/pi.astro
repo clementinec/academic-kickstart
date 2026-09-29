@@ -24,7 +24,7 @@ import {
       <p class="hero-lead">
         {profile.role}, {profile.department}, {profile.institution}
       </p>
-      <p class="hero-summary">Human-building-climate systems, simulation, climate futures, and design-facing AI.</p>
+      <p class="hero-summary">{profile.summary}</p>
       <ul class="inline-links" aria-label="Profile links">
         {links.map((link) => (
           <li><a href={link.href}>{link.label}</a></li>

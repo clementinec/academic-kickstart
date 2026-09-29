@@ -1,97 +1,119 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import {
-  contributions,
-  expertise,
-  lab,
-  honors,
-  supervision
-} from "../data/site";
+import { expertise, researchOverview } from "../data/site";
+import { researchProgramme } from "../data/research";
+
+const paperAnchor = (id: string) => `paper-${id.toLowerCase()}`;
 ---
 
 <BaseLayout
-  title="Research | FORGE"
-  description="Research themes, methods, and current directions for FORGE."
+  title="Research and selected work | FORGE"
+  description="People, systems, and climate: the research questions and selected publications behind FORGE's work."
   activePath="/research"
 >
-  <section class="page-intro">
+  <section class="page-intro research-intro">
     <div>
-      <p class="eyebrow">{lab.name}</p>
-      <h1>Research organized around papers, projects, and standards work.</h1>
+      <p class="eyebrow">Research and selected work</p>
+      <h1>People, systems, climate.</h1>
       <p class="page-summary">
-        FORGE currently concentrates on four connected lines of work: human heat and
-        thermal comfort, climate forcing and future weather, control and co-simulation,
-        and ventilation or design-facing systems. The themes below are pulled directly
-        from recent papers, grants, and ongoing student projects rather than generic
-        academic categories.
+        {researchOverview} We ask how building decisions can account for the likelihood
+        and consequences of unacceptable discomfort across diverse occupants and uncertain climate futures.
       </p>
+      <div class="hero-links">
+        <a class="text-link" href="#programme">Explore the programme</a>
+        <a class="text-link" href="/publications/">Publication catalogue</a>
+      </div>
     </div>
   </section>
 
-  <section class="feature-grid">
-    {contributions.map((item, index) => (
-      <article class="feature-panel">
-        <p class="eyebrow">Current track 0{index + 1}</p>
-        <h2>{item.title}</h2>
-        <p>{item.text}</p>
-      </article>
-    ))}
-  </section>
-
-  <section class="page-grid">
-    {expertise.map((group) => (
-      <div class="section-shell">
-        <div class="section-header">
-          <p class="eyebrow">Research theme</p>
-          <h2>{group.area}</h2>
-        </div>
-        <ul class="statement-list">
-          {group.items.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
-
-  <section class="page-grid">
-    <div class="section-shell">
-      <div class="section-header">
-        <p class="eyebrow">Current supervision</p>
-        <h2>Student work in motion</h2>
-      </div>
-      <ul class="statement-list">
-        {supervision.doctoral.map((item) => (
-          <li>{item}</li>
-        ))}
-        {supervision.theses.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-    </div>
-    <div class="section-shell">
-      <div class="section-header">
-        <p class="eyebrow">Support and recognition</p>
-        <h2>Recent momentum</h2>
-      </div>
-      <ul class="statement-list">
-        {honors.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="section-shell emphasis-shell research-position-shell">
+  <section id="programme" class="research-programme" aria-labelledby="programme-title">
     <div class="section-header">
-      <p class="eyebrow">Lab position</p>
-      <h2>Technical enough for validation, legible enough for design</h2>
+      <p class="eyebrow">Three interacting areas</p>
+      <h2 id="programme-title">Research programme</h2>
+      <p class="note">Nine highlighted papers. Select a contribution to read its citation below.</p>
     </div>
-    <p>
-      FORGE sits between standards work, building simulation, comfort science, and
-      design pedagogy. The aim is to build methods rigorous enough for climate-risk
-      analysis, validation, and technical decision-making, but clear enough to inform
-      architectural judgment, studio teaching, and public-sector collaboration.
-    </p>
+    <div class="feature-grid">
+      {researchProgramme.map((area) => (
+        <article class="feature-panel programme-card" id={`programme-${area.id}`} tabindex="-1" aria-labelledby={`programme-title-${area.id}`}>
+          <p class="eyebrow">{area.title}</p>
+          <h3 id={`programme-title-${area.id}`}>{area.focus}</h3>
+          <p>{area.text}</p>
+          <ul class="programme-work-links" aria-label={`Selected ${area.title.toLowerCase()} work`}>
+            {area.works.map((work) => (
+              <li>
+                <a href={`#${paperAnchor(work.paperId)}`}>
+                  <span class="reference-id">{work.paperId}</span>
+                  <span>{work.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <div class="research-evidence">
+    {researchProgramme.map((area) => (
+      <section class="section-shell evidence-group" aria-labelledby={`question-${area.id}`}>
+        <div class="evidence-intro">
+          <p class="eyebrow">{area.title} / Selected work</p>
+          <h2 id={`question-${area.id}`}>{area.question}</h2>
+          <p>{area.connection}</p>
+        </div>
+        <div class="research-paper-list">
+          {area.works.map(({ paperId, label, contribution, paper }) => (
+            <article class="research-paper" id={paperAnchor(paperId)} tabindex="-1" aria-labelledby={`title-${paperId}`}>
+              <a class="reference-id paper-return" href={`#programme-${area.id}`} aria-label={`${paperId}: back to the ${area.title} programme`} title={`Back to ${area.title}`}>
+                <span aria-hidden="true">↑ </span>{paperId}
+              </a>
+              <div class="research-paper-body">
+                <p class="research-contribution"><strong>{label}.</strong> {contribution}</p>
+                <h3 id={`title-${paperId}`} class="research-paper-title">{paper.title}</h3>
+                <p class="research-citation">
+                  {paper.authors}<br />
+                  <em>{paper.venue}</em> · {paper.year}
+                  {paper.status === "Accepted" && <> · <strong>{paper.note}</strong></>}
+                  {paper.status === "In press" && <> · <strong>In press</strong></>}
+                </p>
+                <div class="research-paper-links">
+                  {paper.doi && <a class="text-link" href={paper.doi} target="_blank" rel="noreferrer" aria-label={`Read ${paperId} via DOI`}>DOI ↗</a>}
+                  <a class="text-link" href={`/publications/#publication-${paperId.toLowerCase()}`}>Catalogue entry</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="evidence-footer">
+          <a class="text-link" href={`/publications/?area=${area.id}`}>More {area.title.toLowerCase()} publications →</a>
+          <a class="text-link" href={`#programme-${area.id}`}>Back to programme ↑</a>
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <details class="section-shell research-methods">
+    <summary>Methods and applications</summary>
+    <div class="page-grid">
+      {expertise.map((group) => (
+        <div>
+          <h3>{group.area}</h3>
+          <ul class="statement-list">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </details>
+
+  <section class="section-shell research-next quiet-shell">
+    <h2>Explore further.</h2>
+    <p>Browse publications since joining HKU, or use the full CV for the complete career record.</p>
+    <div class="inline-links">
+      <a class="text-link" href="/publications/">Publication catalogue</a>
+      <a class="text-link" href="/cv.pdf">Full CV</a>
+      <a class="text-link" href="/team/">Meet the team</a>
+      <a class="text-link" href="/pi/">PI, teaching and supervision</a>
+    </div>
   </section>
 </BaseLayout>

@@ -143,9 +143,9 @@ h1 {
 
 h2 {
   margin: 0;
-  font-family: "DM Serif Text", serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(1.9rem, 4vw, 3.2rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -367,6 +367,11 @@ li {
   box-shadow: var(--shadow-soft);
 }
 
+.publication-intro h1 {
+  max-width: none;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+}
+
 .filter-header {
   display: flex;
   justify-content: space-between;
@@ -374,10 +379,43 @@ li {
   align-items: center;
 }
 
+.filter-header h2 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
 .filter-status {
   margin: 0;
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+.filter-help {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.publication-empty {
+  padding: 1.2rem;
+}
+
+.filter-reset {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.filter-header .filter-reset {
+  min-height: 2.75rem;
+  flex-shrink: 0;
+  font-size: 0.8rem;
 }
 
 .publication-filters {
@@ -388,16 +426,22 @@ li {
 
 .filter-chip {
   min-width: 0;
+  min-height: 2.75rem;
   height: auto;
-  padding: 0.28rem 0.65rem;
+  padding: 0.45rem 0.9rem;
   border: 1px solid #bdbdbd;
   border-radius: 999px;
   background: #f4f4f4;
   color: #3f3f3f;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.76rem;
+  font-family: inherit;
+  font-size: 0.8rem;
   line-height: 1.35;
-  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.filter-chip[data-area] {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.1rem;
 }
 
 .filter-chip:hover,
@@ -407,10 +451,163 @@ li {
 }
 
 .filter-chip.is-active {
-  border: 2px solid var(--border);
-  background: var(--card-yellow);
-  color: var(--text);
-  box-shadow: 2px 2px 0 #000;
+  border-color: var(--border);
+  background: var(--text);
+  color: var(--card-white);
+}
+
+.publication-topic-filter {
+  border-top: 1px solid #c7c7c7;
+}
+
+.publication-topic-filter summary {
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.7rem 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.publication-topic-filter[open] .publication-filters {
+  margin: 0.2rem 0 0.65rem;
+}
+
+.publication-catalogue {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-header.catalogue-group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.catalogue-group-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.catalogue-group-header .section-count {
+  font-family: "IBM Plex Mono", monospace;
+  white-space: nowrap;
+}
+
+.catalogue-paper {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.6rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid #bdbdbd;
+}
+
+.catalogue-paper[hidden] {
+  display: none;
+}
+
+.catalogue-paper:last-child {
+  padding-bottom: 0;
+}
+
+.catalogue-reference {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.catalogue-reference a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25em;
+}
+
+.catalogue-year {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.catalogue-paper-body {
+  min-width: 0;
+}
+
+.catalogue-title {
+  max-width: 70ch;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.catalogue-authors {
+  margin: 0.65rem 0 0.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.catalogue-venue {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.catalogue-doi {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-left: 0.6rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  text-underline-offset: 0.2em;
+}
+
+.catalogue-status {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.catalogue-note {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.catalogue-reading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  align-items: flex-start;
+  margin-top: 0.4rem;
+}
+
+.catalogue-summary {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+
+.catalogue-summary summary {
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.7rem 0;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.catalogue-summary p {
+  max-width: 80ch;
+  margin: 0.4rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.publication-filter-shell :focus-visible,
+.catalogue-paper a:focus-visible,
+.catalogue-summary summary:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 4px;
 }
 
 .feature-panel {
@@ -438,10 +635,174 @@ li {
   background: var(--card-yellow);
 }
 
-.research-position-shell {
-  margin-top: 1.75rem;
-  padding-top: 1.7rem;
-  padding-bottom: 1.85rem;
+.research-intro h1 {
+  max-width: none;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+}
+
+.research-programme,
+.programme-card,
+.research-paper,
+.publication-card[id],
+.catalogue-paper {
+  scroll-margin-top: 1.5rem;
+}
+
+.research-programme > .section-header p {
+  margin: 0;
+}
+
+.programme-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.programme-card h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  line-height: 1.15;
+}
+
+.programme-work-links {
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.programme-work-links li {
+  border-top: 1px solid #c7c7c7;
+}
+
+.programme-work-links a {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-underline-offset: 0.2em;
+}
+
+.reference-id {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.research-evidence {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.evidence-intro {
+  max-width: 62rem;
+  margin-bottom: 0.75rem;
+}
+
+.evidence-intro h2 {
+  margin-top: 0.55rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.research-paper {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid #bdbdbd;
+}
+
+.paper-return {
+  display: inline-flex;
+  align-self: start;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25em;
+}
+
+.research-paper-body {
+  min-width: 0;
+}
+
+.research-contribution {
+  margin: 0 0 0.65rem;
+}
+
+.research-paper-title {
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  line-height: 1.3;
+}
+
+.research-citation {
+  margin: 0.65rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.research-paper-links,
+.evidence-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  align-items: center;
+}
+
+.research-paper-links a,
+.evidence-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.9rem;
+}
+
+.evidence-footer {
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--border);
+}
+
+.programme-card:target,
+.research-paper:target,
+.publication-card[id]:target,
+.catalogue-paper:target {
+  outline: 3px solid var(--border);
+  outline-offset: 4px;
+}
+
+.research-programme a:focus-visible,
+.research-evidence a:focus-visible,
+.research-methods summary:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 4px;
+}
+
+.research-methods,
+.research-next {
+  margin-top: 1.5rem;
+}
+
+.research-methods summary {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.research-methods h3 {
+  margin-bottom: 0.8rem;
+}
+
+.publication-context-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-left: auto;
+  font-size: 0.85rem;
 }
 
 .section-header {
@@ -896,5 +1257,45 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.45rem;
+  }
+
+  .research-paper {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+
+  .paper-return {
+    justify-self: start;
+  }
+
+  .catalogue-paper {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    padding-top: 0.8rem;
+  }
+
+  .catalogue-reference {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .catalogue-year {
+    font-size: 1rem;
+  }
+
+  .publication-context-link {
+    margin-left: 0;
+  }
+
+  .filter-header {
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

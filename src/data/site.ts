@@ -1,10 +1,34 @@
+export const researchOverview =
+  "Research on how people, building systems, and climate interact to shape thermal protection and energy demand.";
+
+export const researchAxes = [
+  {
+    id: "people",
+    title: "People",
+    focus: "Thermal protection and human variability",
+    text: "We model how hot or cold people feel and how likely each sensation is, accounting for human heat generation, physiology, and context."
+  },
+  {
+    id: "systems",
+    title: "Systems",
+    focus: "Integration and energy uncertainty",
+    text: "We connect human-response models to building simulation and control, using predicted thermal sensations to assess discomfort risk, energy demand, and operational uncertainty."
+  },
+  {
+    id: "climate",
+    title: "Climate",
+    focus: "Future weather and resilience",
+    text: "Weather generation, changing exposure, and climate stress-testing reveal how uncertain futures affect building performance and the people buildings serve."
+  }
+];
+
 export const lab = {
   name: "FORGE",
   longName: "Future, Occupant, Risk, and Generative Environments",
   shortDescription:
     "A design-science lab for human-building-climate systems at The University of Hong Kong.",
   pitch:
-    "FORGE studies how buildings and environmental systems perform for actual people across uncertain, climate-stressed futures.",
+    "FORGE studies how interactions between people, building systems, and climate shape thermal protection and energy demand.",
   why:
     "The lab is built on a simple position: architecture and energy systems have drifted too far from the people they claim to serve. FORGE writes people back into simulation, control, climate risk, and design reasoning.",
   pillars: [
@@ -19,12 +43,13 @@ export const homeTeamSummary =
 
 export const homeFocus = {
   intro:
-    "The current agenda is concentrated around standards revision, future weather uncertainty, thermal comfort prediction, and AI-supported design pedagogy.",
+    "The research programme connects people, integrated building systems, and climate futures, with thermal protection and energy uncertainty at their intersections.",
   items: [
     "ASHRAE 1959-TRP",
     "Human Heat Standards",
     "Climate Stress-Testing",
-    "Ordinal Thermal Comfort",
+    "Thermal Protection",
+    "Ordinal and Tail Risk",
     "Risk-Aware Control",
     "Socratic Oracle"
   ]
@@ -87,7 +112,7 @@ export const profile = {
   hero:
     "Design science for human-building-climate systems.",
   summary:
-    "Probabilistic modeling, physics-informed ML, co-simulation, climate stress-testing, and design-facing AI for buildings, cities, and public institutions.",
+    "Thermal protection and energy demand at the intersections of people, building systems, and climate, using probabilistic modeling, sensing, and integrated simulation.",
   profilePoints: [
     "Published a correction to the century-old 120 W metabolic default in comfort standards, prompting and winning ASHRAE 1959-TRP as PI in February 2026.",
     "Builds digital twins, probabilistic simulation pipelines, scenario-conditioned weather generation, and computer-vision methods for environmental design.",
@@ -188,7 +213,8 @@ export const links = [
     label: "ResearchGate",
     href: "https://www.researchgate.net/profile/Hongshan-Guo-3"
   },
-  { label: "CV", href: "/cv.pdf" }
+  { label: "Full CV", href: "/cv.pdf" },
+  { label: "Short profile", href: "/cv-profile.pdf" }
 ];
 
 export const metrics = [
@@ -214,23 +240,6 @@ export const metrics = [
   }
 ];
 
-export const contributions = [
-  {
-    title: "Human heat, comfort, and standards",
-    text:
-      "Research here spans demographic metabolic rates, MRT-aware comfort analysis, ordinal prediction, and physiology-constrained models. The through-line is to replace abstract default occupants with measurable human heat and comfort response."
-  },
-  {
-    title: "Climate futures and stochastic weather",
-    text:
-      "FORGE studies how future weather assumptions alter building performance using climate forcing, ERA5 or CMIP chains, stochastic generation, and uncertainty propagation. The goal is not just future files, but defensible stress-tests for design and operation."
-  },
-  {
-    title: "Operation, ventilation, and design-facing systems",
-    text:
-      "Work extends from EnergyPlus co-simulation and risk-aware control to wet-market ventilation retrofits and AI-supported pedagogy platforms. The point is to turn models into operational, institutional, and design tools rather than leaving them as standalone predictions."
-  }
-];
 
 export const appointments = [
   {
@@ -320,7 +329,7 @@ export const expertise = [
 
 export const supervision = {
   doctoral: [
-    "Kanxuan He, PhD (HKU, 2025-): probabilistic control; first place at the ICML 2025 CO-BUILD Smart Building Competition.",
+    "Kanxuan He, PhD (HKU, 2025-): probabilistic control; Best Paper Award at IAQVEC 2026 (May 2026); first place at the ICML 2025 CO-BUILD Smart Building Competition.",
     "Yu Chang, PhD (HKU, 2024-): cross-cultural thermal comfort; first-author review in Renewable and Sustainable Energy Reviews (2025)."
   ],
   theses: [
@@ -333,19 +342,81 @@ export const honors = [
   "ASHRAE Research Project 1959-TRP, PI, awarded February 2026 and commencing April 2026.",
   "Teaching Development and Language Enhancement Grant, HKU, PI, Socratic Oracle (2025-2028).",
   "Teaching Development Grant, HKU, PI, AI Design Coach (2026-2028).",
+  "IAQVEC 2026 Best Paper Award, co-recipient with PhD student Kanxuan He as his supervisor and co-author, Los Angeles, May 2026.",
   "ICML 2025 CO-BUILD Smart Building Competition, first place as faculty mentor and author.",
   "NeurIPS 2025 Urban AI Workshop Buildings Challenge, third place as faculty mentor.",
   "Gartner Eye on Innovation Award, BNY Mellon, 2021.",
   "Lowry Methodology Award, International Conference of Urban Climate, 2018."
 ];
 
+// Citation sources and reconciliation notes: data/publication-refresh-2026-09-29.md.
 export const publications = {
+  accepted: [
+    {
+      id: "A01",
+      authors: "Hongshan Guo",
+      title:
+        "Delivered-Energy and Operative-Temperature Trade-offs for Learned-Probability-Informed HVAC Supervision in a Weather Stress Grid.",
+      areas: ["people", "systems", "climate"],
+      venue: "Energy and Buildings",
+      year: "2026",
+      status: "Accepted",
+      note: "Accepted 27 September 2026.",
+      summary:
+        "Uses predicted probabilities of thermal sensation to inform HVAC supervision, examining delivered-energy and operative-temperature trade-offs across a weather stress grid.",
+      tags: ["thermal protection", "ordinal risk", "tail risk", "energy", "climate", "thermal comfort", "control"]
+    },
+    {
+      id: "A02",
+      authors: "Hongshan Guo, Kanxuan He",
+      title:
+        "Lower Peaks, Similar Growth: Isolating the Value and Limits of AI-Driven Thermal Sensation Modeling for Building–Grid Resilience Under Future Climates.",
+      areas: ["people", "systems", "climate"],
+      venue: "Engineering Applications of Artificial Intelligence",
+      year: "2026",
+      status: "Accepted",
+      note: "Accepted 15 September 2026.",
+      tags: ["energy", "climate", "thermal comfort", "control"]
+    },
+    {
+      id: "A03",
+      authors: "Hongshan Guo",
+      title:
+        "Equal Cooling Setpoints, Unequal Thermal Outcomes: Residential Cooling Service Under Future Weather and Ageing.",
+      areas: ["people", "systems", "climate"],
+      venue: "Energy",
+      year: "2026",
+      status: "In press",
+      note: "Article 142403; DOI registered, volume not yet assigned.",
+      summary:
+        "Examines how future weather and population ageing affect residential cooling service and thermal outcomes under equal cooling setpoints.",
+      doi: "https://doi.org/10.1016/j.energy.2026.142403",
+      tags: ["energy", "climate", "thermal comfort", "human heat"]
+    }
+  ],
   journals: [
     {
+      id: "J01",
+      authors: "Yu Chang, Hongshan Guo",
+      title:
+        "Temporal Regime Diagnostics of Dining-Space CO₂ Under Occupancy Loading: A Long-Horizon Operational Study with Dense-Grid Seed Evidence.",
+      areas: ["people", "systems"],
+      venue: "Building and Environment",
+      year: "2026",
+      status: "Published online",
+      note: "CO₂ monitoring, occupancy history, and temporal response diagnostics.",
+      summary:
+        "Combines dense sensor measurements with 13 months of coffee-shop and restaurant monitoring to identify CO₂ build-up and recovery patterns. Recent occupancy history improves prediction of concentration changes, while the diagnostic framework distinguishes temporal response from instantaneous headcount or ventilation estimates.",
+      doi: "https://doi.org/10.1016/j.buildenv.2026.115257",
+      tags: ["ventilation"]
+    },
+    {
+      id: "J02",
       authors:
         "Hongshan Guo, Sebastiano Anselmo, Maria Ferrara, Shuai Niu, Binlin Chi, Xuchen Wang",
       title:
         "Automated Urban Energy Assessment: From Thermal Flyover to AI-Driven Retrofit Prioritization for Sustainable Cities.",
+      areas: ["systems"],
       venue: "Sustainable Cities and Society",
       year: "2026",
       status: "Published",
@@ -356,61 +427,11 @@ export const publications = {
       tags: ["energy", "climate"]
     },
     {
-      authors: "Hongshan Guo, Dorit Aviv",
-      title:
-        "From Seven Points to Probabilities: Ordinal Learning for Risk-Aware Thermal Comfort Prediction.",
-      venue: "Building and Environment",
-      year: "2026",
-      status: "Published",
-      note: "Ordinal learning, risk-aware prediction.",
-      summary:
-        "Reframes thermal sensation prediction as an ordinal learning problem with calibrated probabilities for risk-aware comfort decisions. The model yields confidence-aware outputs that are more useful for control and design decisions under uncertainty than a flat seven-point label alone.",
-      doi: "https://doi.org/10.1016/j.buildenv.2026.114426",
-      tags: ["thermal comfort", "control"]
-    },
-    {
-      authors: "Hongshan Guo, Ilaria Pigliautile, Yu Chang, Qingyao Qiao, Yichun Li",
-      title:
-        "Toward Smarter HVAC Control: Machine Learning Reveals Hidden Drivers in Thermal Comfort Databases.",
-      venue: "Energy and AI",
-      year: "2026",
-      status: "Published",
-      note: "Sensitivity analysis, MRT, and data quality.",
-      summary:
-        "Shows how missing-data policy reshapes feature sensitivity rankings and supports MRT-aware, occupant-centric HVAC control. The paper makes clear that preprocessing decisions materially affect what machine-learning models appear to learn from thermal comfort databases.",
-      doi: "https://doi.org/10.1016/j.egyai.2026.100709",
-      tags: ["thermal comfort", "control", "energy"]
-    },
-    {
-      authors: "Chao Cen, Hongshan Guo, Lup Wai Chew, Nyuk Hien Wong",
-      title:
-        "Experimental Study on Gender Differences in Thermal Comfort and Physiological Responses in Fan-Assisted Cooling Environments.",
-      venue: "Energy and Buildings",
-      year: "2026",
-      status: "Published",
-      note: "Fan-assisted cooling, gender differences, and tropical mixed-mode comfort.",
-      summary:
-        "Finds that gender differences become most pronounced under high-velocity cooling at lower temperatures, with implications for equitable fan-cooling design. By connecting subjective votes with skin-temperature responses, the study shows why mixed-mode cooling strategies should not assume uniform comfort response.",
-      doi: "https://doi.org/10.1016/j.enbuild.2026.117365",
-      tags: ["thermal comfort", "human heat"]
-    },
-    {
-      authors: "Hongshan Guo, Kanxuan He",
-      title:
-        "Input Quality, Not Statistical Complexity, Determines Climate-Adapted Weather File Fidelity: A Causal Decomposition of Degree-Day Errors.",
-      venue: "Energy",
-      year: "2026",
-      status: "Published",
-      note: "Weather file validation and causal analysis.",
-      summary:
-        "Shows that weather-file baseline quality dominates future demand bias, outperforming more complex workflows for climate-adapted energy projections. Rather than rewarding statistical complexity for its own sake, the paper identifies input fidelity as the main determinant of robust downstream building simulation.",
-      doi: "https://doi.org/10.1016/j.energy.2026.140867",
-      tags: ["climate", "energy"]
-    },
-    {
+      id: "J03",
       authors: "Hongshan Guo, Kanxuan He",
       title:
         "Scenario-Conditioned Actual Meteorological Years (sAMY): A Stochastic Weather Generator Using Multi-Decadal Observations.",
+      areas: ["systems", "climate"],
       venue: "Energy and Buildings",
       year: "2026",
       status: "Published",
@@ -421,10 +442,72 @@ export const publications = {
       tags: ["climate", "energy"]
     },
     {
+      id: "J04",
+      authors: "Chao Cen, Hongshan Guo, Lup Wai Chew, Nyuk Hien Wong",
+      title:
+        "Experimental Study on Gender Differences in Thermal Comfort and Physiological Responses in Fan-Assisted Cooling Environments.",
+      areas: ["people", "systems"],
+      venue: "Energy and Buildings",
+      year: "2026",
+      status: "Published",
+      note: "Fan-assisted cooling, gender differences, and tropical mixed-mode comfort.",
+      summary:
+        "Finds that gender differences become most pronounced under high-velocity cooling at lower temperatures, with implications for equitable fan-cooling design. By connecting subjective votes with skin-temperature responses, the study shows why mixed-mode cooling strategies should not assume uniform comfort response.",
+      doi: "https://doi.org/10.1016/j.enbuild.2026.117365",
+      tags: ["thermal comfort", "human heat"]
+    },
+    {
+      id: "J05",
+      authors: "Hongshan Guo, Kanxuan He",
+      title:
+        "Input Quality, Not Statistical Complexity, Determines Climate-Adapted Weather File Fidelity: A Causal Decomposition of Degree-Day Errors.",
+      areas: ["systems", "climate"],
+      venue: "Energy",
+      year: "2026",
+      status: "Published",
+      note: "Weather file validation and causal analysis.",
+      summary:
+        "Shows that weather-file baseline quality dominates future demand bias, outperforming more complex workflows for climate-adapted energy projections. Rather than rewarding statistical complexity for its own sake, the paper identifies input fidelity as the main determinant of robust downstream building simulation.",
+      doi: "https://doi.org/10.1016/j.energy.2026.140867",
+      tags: ["climate", "energy"]
+    },
+    {
+      id: "J06",
+      authors: "Hongshan Guo, Dorit Aviv",
+      title:
+        "From Seven Points to Probabilities: Ordinal Learning for Risk-Aware Thermal Comfort Prediction.",
+      areas: ["people", "systems"],
+      venue: "Building and Environment",
+      year: "2026",
+      status: "Published",
+      note: "Ordinal learning, risk-aware prediction.",
+      summary:
+        "Predicts the probability of each response on the seven-point cold-to-hot thermal sensation scale, so design and control decisions can account for uncertainty in how occupants feel.",
+      doi: "https://doi.org/10.1016/j.buildenv.2026.114426",
+      tags: ["ordinal risk", "thermal comfort", "control"]
+    },
+    {
+      id: "J07",
+      authors: "Hongshan Guo, Ilaria Pigliautile, Yu Chang, Qingyao Qiao, Yichun Li",
+      title:
+        "Toward Smarter HVAC Control: Machine Learning Reveals Hidden Drivers in Thermal Comfort Databases.",
+      areas: ["people", "systems"],
+      venue: "Energy and AI",
+      year: "2026",
+      status: "Published",
+      note: "Sensitivity analysis, MRT, and data quality.",
+      summary:
+        "Shows how missing-data policy reshapes feature sensitivity rankings and supports MRT-aware, occupant-centric HVAC control. The paper makes clear that preprocessing decisions materially affect what machine-learning models appear to learn from thermal comfort databases.",
+      doi: "https://doi.org/10.1016/j.egyai.2026.100709",
+      tags: ["thermal comfort", "control", "energy"]
+    },
+    {
+      id: "J08",
       authors:
         "Hongshan Guo, Yu Chang, Yichun Li, Ying Zhou, Qingyao Qiao, Chun Yin Lai, Eric Schuldenfrei",
       title:
         "Ventilation-Energy Trade-offs in Retrofitted Hong Kong Wet Markets.",
+      areas: ["people", "systems", "climate"],
       venue: "Energy and Buildings",
       year: "2026",
       status: "Published",
@@ -435,22 +518,11 @@ export const publications = {
       tags: ["ventilation", "energy", "climate"]
     },
     {
-      authors: "Hongshan Guo, Ruiji Sun, Youmin Xu",
-      title:
-        "Correcting the 120-Watt Assumption: Demographic-Aware Metabolic Rates for Energy Savings and Thermal Comfort Equity in Buildings.",
-      venue: "Energy and Buildings",
-      year: "2025",
-      status: "Published",
-      note: "Standards impact and equity; prompted ASHRAE 1959-TRP.",
-      summary:
-        "Demonstrates that demographic-aware metabolic loads can cut HVAC energy use and reduce gender-based comfort bias relative to the legacy 120 W/person assumption. The work directly challenged a century-old default embedded in standards and helped motivate ASHRAE 1959-TRP.",
-      doi: "https://doi.org/10.1016/j.enbuild.2025.116525",
-      tags: ["human heat", "energy"]
-    },
-    {
+      id: "J09",
       authors: "Hongshan Guo, Kanxuan He, Youmin Xu, Yue Lei",
       title:
         "A Co-Simulation Methodology for Integrating Data-Driven Thermal Sensation Models with Building Energy Control.",
+      areas: ["people", "systems", "climate"],
       venue: "Energy and Buildings",
       year: "2026",
       status: "Published",
@@ -461,22 +533,26 @@ export const publications = {
       tags: ["thermal comfort", "control", "climate"]
     },
     {
-      authors: "Hongshan Guo, Kanxuan He, Yongqiang Luo, Yu Chang",
+      id: "J10",
+      authors: "Hongshan Guo, Ruiji Sun, Youmin Xu",
       title:
-        "Physics-Informed Neural Networks for Robust Thermal Comfort Prediction: Overcoming Data Quality Limitations Through Physiological Constraints.",
-      venue: "Building and Environment",
+        "Correcting the 120-Watt Assumption: Demographic-Aware Metabolic Rates for Energy Savings and Thermal Comfort Equity in Buildings.",
+      areas: ["people", "systems"],
+      venue: "Energy and Buildings",
       year: "2025",
       status: "Published",
-      note: "PINNs and physiological constraints.",
+      note: "Standards impact and equity; prompted ASHRAE 1959-TRP.",
       summary:
-        "Uses physiological constraints inside a neural model to improve robustness and interpretability in large-scale thermal comfort prediction. The approach treats building-comfort ML as a physically informed modeling problem rather than a purely statistical fitting exercise.",
-      doi: "https://doi.org/10.1016/j.buildenv.2025.113588",
-      tags: ["thermal comfort", "human heat"]
+        "Demonstrates that demographic-aware metabolic loads can cut HVAC energy use and reduce gender-based comfort bias relative to the legacy 120 W/person assumption. The work directly challenged a century-old default embedded in standards and helped motivate ASHRAE 1959-TRP.",
+      doi: "https://doi.org/10.1016/j.enbuild.2025.116525",
+      tags: ["human heat", "energy"]
     },
     {
+      id: "J11",
       authors: "Yu Chang, Hongshan Guo, Yichun Li, Ilaria Pigliautile, Binlin Chi",
       title:
         "A Data-Driven Qualitative Review of Thermal Comfort Studies: Bridging the Gap Between Western and Eastern Perspectives.",
+      areas: ["people"],
       venue: "Renewable and Sustainable Energy Reviews",
       year: "2025",
       status: "Published",
@@ -485,26 +561,45 @@ export const publications = {
         "Reviews how comfort studies use personal, contextual, and PMV-related variables, highlighting gaps that limit cross-cultural comparison and model transfer. It also establishes a benchmark-oriented framing for comparing Eastern and Western comfort evidence more systematically.",
       doi: "https://doi.org/10.1016/j.rser.2025.116020",
       tags: ["thermal comfort", "climate"]
+    },
+    {
+      id: "J12",
+      authors: "Hongshan Guo, Kanxuan He, Yongqiang Luo, Yu Chang",
+      title:
+        "Physics-Informed Neural Networks for Robust Thermal Comfort Prediction: Overcoming Data Quality Limitations Through Physiological Constraints.",
+      areas: ["people"],
+      venue: "Building and Environment",
+      year: "2025",
+      status: "Published",
+      note: "PINNs and physiological constraints.",
+      summary:
+        "Uses physiological constraints inside a neural model to improve robustness and interpretability in large-scale thermal comfort prediction. The approach treats building-comfort ML as a physically informed modeling problem rather than a purely statistical fitting exercise.",
+      doi: "https://doi.org/10.1016/j.buildenv.2025.113588",
+      tags: ["thermal comfort", "human heat"]
     }
   ],
   chapters: [
   ],
   proceedings: [
     {
+      id: "C01",
       authors: "He K., Guo H.",
       title:
         "Data-Driven Cross-Regional Climate Zone Classification for Building Codes: A Future-Compatible Framework.",
+      areas: ["systems", "climate"],
       venue: "E3S Web of Conferences 716",
       year: "2026",
-      status: "Conference paper",
-      note: "Future-compatible climate zoning for building codes.",
+      status: "Best Paper Award",
+      note: "IAQVEC 2026, Los Angeles, May 2026. Future-compatible climate zoning for building codes.",
       doi: "https://doi.org/10.1051/e3sconf/202671610011",
       tags: ["climate", "energy"]
     },
     {
+      id: "C02",
       authors: "He K., Guo H.",
       title:
         "A Temporal Features-Enhanced Mixture-of-Experts Approach for Indoor Temperature Prediction.",
+      areas: ["systems"],
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Oral, first place",
@@ -512,9 +607,11 @@ export const publications = {
       tags: ["control", "energy"]
     },
     {
+      id: "C03",
       authors: "Niu S., Guo H., Ferrara M., Anselmo S.",
       title:
         "Thermal-SAM: Adversarial Prompt-Based Unsupervised Building Segmentation in Thermal Aerial Imagery.",
+      areas: ["systems"],
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Poster, third place",
@@ -522,9 +619,11 @@ export const publications = {
       tags: ["energy", "climate"]
     },
     {
+      id: "C04",
       authors: "Guo H., Chang Y., Hu D.",
       title:
         "ML-Driven Sensitivity Analysis for Lean HVAC: New Insights from Large-Scale Comfort Data.",
+      areas: ["people", "systems"],
       venue: "ICML 2025 CO-BUILD Workshop",
       year: "2025",
       status: "Poster",
@@ -532,49 +631,39 @@ export const publications = {
       tags: ["thermal comfort", "control", "energy"]
     },
     {
+      id: "C05",
       authors: "Guo H., Zhou Y., Lai C.Y., Ren C.",
-      title: "From Open Air to Air-Tight: Ventilation Overhaul in Hong Kong Wet Markets.",
-      venue: "IBPC 2024",
-      year: "2024",
+      title:
+        "From Open Air to Air-Tight: Analyzing the Ventilation Overhaul in Hong Kong's Wet Markets and Its Implications.",
+      areas: ["people", "systems"],
+      venue: "Multiphysics and Multiscale Building Physics (IBPC 2024)",
+      year: "2025",
       status: "Conference paper",
-      note: "",
+      note: "Proceedings chapter, pp. 55–60; first published online in December 2024.",
+      doi: "https://doi.org/10.1007/978-981-97-8317-5_9",
       tags: ["ventilation", "energy", "climate"]
     },
     {
-      authors: "Guo H., Li Y., Zhou Y., Chang Y., Lai C.Y.",
-      title:
-        "From Open Air to Air-Tight: Analyzing the Ventilation Overhaul in Hong Kong's Wet Markets and Its Implications.",
-      venue: "IBPC 2024",
-      year: "2024",
-      status: "Conference paper",
-      note: "",
-      tags: ["ventilation", "energy"]
-    },
-    {
+      id: "C06",
       authors: "Guo H., Coleman J., Gullapalli I.",
       title:
         "Accelerating NZEB Design Optimization Through LLM-Based Standardization and Compliance Checking.",
-      venue: "IBPC 2024",
-      year: "2024",
+      areas: ["systems"],
+      venue: "Multiphysics and Multiscale Building Physics (IBPC 2024)",
+      year: "2025",
       status: "Conference paper",
-      note: "",
+      note: "Proceedings chapter, pp. 585–591; first published online in December 2024.",
+      doi: "https://doi.org/10.1007/978-981-97-8309-0_79",
       tags: ["energy", "design intelligence"]
     }
   ],
   underReview: [
     {
-      authors: "Guo H., He K.",
-      title:
-        "Controller-Agnostic Benchmarking Across Five Climates: Comfort, Energy, and Peak Trade-offs to 2100.",
-      venue: "Engineering Applications of Artificial Intelligence",
-      year: "2025",
-      status: "Under review",
-      note: "Climate futures benchmarking."
-    },
-    {
+      id: "M01",
       authors: "Guo H., He K., Xu Y., Shi Z., Aviv D.",
       title:
         "Probabilistic Thermal Comfort for Energy-Efficient Building Control: A Risk-Aware Framework.",
+      areas: ["people", "systems"],
       venue: "Energy Conversion and Management",
       year: "2026",
       status: "Under review",

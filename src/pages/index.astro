@@ -9,9 +9,9 @@ import {
   publications
 } from "../data/site";
 
-const featuredPublications = publications.journals.slice(0, 3);
+const featuredPublications = [...publications.accepted, ...publications.journals].slice(0, 3);
 const publicationMeta = (item) =>
-  `${item.venue} · ${item.year}${item.status === "Accepted" ? " · Accepted" : ""}`;
+  `${item.venue} · ${item.year}${item.status && item.status !== "Published" ? ` · ${item.status}` : ""}`;
 ---
 
 <BaseLayout
@@ -121,6 +121,7 @@ const publicationMeta = (item) =>
               </a>
             )}
           </p>
+          {paper.summary && paper.status === "Accepted" && <p class="note">{paper.note}</p>}
           <p class="note">{paper.authors}</p>
           <div class="publication-tags">
             {paper.tags?.map((tag) => (

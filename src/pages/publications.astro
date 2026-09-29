@@ -1,9 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { publications } from "../data/site";
+import { publications, researchAxes } from "../data/site";
+import { selectedResearchIds } from "../data/research";
 
 const tagId = (tag) => tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const tagOrder = [
+  "thermal protection",
+  "ordinal risk",
+  "tail risk",
   "energy",
   "climate",
   "thermal comfort",
@@ -12,25 +16,33 @@ const tagOrder = [
   "human heat",
   "design intelligence"
 ];
-const allItems = [...publications.journals, ...publications.proceedings];
+const allItems = [...publications.accepted, ...publications.journals, ...publications.proceedings];
 const filterTags = tagOrder.filter((tag) => allItems.some((item) => item.tags?.includes(tag)));
-const publicationMeta = (item) =>
-  `${item.venue} · ${item.year}${
-    item.status && item.status !== "Published" && item.status !== "Conference paper"
-      ? ` · ${item.status}`
-      : ""
-  }`;
 const publicationTags = (item) => item.tags ?? [];
 const publicationTagIds = (item) => publicationTags(item).map(tagId).join(" ");
+const publicationStatus = (item) =>
+  item.status === "Accepted"
+    ? item.note
+    : item.status && !["Published", "Conference paper"].includes(item.status)
+      ? item.status
+      : "";
 
 const groups = [
   {
-    title: "Selected journal articles since joining HKU",
+    id: "accepted",
+    title: "Accepted & in press",
+    items: publications.accepted,
+    kind: "journal"
+  },
+  {
+    id: "journals",
+    title: "Journal articles",
     items: publications.journals,
     kind: "journal"
   },
   {
-    title: "Selected refereed conference and workshop papers since joining HKU",
+    id: "conferences",
+    title: "Conference & workshop papers",
     items: publications.proceedings,
     kind: "proceeding"
   }
@@ -39,119 +51,145 @@ const groups = [
 
 <BaseLayout
   title="Publications | FORGE"
-  description="Selected publications and manuscripts associated with FORGE."
+  description="Selected journal articles and refereed conference and workshop papers from FORGE, with publication status, DOI links, and research context."
   activePath="/publications"
 >
-  <section class="page-intro narrow">
+  <section class="page-intro publication-intro">
     <div>
-      <p class="eyebrow">Publications</p>
-      <h1>Selected output across comfort, control, climate, and design intelligence.</h1>
+      <p class="eyebrow">Research output</p>
+      <h1>Publications.</h1>
       <p class="page-summary">
-        Selected publications and conference papers since joining HKU in September 2023,
-        based on the CV and subsequent updates.
+        Selected work since joining HKU in September 2023: journal articles and refereed
+        conference and workshop papers, including accepted manuscripts.
       </p>
+      <div class="hero-links">
+        <a class="text-link" href="/research/">Explore the research programme</a>
+        <a class="text-link" href="/cv.pdf">Full career bibliography</a>
+      </div>
     </div>
   </section>
 
-  <section class="publication-filter-shell" aria-label="Filter publications by topic">
+  <section class="publication-filter-shell" aria-label="Explore publications by research area and topic">
     <div class="filter-header">
-      <p class="eyebrow">Filter</p>
-      <p class="filter-status" data-filter-status>Showing all {allItems.length} selected items</p>
+      <h2 id="research-area-label">Browse by research area</h2>
+      <button class="filter-reset" type="button" data-reset-filters>Reset filters</button>
     </div>
-    <div class="publication-filters" role="list" aria-label="Publication topic filters">
-      <button class="filter-chip is-active" type="button" data-filter="all" data-label="All" aria-pressed="true">
-        All
-      </button>
-      {filterTags.map((tag) => (
-        <button class="filter-chip" type="button" data-filter={tagId(tag)} data-label={tag} aria-pressed="false">
-          {tag}
+    <p class="note filter-help">Select multiple areas to find work at their intersection.</p>
+    <div class="publication-filters" role="group" aria-labelledby="research-area-label">
+      <button class="filter-chip is-active" type="button" data-area="all" aria-pressed="true">All work</button>
+      {researchAxes.map((axis) => (
+        <button class="filter-chip" type="button" data-area={axis.id} data-label={axis.title} title={axis.focus} aria-pressed="false">
+          {axis.title}
         </button>
       ))}
     </div>
+    <details class="publication-topic-filter" data-topic-disclosure>
+      <summary id="publication-topic-label">Methods and topics</summary>
+      <div class="publication-filters" role="group" aria-labelledby="publication-topic-label">
+        <button class="filter-chip is-active" type="button" data-topic="all" data-label="All topics" aria-pressed="true">
+          All topics
+        </button>
+        {filterTags.map((tag) => (
+          <button class="filter-chip" type="button" data-topic={tagId(tag)} data-label={tag} aria-pressed="false">
+            {tag}
+          </button>
+        ))}
+      </div>
+    </details>
+    <p class="filter-status" data-filter-status role="status" aria-live="polite">Showing all {allItems.length} papers</p>
   </section>
 
-  <section class="publication-groups clean-groups">
+  <p class="publication-empty" data-filter-empty hidden>
+    No publications match this combination. Try removing an area or topic,
+    or <button class="filter-reset" type="button" data-reset-filters>show all work</button>.
+  </p>
+
+  <div class="publication-groups publication-catalogue">
     {groups.map((group) => (
-      <div class="section-shell publication-section" data-publication-group>
-        <div class="section-header compact-header">
-          <p class="eyebrow">{group.title}</p>
-          <p class="section-count" data-section-count>{group.items.length} items</p>
+      <section class="section-shell publication-section" aria-labelledby={`heading-${group.id}`} data-publication-group>
+        <div class="section-header catalogue-group-header">
+          <h2 id={`heading-${group.id}`}>{group.title}</h2>
+          <p class="section-count" data-section-count>{group.items.length} papers</p>
         </div>
-        <div class="publication-card-grid">
+        <div class="publication-rows">
           {group.items.map((item) => (
-            <article class="publication-card" data-publication-card data-tags={publicationTagIds(item)}>
-              <p class="publication-meta">
-                {publicationMeta(item)}
-              </p>
-              <h2 class="publication-title">{item.title}</h2>
-              {group.kind === "journal" ? (
-                <>
-                  <p class="publication-summary">
-                    {item.summary || item.note || item.venue}
-                    {item.doi && (
-                      <a class="doi-pill" href={item.doi} target="_blank" rel="noreferrer">
-                        DOI
-                      </a>
+            <article class="catalogue-paper" id={`publication-${item.id.toLowerCase()}`} tabindex="-1" aria-labelledby={`title-publication-${item.id.toLowerCase()}`} data-publication-card data-tags={publicationTagIds(item)} data-areas={item.areas.join(" ")}>
+              <div class="catalogue-reference">
+                <a class="reference-id" href={`#publication-${item.id.toLowerCase()}`} aria-label={`Permalink to ${item.id}`}>{item.id}</a>
+                <span class="catalogue-year">{item.year}</span>
+              </div>
+              <div class="catalogue-paper-body">
+                <h3 class="catalogue-title" id={`title-publication-${item.id.toLowerCase()}`}>{item.title}</h3>
+                <p class="catalogue-authors">{item.authors}</p>
+                <p class="catalogue-venue">
+                  <cite>{item.venue}</cite>
+                  {item.doi && <a class="catalogue-doi" href={item.doi} target="_blank" rel="noreferrer" aria-label={`DOI for ${item.title}`}>[DOI ↗]</a>}
+                </p>
+                {publicationStatus(item) && <p class="catalogue-status">{publicationStatus(item)}</p>}
+                {(item.status === "In press" || group.kind === "proceeding") && item.note && (
+                  <p class="catalogue-note">{item.note}</p>
+                )}
+                {(item.summary || selectedResearchIds.has(item.id)) && (
+                  <div class="catalogue-reading">
+                    {item.summary && (
+                      <details class="catalogue-summary">
+                        <summary>About this paper</summary>
+                        <p>{item.summary}</p>
+                      </details>
                     )}
-                  </p>
-                  <p class="note">{item.authors}</p>
-                  <div class="publication-tags">
-                    {publicationTags(item).map((tag) => (
-                      <span>{tag}</span>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <p class="publication-summary compact-summary">
-                    {item.note || item.venue}
-                    {item.doi && (
-                      <a class="doi-pill" href={item.doi} target="_blank" rel="noreferrer">
-                        DOI
-                      </a>
+                    {selectedResearchIds.has(item.id) && (
+                      <a class="text-link publication-context-link" href={`/research/#paper-${item.id.toLowerCase()}`}>Research context →</a>
                     )}
-                  </p>
-                  <p class="note">{item.authors}</p>
-                  <div class="publication-tags">
-                    {publicationTags(item).map((tag) => (
-                      <span>{tag}</span>
-                    ))}
                   </div>
-                </>
-              )}
+                )}
+              </div>
             </article>
           ))}
         </div>
-      </div>
+      </section>
     ))}
-  </section>
+  </div>
 
   <script>
-    const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
+    const areaButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-area]"));
+    const topicButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-topic]"));
     const filterStatus = document.querySelector("[data-filter-status]");
-    const groups = Array.from(document.querySelectorAll("[data-publication-group]"));
-    const validFilters = new Set(filterButtons.map((button) => button.dataset.filter));
+    const topicDisclosure = document.querySelector<HTMLDetailsElement>("[data-topic-disclosure]");
+    const emptyState = document.querySelector<HTMLElement>("[data-filter-empty]");
+    const groups = Array.from(document.querySelectorAll<HTMLElement>("[data-publication-group]"));
+    const validAreas = new Set(areaButtons.map((button) => button.dataset.area!).filter((area) => area !== "all"));
+    const validTopics = new Set(topicButtons.map((button) => button.dataset.topic!));
+    const initialParams = new URL(window.location.href).searchParams;
+    const selectedAreas = new Set(initialParams.getAll("area").filter((area) => validAreas.has(area)));
+    const initialTopic = initialParams.get("tag") ?? "all";
+    let selectedTopic = validTopics.has(initialTopic) ? initialTopic : "all";
 
-    const itemLabel = (count) => `${count} selected ${count === 1 ? "item" : "items"}`;
+    const itemLabel = (count) => `${count} ${count === 1 ? "paper" : "papers"}`;
 
-    function applyPublicationFilter(filter, updateUrl = true) {
-      const activeFilter = validFilters.has(filter) ? filter : "all";
-      const activeButton = filterButtons.find((button) => button.dataset.filter === activeFilter);
+    function applyPublicationFilters(updateUrl = true) {
       let visibleTotal = 0;
 
-      filterButtons.forEach((button) => {
-        const isActive = button.dataset.filter === activeFilter;
+      areaButtons.forEach((button) => {
+        const isActive = button.dataset.area === "all" ? selectedAreas.size === 0 && selectedTopic === "all" : selectedAreas.has(button.dataset.area!);
         button.classList.toggle("is-active", isActive);
         button.setAttribute("aria-pressed", String(isActive));
       });
+      topicButtons.forEach((button) => {
+        const isActive = button.dataset.topic === selectedTopic;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+      if (topicDisclosure && selectedTopic !== "all") topicDisclosure.open = true;
 
       groups.forEach((group) => {
-        const cards = Array.from(group.querySelectorAll("[data-publication-card]"));
+        const cards = Array.from(group.querySelectorAll<HTMLElement>("[data-publication-card]"));
         let visibleInGroup = 0;
 
         cards.forEach((card) => {
           const tags = card.dataset.tags?.split(" ").filter(Boolean) ?? [];
-          const isVisible = activeFilter === "all" || tags.includes(activeFilter);
+          const areas = card.dataset.areas?.split(" ").filter(Boolean) ?? [];
+          const isVisible = [...selectedAreas].every((area) => areas.includes(area)) &&
+            (selectedTopic === "all" || tags.includes(selectedTopic));
           card.hidden = !isVisible;
           if (isVisible) visibleInGroup += 1;
         });
@@ -163,29 +201,85 @@ const groups = [
       });
 
       if (filterStatus) {
-        const label = activeButton?.dataset.label ?? "All";
-        filterStatus.textContent =
-          activeFilter === "all"
-            ? `Showing all ${itemLabel(visibleTotal)}`
-            : `Showing ${itemLabel(visibleTotal)} tagged ${label}`;
+        const areaLabels = areaButtons.filter((button) => selectedAreas.has(button.dataset.area!)).map((button) => button.dataset.label);
+        const topicLabel = topicButtons.find((button) => button.dataset.topic === selectedTopic)?.dataset.label;
+        const areaText = areaLabels.length ? ` · ${areaLabels.join(" × ")}` : "";
+        const topicText = selectedTopic === "all" ? "" : ` · ${topicLabel}`;
+        const allText = !selectedAreas.size && selectedTopic === "all" ? "all " : "";
+        filterStatus.textContent = `Showing ${allText}${itemLabel(visibleTotal)}${areaText}${topicText}`;
       }
+      if (emptyState) emptyState.hidden = visibleTotal !== 0;
 
       if (updateUrl) {
         const url = new URL(window.location.href);
-        if (activeFilter === "all") {
+        url.searchParams.delete("area");
+        validAreas.forEach((area) => {
+          if (selectedAreas.has(area)) url.searchParams.append("area", area);
+        });
+        if (selectedTopic === "all") {
           url.searchParams.delete("tag");
         } else {
-          url.searchParams.set("tag", activeFilter);
+          url.searchParams.set("tag", selectedTopic);
         }
+        const target = publicationHashTarget();
+        if (target?.hidden) url.hash = "";
         window.history.replaceState({}, "", url);
       }
     }
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => applyPublicationFilter(button.dataset.filter ?? "all"));
+    function resetFilters() {
+      selectedAreas.clear();
+      selectedTopic = "all";
+      applyPublicationFilters();
+    }
+    areaButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const area = button.dataset.area!;
+        if (area === "all") return resetFilters();
+        if (selectedAreas.has(area)) selectedAreas.delete(area);
+        else selectedAreas.add(area);
+        applyPublicationFilters();
+      });
+    });
+    topicButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedTopic = button.dataset.topic!;
+        applyPublicationFilters();
+      });
+    });
+    document.querySelectorAll("[data-reset-filters]").forEach((button) => {
+      button.addEventListener("click", () => {
+        resetFilters();
+        if (emptyState?.contains(button)) {
+          document.querySelector<HTMLButtonElement>(".filter-header [data-reset-filters]")?.focus();
+        }
+      });
     });
 
-    const initialFilter = new URL(window.location.href).searchParams.get("tag") ?? "all";
-    applyPublicationFilter(initialFilter, false);
+    function publicationHashTarget() {
+      let id: string;
+      try {
+        id = decodeURIComponent(window.location.hash.slice(1));
+      } catch {
+        return null;
+      }
+      const target = document.getElementById(id);
+      return target?.matches("[data-publication-card]") ? target : null;
+    }
+
+    function revealPublication() {
+      const target = publicationHashTarget();
+      if (!target) return;
+      if (target.hidden) resetFilters();
+      document.fonts.ready.then(() => {
+        if (target.hidden || target !== publicationHashTarget()) return;
+        target.scrollIntoView({ block: "start", behavior: "instant" });
+        target.focus({ preventScroll: true });
+      });
+    }
+
+    applyPublicationFilters(false);
+    revealPublication();
+    window.addEventListener("hashchange", revealPublication);
   </script>
 </BaseLayout>
